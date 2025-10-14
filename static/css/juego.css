@@ -109,3 +109,21 @@ canvas {
 }
 
 
+
+.mb-4 {
+  position: fixed;       /* se mantiene visible incluso si haces scroll */
+  top: 20px;             /* distancia desde arriba */
+  left: 20px;            /* distancia desde la izquierda */
+  z-index: 1000;         /* por encima de los demás elementos */
+}
+
+.mb-4 img {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.mb-4 img:hover {
+  transform: scale(1.1);
+}

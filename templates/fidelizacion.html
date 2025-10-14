@@ -5,8 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Botón Envío - Caricaturesco</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/regresar.css') }}">
+  <link href="{{ url_for('static', filename='css/modo-oscuro.css') }}" rel="stylesheet" />
 </head>
-<body>
+<body class="dark-mode2">
+
+    <div class="mb-4">
+      <a href="/selector_retos">
+      <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar" class="h-12 w-12 auto-invert3">
+      </a>
+    </div>
+
  <section class="bg-pink-50 py-10 px-6">
   <div class="max-w-md mx-auto bg-white border-2 border-green-800 rounded-xl p-6 shadow-md text-center">
     <h2 class="text-lg text-green-700 font-semibold mb-2">Recolecta un sello con cada compra</h2>
@@ -15,49 +24,15 @@
 
     <!-- Cuadros de sello -->
     <div class="grid grid-cols-4 grid-rows-3 gap-4 justify-center">
-      <!-- Casillas llenas -->
-      <div id="cuadro1" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center text-green-600 font-bold cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro1')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-        </svg>
-      </div>
-      <div id="cuadro2" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center text-green-600 font-bold cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro2')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-        </svg>
-      </div>
-      <div id="cuadro3" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center text-green-600 font-bold cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro3')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-        </svg>
-      </div>
-      <div id="cuadro4" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center text-green-600 font-bold cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro4')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-        </svg>
-      </div>
-      <div id="cuadro5" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center text-green-600 font-bold cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro5')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-        </svg>
-      </div>
-      <div id="cuadro6" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center text-green-600 font-bold cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro6')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-        </svg>
-      </div>
-      <div id="cuadro7" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center text-green-600 font-bold cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro7')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-        </svg>
-      </div>
-      <div id="cuadro8" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center text-green-600 font-bold cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro8')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-        </svg>
-      </div>
-      
       <!-- Casilla vacía -->
+      <div id="cuadro1" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro1')"></div>
+      <div id="cuadro2" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro2')"></div>
+      <div id="cuadro3" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro3')"></div>
+      <div id="cuadro4" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro4')"></div>
+      <div id="cuadro5" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro7')"></div>
+      <div id="cuadro6" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro6')"></div>
+      <div id="cuadro7" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro7')"></div>
+      <div id="cuadro8" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro8')"></div>
       <div id="cuadro9" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro9')"></div>
       <div id="cuadro10" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro10')"></div>
       <div id="cuadro11" class="w-12 h-12 border-2 border-green-800 rounded flex items-center justify-center cuadro-sello" style="height: 48px; width: 48px; border-width: 3px;" onclick="toggleSello('cuadro11')"></div>
@@ -72,5 +47,6 @@
 </section>
 
 <script src="{{ url_for('static', filename='js/fidelizacion.js') }}"></script>
+<script src="{{ url_for('static', filename='js/modo-oscuro.js') }}"></script>
 </body>
 </html>

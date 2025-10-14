@@ -105,30 +105,32 @@ def registro():
         telefono = request.form['telefono']
         contraseña = request.form['contraseña']
         confirmar_contraseña = request.form['confirmar_contraseña']
+        preferencias = request.form.get('preferencias')  # ✅ nuevo campo
 
         # Validar contraseñas iguales
         if contraseña != confirmar_contraseña:
             flash('⚠️ Las contraseñas no coinciden.', 'error')
             return redirect('/registro')
 
-        # Guardar datos en tabla "registro" (sin encriptar contraseña)
         cur = mysql.connection.cursor()
         try:
+            # ✅ Insertar solo los campos que existen en la tabla
             cur.execute("""
-                INSERT INTO registro (nombre, email, telefono, contraseña)
-                VALUES (%s, %s, %s, %s)
-            """, (nombre, email, telefono, contraseña))
+                INSERT INTO registro (nombre, email, telefono, contraseña, preferencias)
+                VALUES (%s, %s, %s, %s, %s)
+            """, (nombre, email, telefono, contraseña, preferencias))
+
             mysql.connection.commit()
             flash('✅ Usuario registrado correctamente.', 'success')
+
         except Exception as e:
             mysql.connection.rollback()
             flash(f'⚠️ Error al guardar: {e}', 'error')
+
         finally:
             cur.close()
 
-        flash('Registro exitoso. ¡Ahora inicia sesión!', 'success')
         return redirect('/login')
-
 
     return render_template('registro.html')
 
@@ -182,14 +184,35 @@ def favorito():
     return render_template("favoritos.html")
 
 #formulario de compra
-@app.route("/formulario_compra")
+@app.route('/formulario_compra', methods=['GET', 'POST'])
 def formulario_compra():
-    return render_template("formulario_compra.html")
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        correo = request.form['correo']
+        telefono = request.form['telefono']
+        direccion = request.form['direccion']
+        referencia = request.form['referencia']
+        pago = request.form['pago']
+        entrega = request.form['entrega']
 
-#favorito
-@app.route("/nosotros")
-def nosotros():
-    return render_template("nosotros.html")
+        cur = mysql.connection.cursor()
+        try:
+            cur.execute("""
+                INSERT INTO compras (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """, (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega))
+            mysql.connection.commit()
+            flash('✅ Pedido enviado correctamente.', 'success')
+        except Exception as e:
+            mysql.connection.rollback()
+            flash(f'⚠️ Error al guardar el pedido: {e}', 'error')
+        finally:
+            cur.close()
+
+        return redirect('/formulario_compra')
+
+    return render_template('formulario_compra.html')
 
 
 #formulario cotizacion 
@@ -200,6 +223,10 @@ def formulario_cotizacion():
 @app.route("/selector_retos")
 def retos():
     return render_template("retos.html")
+
+@app.route("/nosotros")
+def nosotros():
+    return render_template("nosotros.html")
 
 
 if __name__ == '__main__':

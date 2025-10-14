@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Pixel Floris - Florería Manu</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/juego.css') }}">
+    <link href="{{ url_for('static', filename='css/modo-oscuro.css') }}" rel="stylesheet" />
 </head>
 
 <body>
+    
+    <div class="mb-4">
+      <a href="/selector_retos">
+      <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar" class="h-12 w-12 auto-invert2">
+      </a>
+    </div>
+
     <div class="game-wrap">
         <header>
             <h1>Pixel Floris - ¡Colecciona flores y gana descuento!</h1>
@@ -47,6 +55,7 @@
 
     <script src="{{ url_for('static', filename='js/menujuego.js')}}"></script>
     <script src="{{ url_for('static', filename='js/juego.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/modo-oscuro.js')}}"></script>
 </body>
 
 </html>

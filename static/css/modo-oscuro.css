@@ -1,40 +1,49 @@
+/* ===================== */
 /* static/css/modo-oscuro.css */
+/* ===================== */
 
-/* transición suave */
+/* Transición suave */
 body, nav, footer, .bg-white, .carousel-container, .footer-container {
   transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }
+
 /* Oculta el checkbox de toggle */
 #toggle {
   display: none;
 }
 
-
+/* ------------------- */
 /* Modo oscuro general */
+/* ------------------- */
 body.dark-mode {
   background-color: #0b0b0c; /* fondo principal */
   color: #54a4b3;
 }
 
-/* navegación */
+body.dark-mode2 {
+  background-color: var(--color-pink-50);
+  color: #54a4b3;
+}
+
+/* Navegación */
 body.dark-mode nav {
-  background-color: #e4e4e4; /* oscuro */
+  background-color: #e4e4e4;
   color: #ffffff;
 }
 
-/* tarjetas / cajas que usan class bg-white en tu HTML */
+/* Tarjetas / cajas */
 body.dark-mode .bg-white {
   background-color: #111827 !important;
   color: #ffffff;
   border: 1px solid #263244;
 }
 
-/* textos destacados (precio rosa) ajustado para contraste en oscuro */
+/* Textos destacados */
 body.dark-mode .text-pink-600 {
   color: #f6a6d5 !important;
 }
 
-/* botones principales */
+/* Botones */
 body.dark-mode .bg-pink-500 {
   background-color: #be185d !important;
 }
@@ -42,7 +51,7 @@ body.dark-mode .bg-pink-500:hover {
   background-color: #9f1239 !important;
 }
 
-/* footer */
+/* Footer */
 body.dark-mode .footer {
   background-color: #0b1220;
   color: #ffffff;
@@ -51,76 +60,73 @@ body.dark-mode .footer a {
   color: #ffffff;
 }
 
-/* buscador */
+/* Buscador */
 body.dark-mode #form-busqueda {
   background-color: #111827;
   border: 1px solid #2b4356;
 }
 
-/* invertir íconos sin data-* (solo íconos, no fotos) */
 img.auto-invert {
   transition: filter .18s ease;
 }
 body.dark-mode img.auto-invert {
   filter: invert(1) grayscale(1) brightness(1.1);
 }
+body.dark-mode img.auto-invert2 {
+  filter: brightness(0) invert(1);
+}
 
-/* evitar invertir imágenes de producto largas: aplica auto-invert sólo a nav-icons / logos */
-/* si ves que alguna foto se invierte por error, añade data-light/data-dark o quítale la clase auto-invert */
+body.dark-mode img.auto-invert3 {
+  filter: brightness(0) grayscale(1) invert(1);
+}
 
-/* Links normales en modo oscuro */
+/* Links normales */
 body.dark-mode a {
   color: #fff;
 }
 
-/* Forzar también a los textos dentro de icono-texto */
 body.dark-mode .icono-texto span,
 body.dark-mode .forma-letra3 {
-  color: #fff;  /* Texto en blanco */
+  color: #fff;
 }
-
-/* Opcional: que cambie al pasar el mouse */
 body.dark-mode a:hover span {
   color: #ccc;
 }
-/* Mantener el buscador claro en modo oscuro */
+
+/* Buscador claro */
 body.dark-mode #form-busqueda {
-  background-color: #f5f6f8 !important; /* fondo claro */
+  background-color: #f5f6f8 !important;
   border-color: #ccc !important;
 }
-
 body.dark-mode #buscador {
-  color: #000 !important; /* texto negro */
+  color: #000 !important;
 }
-
 body.dark-mode #buscador::placeholder {
-  color: #666 !important; /* placeholder gris */
+  color: #666 !important;
 }
-
 body.dark-mode #form-busqueda button img {
-  filter: none !important; /* evita que se invierta el ícono */
+  filter: none !important;
 }
 
-/* ===== MODO OSCURO SOLO PARA ESTA PÁGINA ===== */
+/* ----------------------------- */
+/* ====== PÁGINA DEL JUEGO ===== */
+/* ----------------------------- */
 body#pagina-juego.dark-mode {
   background-color: #0b0b0c !important;
   color: #ffffff !important;
 }
 
-/* Navegación dentro de esta página */
 body#pagina-juego.dark-mode nav {
   background-color: #1f2937 !important;
   color: #ffffff !important;
 }
 
-/* Cajas o tarjetas */
 body#pagina-juego.dark-mode .bg-white {
   background-color: #111827 !important;
   color: #ffffff !important;
   border: 1px solid #2d3748 !important;
 }
 
-/* Botones */
 body#pagina-juego.dark-mode .bg-pink-500 {
   background-color: #be185d !important;
 }
@@ -128,18 +134,15 @@ body#pagina-juego.dark-mode .bg-pink-500:hover {
   background-color: #9f1239 !important;
 }
 
-/* Footer */
 body#pagina-juego.dark-mode footer {
   background-color: #0b1220 !important;
   color: #ffffff !important;
 }
 
-/* Enlaces */
 body#pagina-juego.dark-mode a {
   color: #60a5fa !important;
 }
 
-/* ===== Forzar texto blanco en modo oscuro solo en esta página ===== */
 body#pagina-juego.dark-mode,
 body#pagina-juego.dark-mode p,
 body#pagina-juego.dark-mode span,
@@ -154,3 +157,234 @@ body#pagina-juego.dark-mode li,
 body#pagina-juego.dark-mode div {
   color: #ffffff !important;
 }
+
+/* ----------------------------- */
+/* ====== PÁGINA NOSOTROS ===== */
+/* ----------------------------- */
+body#pagina-nosotros.dark-mode {
+  background-color: #0b0b0c !important; /* fondo oscuro principal */
+  color: #ffffff !important;
+}
+
+body#pagina-nosotros.dark-mode main {
+  background-color: #111827 !important; /* cuadro central oscuro */
+  color: #ffffff !important;
+  border: 1px solid #2d3748 !important;
+}
+
+body#pagina-nosotros.dark-mode .bg-white {
+  background-color: #1f2937 !important; /* tarjetas */
+  border-color: #374151 !important;
+}
+
+body#pagina-nosotros.dark-mode h1,
+body#pagina-nosotros.dark-mode h2,
+body#pagina-nosotros.dark-mode h3,
+body#pagina-nosotros.dark-mode p,
+body#pagina-nosotros.dark-mode span,
+body#pagina-nosotros.dark-mode a {
+  color: #ffffff !important;
+}
+
+body#pagina-nosotros.dark-mode .text-pink-700 {
+  color: #f6a6d5 !important;
+}
+
+body#pagina-nosotros.dark-mode footer {
+  background-color: #0b1220 !important;
+  color: #ffffff !important;
+}
+
+body#pagina-nosotros.dark-mode .bg-pink-500 {
+  background-color: #be185d !important;
+}
+body#pagina-nosotros.dark-mode .bg-pink-500:hover {
+  background-color: #9f1239 !important;
+}
+
+/* Icono regresar */
+body#pagina-nosotros.dark-mode .boton-regresar img {
+  filter: none !important;
+}
+
+/* ----------------------------- */
+/* ====== LOGIN / REGISTRO ===== */
+/* ----------------------------- */
+body#pagina-login.dark-mode,
+body#pagina-registro.dark-mode {
+  background-color: #0b0b0c !important;
+  color: #ffffff !important;
+}
+
+body#pagina-login.dark-mode main,
+body#pagina-registro.dark-mode main {
+  background-color: #111827 !important;
+  border: 1px solid #2d3748 !important;
+  color: #ffffff !important;
+}
+
+/* Input texto blanco al escribir */
+body.dark-mode input,
+body.dark-mode textarea {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+/* Placeholders más claros */
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #bfbfbf !important;
+}
+
+/* 🌸 Fondo normal para la página de nosotros */
+#pagina-nosotros {
+  background: linear-gradient(to bottom right, #d1fae5, #fbcfe8); /* verde-rosado */
+  transition: background 0.5s ease;
+}
+
+/* 🌙 Fondo oscuro solo para la página de nosotros */
+body.dark-mode#pagina-nosotros {
+  background: linear-gradient(to bottom right, #1a1a1a, #2a2a2a); /* tonos gris oscuro */
+}
+
+/* 🌸 Textos normales */
+#pagina-nosotros p,
+#pagina-nosotros h1,
+#pagina-nosotros h2,
+#pagina-nosotros h3 {
+  color: #333;
+  transition: color 0.5s ease;
+}
+
+/* 🌙 Textos en modo oscuro */
+body.dark-mode#pagina-nosotros p,
+body.dark-mode#pagina-nosotros h1,
+body.dark-mode#pagina-nosotros h2,
+body.dark-mode#pagina-nosotros h3 {
+  color: #fff;
+}
+
+/* 🌸 Cuadros interiores */
+#pagina-nosotros main,
+#pagina-nosotros section div {
+  background-color: #fff;
+  border-color: #fbcfe8;
+  transition: all 0.5s ease;
+}
+
+/* 🌙 Cuadros interiores en modo oscuro */
+body.dark-mode#pagina-nosotros main,
+body.dark-mode#pagina-nosotros section div {
+  background-color: #1f2937; /* gris oscuro */
+  border-color: #374151;
+}
+
+/* 🌸 Fondo claro del LOGIN */
+#pagina-login {
+  background: linear-gradient(to bottom right, #d1fae5, #fbcfe8); /* verde-rosado */
+  transition: background 0.5s ease;
+}
+
+/* 🌙 Fondo oscuro del LOGIN */
+body.dark-mode#pagina-login {
+  background: linear-gradient(to bottom right, #1a1a1a, #2a2a2a); /* gris oscuro */
+}
+
+/* 🌸 Textos normales */
+#pagina-login h1,
+#pagina-login label,
+#pagina-login p,
+#pagina-login a {
+  color: #333;
+  transition: color 0.5s ease;
+}
+
+/* 🌙 Textos en modo oscuro */
+body.dark-mode#pagina-login h1,
+body.dark-mode#pagina-login label,
+body.dark-mode#pagina-login p,
+body.dark-mode#pagina-login a {
+  color: #fff;
+}
+
+/* 🌸 Cuadro principal */
+#pagina-login main,
+#pagina-login form {
+  background-color: #fff;
+  border-color: #fbcfe8;
+  transition: all 0.5s ease;
+}
+
+/* 🌙 Cuadro principal oscuro */
+body.dark-mode#pagina-login main,
+body.dark-mode#pagina-login form {
+  background-color: #1f293700; /* gris oscuro */
+  border-color: #37415100;
+}
+
+/* 🌸 Campos de entrada */
+#pagina-login input {
+  background-color: #ffffff00;
+  color: #000;
+  border: 1px solid #cccccc00;
+  transition: all 0.5s ease;
+}
+
+/* 🌸 Fondo claro del REGISTRO */
+#pagina-registro {
+  background: linear-gradient(to bottom right, #d1fae5, #fbcfe8); /* verde con rosado */
+  transition: background 0.5s ease;
+}
+
+/* 🌙 Fondo oscuro del REGISTRO */
+body.dark-mode#pagina-registro {
+  background: linear-gradient(to bottom right, #1a1a1a, #2a2a2a); /* gris oscuro */
+}
+
+/* 🌸 Textos normales */
+#pagina-registro h1,
+#pagina-registro label,
+#pagina-registro p,
+#pagina-registro a {
+  color: #333;
+  transition: color 0.5s ease;
+}
+
+/* 🌙 Textos en modo oscuro */
+body.dark-mode#pagina-registro h1,
+body.dark-mode#pagina-registro label,
+body.dark-mode#pagina-registro p,
+body.dark-mode#pagina-registro a {
+  color: #fff;
+}
+
+/* 🌸 Cuadro principal */
+#pagina-registro main,
+#pagina-registro form {
+  background-color: #fff;
+  border-color: #fbcfe8;
+  transition: all 0.5s ease;
+}
+
+/* 🌙 Cuadro principal oscuro */
+body.dark-mode#pagina-registro main,
+body.dark-mode#pagina-registro form {
+  background-color: #1f293700; /* gris oscuro */
+  border-color: #37415100;
+}
+
+/* 🌸 Campos de entrada */
+#pagina-registro input {
+  background-color: #ffffff00;
+  color: #000;
+  border: 1px solid #cccccc00;
+  transition: all 0.5s ease;
+}
+
+/* 🌙 Campos de entrada en modo oscuro */
+body.dark-mode#pagina-registro input {
+  background-color: #2d2d2d;
+  color: #fff;
+  border-color: #55555500;
+}
+
