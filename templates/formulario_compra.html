@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Compra</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+</head>
+<body class=" bg-white  font-sans min-h-screen flex items-center justify-center">
+
+<div class="min-h-screen flex items-center justify-center bg-gray-200">
+  <div class="bg-pink-100 p-8 rounded-3xl shadow-lg w-full max-w-3xl">
+    <!-- TÍTULO -->
+    <h1 class="text-4xl font-bold text-center text-green-800">Formulario de Compra de Productos</h1>
+    <p class="text-center text-gray-700 mt-1">Realizamos entregas únicamente dentro<br>de Cañete, Lima - Perú 🌷</p>
+
+    <!-- FORMULARIO -->
+    <form class="mt-8 space-y-6 text-gray-800">
+      <!-- DATOS -->
+      <div>
+        <h2 class="font-semibold text-lg text-green-900 mb-2">Datos</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <input type="text" placeholder="Nombre" class="border border-green-600 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-800">
+          <input type="text" placeholder="Apellido" class="border border-green-800 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-800">
+        </div>
+      </div>
+
+      <!-- CONTACTO -->
+      <div>
+        <h2 class="font-semibold text-lg text-green-900 mb-2">Contacto</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <input type="email" placeholder="Correo electrónico" class="border border-green-600 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-800">
+          <input type="text" placeholder="999-999-999" class="border border-green-800 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-800">
+        </div>
+      </div>
+
+      <!-- DIRECCIÓN -->
+      <div>
+        <h2 class="font-semibold text-lg text-green-900 mb-2">Dirección de entrega</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <input type="text" placeholder="Dirección" class="border border-green-600 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-800">
+          <input type="text" placeholder="Ingrese referencia" class="border border-green-800 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-800">
+        </div>
+      </div>
+
+      <!-- MÉTODO DE PAGO Y ENTREGA -->
+      <div class="grid grid-cols-2 gap-6">
+        <div class="border border-green-800 rounded-lg p-4">
+          <h2 class="font-semibold text-lg text-green-900 mb-2">Método de pago</h2>
+          <label class="block"><input type="radio" name="pago" class="mr-2">Yape</label>
+          <label class="block"><input type="radio" name="pago" class="mr-2">Plin</label>
+          <label class="block"><input type="radio" name="pago" class="mr-2">Pago contra entrega</label>
+        </div>
+
+        <div class="border border-green-800 rounded-lg p-4">
+          <h2 class="font-semibold text-lg text-green-900 mb-2">Tipo de entrega</h2>
+          <label class="block"><input type="radio" name="entrega" class="mr-2">Presencial</label>
+          <label class="block"><input type="radio" name="entrega" class="mr-2">Delivery</label>
+        </div>
+      </div>
+
+      <!-- BOTÓN -->
+      <div class="flex justify-center mt-6">
+        <button type="submit" class="bg-green-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-green-800 transition">Enviar pedido</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+    <!-- 💬 WhatsApp flotante -->
+  <a href="https://wa.me/51967086515" target="_blank" class="fixed bottom-6 right-6 z-50">
+    <img src="static/image/logos/whatsapp.png" alt="WhatsApp"
+      class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
+  </a>
+
+</body>
+</html>

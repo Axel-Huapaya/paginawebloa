@@ -1,0 +1,206 @@
+from flask import Flask, render_template, url_for, send_from_directory, redirect, request, flash, session
+from flask_mysqldb import MySQL
+from werkzeug.security import generate_password_hash, check_password_hash
+import requests
+
+app = Flask(__name__)
+app.secret_key = 'clave_secreta'
+
+app.config['MYSQL_HOST'] = 'florerialogin.c56wy8mq0stq.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_PORT'] = 3306
+app.config['MYSQL_USER'] = 'admin'
+app.config['MYSQL_PASSWORD'] = 'floreriamanu'
+app.config['MYSQL_DB'] = 'floreria_db'
+
+mysql = MySQL(app)
+# Ruta para el sitemap
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(directory='.', path='sitemap.xml', mimetype='application/xml')
+
+
+# Página principal
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    audio = {
+        "audioRamo1": url_for('static', filename='audio/alma de bosque.wav'),
+        "audioRamo2": url_for('static', filename='audio/aurora moderna.wav'),
+        "audioRamo3": url_for('static', filename='audio/atetish.wav'),
+        "audioRamo4": url_for('static', filename='audio/belicate.wav'),
+        "audioRamo5": url_for('static', filename='audio/canto de rio.wav'),
+        "audioRamo6": url_for('static', filename='audio/clicken lila.wav'),
+        "audioRamo7": url_for('static', filename='audio/corazón de jardin.wav'),
+        "audioRamo8": url_for('static', filename='audio/deliccat.wav'),
+        "audioRamo9": url_for('static', filename='audio/dulce amanecer.wav'),
+        "audioRamo10": url_for('static', filename='audio/eco de primavera.wav'),
+        "audioRamo11": url_for('static', filename='audio/elegancia pura.wav'),
+        "audioRamo12": url_for('static', filename='audio/elixir de flores.wav'),
+        "audioRamo13": url_for('static', filename='audio/eterno romance.wav'),
+    }
+
+    # Llamamos cada imagen por separado
+    imagenes = {
+        "whatsapp": url_for('static', filename='image/logos/whatsapp.png'),
+        "imagen1": url_for('static', filename='image/ramos/ramo1.jpg'),
+        "Facebook": url_for('static', filename='image/logos/facebook.png'),
+        "imagen2": url_for('static', filename='image/ramos/ramo2.jpg'),
+        "imagen3": url_for('static', filename='image/ramos/ramo3.png'),
+        "imagen4": url_for('static', filename='image/ramos/ramo4.png'),
+        "imagen5": url_for('static', filename='image/ramos/ramo5.jpg'),
+        "imagen6": url_for('static', filename='image/ramos/ramo6.png'),
+        "imagen7": url_for('static', filename='image/ramos/ramo7.jpg'),
+        "imagen8": url_for('static', filename='image/ramos/ramo8.jpg'),
+        "imagen9": url_for('static', filename='image/ramos/ramo9.jpg'),
+        "imagen10": url_for('static', filename='image/ramos/ramo10.png'),
+        "imagen11": url_for('static', filename='image/ramos/ramo11.jpg'),
+        "imagen12": url_for('static', filename='image/ramos/ramo12.jpg'),
+        "imagen13": url_for('static', filename='image/ramos/ramo13.png'),
+        "carrito": url_for('static', filename='image/logos/carrito.png'),
+        "carrito2": url_for('static', filename='image/logos/carrito2.png'),
+        "favorito": url_for('static', filename='image/logos/favorito.png'),
+        "favorito2": url_for('static', filename='image/logos/favorito2.png'),
+        "retos": url_for('static', filename='image/logos/retos.gif'),
+        "claro_oscuro": url_for('static', filename='image/logos/claro.png'),
+        "oscuro_claro": url_for('static', filename='image/logos/oscuro.png'),
+        "favorito_rojo": url_for('static', filename='image/logos/favorito-rojo.png'),
+        "perfil": url_for('static', filename='image/logos/perfil.png'),
+        "perfil2": url_for('static', filename='image/logos/perfil2.png'),
+        "google": url_for('static', filename='image/logos/google.jpg'),
+        "facebook": url_for('static', filename='image/logos/facebook.jpg'),
+        "linkedin": url_for('static', filename='image/logos/linkedin.jpg'),
+        "descuento1": url_for('static', filename='image/descuentos/descuento1.png'),
+        "descuento2": url_for('static', filename='image/descuentos/descuento2.png'),
+        "descuento3": url_for('static', filename='image/descuentos/descuento3.png'),
+        "descuento4": url_for('static', filename='image/descuentos/descuento4.png'),
+        "descuento5": url_for('static', filename='image/descuentos/descuento5.png'),
+        "descuento6": url_for('static', filename='image/descuentos/descuento6.png'),
+        "descuento7": url_for('static', filename='image/descuentos/descuento7.png'),
+        "buscador": url_for('static', filename='image/logos/buscador.png'),
+        "chatbot": url_for('static', filename='image/logos/chatbot-icon.png'),
+    }
+
+    # Si llega un POST a "/", lo puedes manejar aquí
+    if request.method == 'POST':
+        return redirect('/')
+
+    return render_template('index.html', **imagenes, **audio)
+
+
+@app.route('/envio', methods=['GET', 'POST'])
+def envio():
+    return render_template('envio.html')
+
+@app.route('/normal', methods=['GET', 'POST'])
+def normal():
+    return render_template('normal.html')
+
+
+
+# Página de registro con soporte para POST
+@app.route('/registro', methods=['GET', 'POST'])
+def registro():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        email = request.form['email']
+        telefono = request.form['telefono']
+        contraseña = request.form['contraseña']
+        confirmar_contraseña = request.form['confirmar_contraseña']
+
+        # Validar contraseñas iguales
+        if contraseña != confirmar_contraseña:
+            flash('⚠️ Las contraseñas no coinciden.', 'error')
+            return redirect('/registro')
+
+        # Guardar datos en tabla "registro" (sin encriptar contraseña)
+        cur = mysql.connection.cursor()
+        try:
+            cur.execute("""
+                INSERT INTO registro (nombre, email, telefono, contraseña)
+                VALUES (%s, %s, %s, %s)
+            """, (nombre, email, telefono, contraseña))
+            mysql.connection.commit()
+            flash('✅ Usuario registrado correctamente.', 'success')
+        except Exception as e:
+            mysql.connection.rollback()
+            flash(f'⚠️ Error al guardar: {e}', 'error')
+        finally:
+            cur.close()
+
+        flash('Registro exitoso. ¡Ahora inicia sesión!', 'success')
+        return redirect('/login')
+
+
+    return render_template('registro.html')
+
+
+# Retornar para el formulario de inicio
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        contraseña = request.form['contraseña']
+
+        cur = mysql.connection.cursor()
+        try:
+            cur.execute("INSERT INTO usuarios (nombre, contraseña) VALUES (%s, %s)", (nombre, contraseña))
+            mysql.connection.commit()
+            flash('Usuario guardado', 'success')
+        except Exception as e:
+            mysql.connection.rollback()
+            flash(f'Error al guardar: {e}', 'error')
+        finally:
+            cur.close()
+
+        return redirect('/login')
+
+    return render_template('login.html')
+
+@app.route("/chatbot")
+def index():
+    return render_template("chatbot.html")
+
+@app.route("/juego", endpoint="juego")
+def index():
+    return render_template("juego.html")
+
+#dedicatorias
+@app.route("/dedicatorias")
+def dedicatorias():
+    return render_template("dedicatorias.html")
+
+#Fidelizacion
+@app.route("/fidelizacion")
+def fidelizacion():
+    return render_template("fidelizacion.html")
+#Carrito
+@app.route("/carrito")
+def carrito():
+    return render_template("carrito.html")
+#favorito
+@app.route("/favoritos")
+def favorito():
+    return render_template("favoritos.html")
+
+#formulario de compra
+@app.route("/formulario_compra")
+def formulario_compra():
+    return render_template("formulario_compra.html")
+
+#favorito
+@app.route("/nosotros")
+def nosotros():
+    return render_template("nosotros.html")
+
+
+#formulario cotizacion 
+@app.route("/formulario_cotizacion")
+def formulario_cotizacion():
+    return render_template("formulario_cotizacion.html")
+
+@app.route("/selector_retos")
+def retos():
+    return render_template("retos.html")
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

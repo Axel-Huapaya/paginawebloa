@@ -1,0 +1,45 @@
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+}
+
+.carousel-track {
+  display: flex;
+  width: 200%; /* porque duplicamos las imágenes */
+  animation: scroll 30s linear infinite;
+  animation-play-state: running;
+}
+
+.carousel-container:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+/* Cada enlace ocupa el mismo espacio que una imagen */
+.carousel-track a {
+  display: block;
+  flex-shrink: 0;
+  height: 16rem; /* igual a h-64 */
+  width: auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Imagen dentro del enlace */
+.carousel-track a img {
+  display: block;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  cursor: pointer;
+}

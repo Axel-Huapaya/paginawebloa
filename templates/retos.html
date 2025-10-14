@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sección de Retos</title>
+  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/modo-oscuro.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/modo-oscuro-retos.css') }}" rel="stylesheet">
+</head>
+
+<body id="pagina-juego"> 
+
+    <div class="mb-4">
+      <a href="/" class="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl px-4 py-4">
+        ←
+      </a>
+    </div>
+
+  <!-- Título principal -->
+  <h1 class="text-3xl font-extrabold text-teal-800 dark:text-teal-300 text-center tracking-wide px-10 py-10">
+    SELECCIONA LA SECCIÓN QUE DESEAS INGRESAR
+  </h1>
+
+  <!-- Contenedor general -->
+  <div class="flex flex-row items-start justify-center gap-32 px-10 py-6 flex-wrap">
+
+    <!-- BLOQUE 1 -->
+    <div class="flex flex-col items-center w-[390px]">
+      <h1 class="text-2xl font-bold text-teal-700 dark:text-teal-300 text-center mb-3 hover:text-teal-900 dark:hover:text-teal-200 transition-colors duration-300">
+        PIXEL FLORIS
+      </h1>
+
+      <div class="relative bg-gradient-to-r from-rose-500 to-orange-400 rounded-3xl shadow-lg p-1 w-[390px] h-[130px] mb-3 overflow-hidden">
+        <div class="bg-white dark:bg-gray-700 rounded-3xl w-full h-full overflow-hidden">
+          <a href="/juego" class="hover:underline">
+            <img src="{{ url_for('static', filename='image/logos_paginas/pixelfloris.png') }}"
+                 alt="Logo Pixel Floris"
+                 class="object-contain w-full h-full rounded-3xl transform transition-transform duration-500 hover:scale-110">
+          </a>
+        </div>
+      </div>
+
+      <p class="text-base font-medium text-black dark:text-gray-200 text-justify max-w-[390px]">
+        PIXEL FLORIS, un juego donde te podrás mover con tu personaje, en donde tu primera labor y primer reto será
+        agarrar el máximo de flores posibles que aparecen para así poder recibir descuentos en tus compras, pero no
+        todo es color de rosa, habrán unas tijeras que impedirán que puedas llegar a recolectar todas las flores
+        posibles. ¿CREES PODRÁS LOGRARLO? Solo un verdadero guerrero o guerrera podrá hacerlo. ¡ANÍMATE A JUGARLO!
+      </p>
+
+      <p class="text-base font-medium text-black dark:text-gray-300 text-justify max-w-[390px] py-6">
+        CONTROLES: flechas ← → para moverte, espacio o ↑ para saltar.
+      </p>
+    </div>
+
+    <!-- LOGO CENTRAL -->
+    <div class="flex flex-col items-center justify-center w-[250px] h-auto mx-10 mt-20">
+      <img src="{{ url_for('static', filename='image/logos/logo_empresa.png') }}"
+           alt="Logo Empresa"
+           class="object-contain w-[200px] h-[200px] rounded-full transform transition-transform duration-500 hover:scale-110">
+      
+      <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200 text-center mt-6">
+        ¡BIENVENIDO/A!
+      </h1>
+      <p class="text-base font-medium text-gray-700 dark:text-gray-300 text-center mt-2 px-2">
+        En esta sección podrás encontrar los retos que tenemos para ti. 
+        Tendrás que elegir cuál deseas superar; no te rindas si pierdes,
+        más adelante tendrás más oportunidades.
+      </p>
+    </div>
+
+    <!-- BLOQUE 2 -->
+    <div class="flex flex-col items-center w-[390px]">
+      <h1 class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 text-center mb-3 hover:text-indigo-900 dark:hover:text-indigo-200 transition-colors duration-300">
+        CARTILLA DE FIDELIZACIÓN
+      </h1>
+
+      <div class="relative bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl shadow-lg p-1 w-[390px] h-[130px] mb-3 overflow-hidden">
+        <div class="bg-rose-50 dark:bg-gray-700 rounded-3xl w-full h-full overflow-hidden">
+          <a href="/fidelizacion" class="hover:underline">
+            <img src="{{ url_for('static', filename='image/logos_paginas/fidelizacion.png') }}"
+                 alt="Logo Fidelización"
+                 class="object-contain w-full h-full rounded-3xl transform transition-transform duration-500 hover:scale-110">
+          </a>
+        </div>
+      </div>
+
+      <p class="text-base font-medium text-black dark:text-gray-200 text-justify max-w-[390px]">
+        La cartilla de fidelización se trata de cada compra que realices podrás obtener un check
+        en tu cartilla; al completar 10 compras, obtendrás un cupón de descuento.
+      </p>
+      <p class="text-base font-medium text-black dark:text-gray-300 text-justify max-w-[390px] py-6">
+        ¡ANÍMATE A COMPLETARLA!
+      </p>
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/modo-oscuro.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/modo-oscuro-retos.js') }}" defer></script>
+
+</body>
+</html>

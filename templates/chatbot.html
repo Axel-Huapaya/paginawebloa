@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FloriBot - Tu asistente de consultas</title>
+  <link href="{{ url_for('static', filename='css/chatbot.css') }}" rel="stylesheet" />
+</head>
+<body>
+  <div class="chatbot-container">
+    <!-- Encabezado -->
+    <div class="chatbot-header">
+      <img src="{{ url_for('static', filename='image/logos/chatbot.png') }}" alt="Logo del chatbot" />
+      <div>
+        <h1 class="chatbot-title">FloriBot</h1>
+        <h2 class="chatbot-subtitle">El que te ayuda en tus dudas</h2>
+      </div>
+    </div>
+
+    <!-- Chat -->
+    <div id="chat" class="chat-area"></div>
+
+    <!-- Input -->
+    <div class="chatbot-input">
+      <input type="text" id="userInput" placeholder="Escribe tu pregunta aquí..." />
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+
+    <!-- Botones rápidos -->
+    <div>
+      <p class="quick-title">Preguntas rápidas:</p>
+      <div class="quick-buttons">
+        <button onclick="quickReply('¿Qué descuentos tienen esta semana?')">¿Qué descuentos tienen esta semana?</button>
+        <button onclick="quickReply('¿Dónde están ubicados?')">¿Dónde están ubicados?</button>
+        <button onclick="quickReply('¿Puedo llegar a dejar en espera un pedido')">¿Puedo llegar a dejar en espera un pedido?</button>
+        <button onclick="quickReply('¿Entre más pedidos puedo llegar a obtener descuentos?')">¿Entre más pedidos puedo llegar a obtenr descuentos?</button>
+        <button onclick="quickReply('¿Cuánto cuesta un paquete de 30 personas?')">¿Cuánto cuesta un paquete de 30 personas?</button>
+        <button onclick="quickReply('¿Tienen servicio de fotografía?')">¿Tienen servicio de fotografía?</button>
+        <button onclick="quickReply('¿Qué incluye el paquete premium?')">¿Qué incluye el paquete premium?</button>
+        <button onclick="quickReply('¿Puedo pagar en cuotas?')">¿Puedo pagar en cuotas?</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</body>
+</html>

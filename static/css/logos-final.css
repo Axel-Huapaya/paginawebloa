@@ -1,0 +1,60 @@
+.social-icons img {
+  width: 20px;   
+  height: 20px;
+  margin: 5px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2); /* efecto zoom al pasar el mouse */
+}
+
+.social-icons2 img {
+  width: 80px; /* Ajusta este valor según lo grande que lo quieras */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.social-icons2 img:hover {
+  transform: scale(1.2); /* efecto zoom al pasar el mouse */
+}
+
+.forma-letra {
+  color: #1877F2;
+  font-weight: bold;
+}
+
+.icono-texto {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.icono-texto img {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+}
+
+.forma-letra {
+  font-size: 16px;
+  color: #e65ec4; 
+  font-weight: 500;
+}
+
+.forma-letra2 {
+  font-size: 16px;
+  color: #1877F2; 
+  font-weight: 500;
+}
+
+.forma-letra3 {
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+}
+
+.libro-img {
+  width: 120px;
+  height: auto;
+  cursor: pointer;
+}

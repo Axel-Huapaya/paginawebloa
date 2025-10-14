@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Favoritos</title>
+  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+</head>
+
+<body class="bg-white flex justify-center items-center min-h-screen">
+  <div class="bg-pink-50 w-11/12 md:w-3/4 lg:w-2/3 p-6 rounded-xl shadow-lg">
+
+    <!-- Botón regresar -->
+    <div class="mb-4">
+      <a href="/" class="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl">
+        ←
+      </a>
+    </div>
+
+
+
+    <!-- Título -->
+    <h1 class="text-center text-2xl font-bold text-green-900 mb-6">MIS FAVORITOS</h1>
+
+    <!-- Contenedor -->
+    <div class="bg-pink-50 rounded-xl p-6">
+
+      <h2 class="text-lg font-bold text-green-900 mb-4">LISTA DE PRODUCTOS:</h2>
+
+      <!-- Lista de productos -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Producto -->
+        <div class="flex items-center justify-between bg-white rounded-xl p-3 shadow-sm">
+          <div class="flex items-center gap-3">
+            <img src="static/image/ramos/ramo1.jpg" alt="Bella Esperanza"
+              class="w-20 h-20 border-2 border-green-500 rounded-md">
+            <div>
+              <p class="font-semibold text-green-900">RAMO ALMA DE BOSQUE</p>
+              <div class="flex gap-2 mt-2">
+                <button class="bg-green-900 text-white text-sm font-semibold px-3 py-1 rounded-full">INFO.
+                  ARREGLO</button>
+                <button
+                  class="bg-pink-300 hover:bg-pink-400 text-white text-sm font-semibold px-3 py-1 rounded-full">CARRITO</button>
+                <button class="text-red-500 text-lg">🗑️</button>
+              </div>
+            </div>
+          </div>
+          <span class="text-pink-400 text-2xl">❤</span>
+        </div>
+
+        <!-- Producto -->
+        <div class="flex items-center justify-between bg-white rounded-xl p-3 shadow-sm">
+          <div class="flex items-center gap-3">
+            <img src="static/image/ramos/ramo2.jpg" alt="Bella Esperanza"
+              class="w-20 h-20 border-2 border-green-500 rounded-md">
+            <div>
+              <p class="font-semibold text-green-900">RAMO AURORA</p>
+              <div class="flex gap-2 mt-2">
+                <button class="bg-green-900 text-white text-sm font-semibold px-3 py-1 rounded-full">INFO.
+                  ARREGLO</button>
+                <button
+                  class="bg-pink-300 hover:bg-pink-400 text-white text-sm font-semibold px-3 py-1 rounded-full">CARRITO</button>
+                <button class="text-red-500 text-lg">🗑️</button>
+              </div>
+            </div>
+          </div>
+          <span class="text-pink-400 text-2xl">❤</span>
+        </div>
+
+        <!-- Producto -->
+        <div class="flex items-center justify-between bg-white rounded-xl p-3 shadow-sm">
+          <div class="flex items-center gap-3">
+            <img src="static/image/ramos/ramo3.png" alt="Bella Esperanza"
+              class="w-20 h-20 border-2 border-green-500 rounded-md">
+            <div>
+              <p class="font-semibold text-green-900">RAMO ATETISH</p>
+              <div class="flex gap-2 mt-2">
+                <button class="bg-green-900 text-white text-sm font-semibold px-3 py-1 rounded-full">INFO.
+                  ARREGLO</button>
+                <button
+                  class="bg-pink-300 hover:bg-pink-400 text-white text-sm font-semibold px-3 py-1 rounded-full">CARRITO</button>
+                <button class="text-red-500 text-lg">🗑️</button>
+              </div>
+            </div>
+          </div>
+          <span class="text-pink-400 text-2xl">❤</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Botón WhatsApp -->
+    <a href="https://wa.me/51967086515" target="_blank" class="fixed bottom-6 right-6 z-50">
+      <img src="static/image/logos/whatsapp.png" alt="WhatsApp"
+        class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
+    </a>
+  </div>
+</body>
+
+</html>

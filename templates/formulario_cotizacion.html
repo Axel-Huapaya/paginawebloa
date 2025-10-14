@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de solicitud de cotización personalizada</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+</head>
+<body class="bg-white font-sans min-h-screen flex items-center justify-center">
+
+  <div class=" bg-pink-50   rounded-3xl shadow-lg p-10 w-full max-w-4xl border border-pink-200">
+    <h1 class="text-3xl font-bold text-green-800 text-center mb-2">Formulario de solicitud de cotización</h1>
+    <p class="text-center text-gray-500 mb-6">Realizamos entregas únicamente dentro de Cañete, Lima - Perú 🌷</p>
+
+    <form class="bg-white rounded-3xl shadow-md p-10 space-y-8">
+
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Nombre -->
+        <div>
+          <label class="block text-green-800 font-semibold mb-1">Nombre completo</label>
+          <input type="text" placeholder="Ingrese su nombre" 
+            class="w-full px-4 py-2 border border-green-800 rounded-md bg-green-50 focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <!-- Presupuesto -->
+        <div>
+          <label class="block text-green-800 font-semibold mb-1">Presupuesto aproximado</label>
+          <input type="text" placeholder="Ingresa el monto" 
+            class="w-full px-4 py-2 border border-green-800 rounded-md bg-green-50 focus:ring-2 focus:ring-green-500">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Correo -->
+        <div>
+          <label class="block text-green-800 font-semibold mb-1">Correo electrónico</label>
+          <input type="email" placeholder="Ingrese su correo" 
+            class="w-full px-4 py-2 border border-green-800 rounded-md bg-green-50 focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <!-- Descripción -->
+        <div>
+          <label class="block text-green-800 font-semibold mb-1">Descripción del arreglo</label>
+          <textarea placeholder="Describe tu idea (flores, colores, estilo, etc.)" rows="3"
+            class="w-full px-4 py-2 border border-green-800 rounded-md bg-green-50 focus:ring-2 focus:ring-green-500"></textarea>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Teléfono -->
+        <div>
+          <label class="block text-green-800 font-semibold mb-1">Teléfono</label>
+          <input type="tel" placeholder="Ingrese su número de teléfono"
+            class="w-full px-4 py-2 border border-green-800 rounded-md bg-green-50 focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <!-- Subir imagen -->
+        <div>
+          <label class="block text-green-800 font-semibold mb-1">Subir imagen (opcional)</label>
+          <input type="file" 
+            class="w-full px-4 py-2 border border-green-800 rounded-md bg-green-50 focus:ring-2 focus:ring-green-500">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Tipo de evento -->
+        <div>
+          <label class="block text-green-800 font-semibold mb-1">Tipo de evento</label>
+          <input type="text" placeholder="¿Qué tipo de evento es?" 
+            class="w-full px-4 py-2 border border-green-800 rounded-md bg-green-50 focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <!-- Fecha -->
+        <div>
+          <label class="block text-green-800 font-semibold mb-1">Fecha del evento</label>
+          <input type="date" 
+            class="w-full px-4 py-2 border border-green-800 rounded-md bg-green-50 focus:ring-2 focus:ring-green-500">
+        </div>
+      </div>
+
+   <div class="mt-10 flex justify-center">
+  <button class="bg-pink-300 text-white px-6 py-2 rounded">
+    Enviar solicitud de cotización
+  </button>
+</div>
+    </form>
+
+    <!-- WhatsApp flotante -->
+  <a href="https://wa.me/51967086515" target="_blank" class="fixed bottom-6 right-6 z-50">
+    <img src="static/image/logos/whatsapp.png" alt="WhatsApp"
+      class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
+  </a>
+
+</body>
+</html>

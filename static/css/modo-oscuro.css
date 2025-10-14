@@ -1,0 +1,156 @@
+/* static/css/modo-oscuro.css */
+
+/* transición suave */
+body, nav, footer, .bg-white, .carousel-container, .footer-container {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+/* Oculta el checkbox de toggle */
+#toggle {
+  display: none;
+}
+
+
+/* Modo oscuro general */
+body.dark-mode {
+  background-color: #0b0b0c; /* fondo principal */
+  color: #54a4b3;
+}
+
+/* navegación */
+body.dark-mode nav {
+  background-color: #e4e4e4; /* oscuro */
+  color: #ffffff;
+}
+
+/* tarjetas / cajas que usan class bg-white en tu HTML */
+body.dark-mode .bg-white {
+  background-color: #111827 !important;
+  color: #ffffff;
+  border: 1px solid #263244;
+}
+
+/* textos destacados (precio rosa) ajustado para contraste en oscuro */
+body.dark-mode .text-pink-600 {
+  color: #f6a6d5 !important;
+}
+
+/* botones principales */
+body.dark-mode .bg-pink-500 {
+  background-color: #be185d !important;
+}
+body.dark-mode .bg-pink-500:hover {
+  background-color: #9f1239 !important;
+}
+
+/* footer */
+body.dark-mode .footer {
+  background-color: #0b1220;
+  color: #ffffff;
+}
+body.dark-mode .footer a {
+  color: #ffffff;
+}
+
+/* buscador */
+body.dark-mode #form-busqueda {
+  background-color: #111827;
+  border: 1px solid #2b4356;
+}
+
+/* invertir íconos sin data-* (solo íconos, no fotos) */
+img.auto-invert {
+  transition: filter .18s ease;
+}
+body.dark-mode img.auto-invert {
+  filter: invert(1) grayscale(1) brightness(1.1);
+}
+
+/* evitar invertir imágenes de producto largas: aplica auto-invert sólo a nav-icons / logos */
+/* si ves que alguna foto se invierte por error, añade data-light/data-dark o quítale la clase auto-invert */
+
+/* Links normales en modo oscuro */
+body.dark-mode a {
+  color: #fff;
+}
+
+/* Forzar también a los textos dentro de icono-texto */
+body.dark-mode .icono-texto span,
+body.dark-mode .forma-letra3 {
+  color: #fff;  /* Texto en blanco */
+}
+
+/* Opcional: que cambie al pasar el mouse */
+body.dark-mode a:hover span {
+  color: #ccc;
+}
+/* Mantener el buscador claro en modo oscuro */
+body.dark-mode #form-busqueda {
+  background-color: #f5f6f8 !important; /* fondo claro */
+  border-color: #ccc !important;
+}
+
+body.dark-mode #buscador {
+  color: #000 !important; /* texto negro */
+}
+
+body.dark-mode #buscador::placeholder {
+  color: #666 !important; /* placeholder gris */
+}
+
+body.dark-mode #form-busqueda button img {
+  filter: none !important; /* evita que se invierta el ícono */
+}
+
+/* ===== MODO OSCURO SOLO PARA ESTA PÁGINA ===== */
+body#pagina-juego.dark-mode {
+  background-color: #0b0b0c !important;
+  color: #ffffff !important;
+}
+
+/* Navegación dentro de esta página */
+body#pagina-juego.dark-mode nav {
+  background-color: #1f2937 !important;
+  color: #ffffff !important;
+}
+
+/* Cajas o tarjetas */
+body#pagina-juego.dark-mode .bg-white {
+  background-color: #111827 !important;
+  color: #ffffff !important;
+  border: 1px solid #2d3748 !important;
+}
+
+/* Botones */
+body#pagina-juego.dark-mode .bg-pink-500 {
+  background-color: #be185d !important;
+}
+body#pagina-juego.dark-mode .bg-pink-500:hover {
+  background-color: #9f1239 !important;
+}
+
+/* Footer */
+body#pagina-juego.dark-mode footer {
+  background-color: #0b1220 !important;
+  color: #ffffff !important;
+}
+
+/* Enlaces */
+body#pagina-juego.dark-mode a {
+  color: #60a5fa !important;
+}
+
+/* ===== Forzar texto blanco en modo oscuro solo en esta página ===== */
+body#pagina-juego.dark-mode,
+body#pagina-juego.dark-mode p,
+body#pagina-juego.dark-mode span,
+body#pagina-juego.dark-mode h1,
+body#pagina-juego.dark-mode h2,
+body#pagina-juego.dark-mode h3,
+body#pagina-juego.dark-mode h4,
+body#pagina-juego.dark-mode h5,
+body#pagina-juego.dark-mode h6,
+body#pagina-juego.dark-mode a,
+body#pagina-juego.dark-mode li,
+body#pagina-juego.dark-mode div {
+  color: #ffffff !important;
+}

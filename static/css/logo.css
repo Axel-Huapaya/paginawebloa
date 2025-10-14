@@ -1,0 +1,17 @@
+header {
+      display: flex;
+      align-items: center;
+      background-color: #f5f5f5;
+      padding: 10px 20px;
+    }
+    header img {
+      width: 10px;      /* tamaño pequeño */
+      height: 1px;     /* mismo alto y ancho */
+      border-radius: 50%; /* hace la imagen circular */
+      object-fit: cover; /* mantiene proporción de la imagen */
+      margin-right: 15px; /* espacio entre imagen y texto */
+    }
+    header h1 {
+      font-size: 22px;
+      margin: 0;
+    }

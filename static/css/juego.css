@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.game-wrap {
+  max-width: 800px;
+  margin: auto;
+}
+
+header {
+  margin: 10px 0;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.overlay {
+  position: relative;
+  display: inline-block;
+}
+
+canvas {
+  border: 2px solid #fff;
+  background: url("../image/fondos/fondo-juego.png") no-repeat center center;
+  background-size: cover;
+}
+
+.message {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 20px;
+}
+
+.big {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.btn {
+  background: #ff4081;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.btn.small {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.touch-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.touch-btn {
+  background: #444;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* --- Selección de personajes --- */
+.character-select {
+  margin-top: 20px;
+}
+
+.character-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.character {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.character:hover {
+  transform: scale(1.1);
+  border: 3px solid #ff4081;
+  border-radius: 8px;
+}
+
+

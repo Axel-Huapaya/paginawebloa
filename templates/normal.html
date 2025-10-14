@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florería Manu</title>
+  <link href="{{ url_for('static', filename='css/carrusel.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/pie.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot-logo.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/logos-final.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/modo-oscuro.css')}}">
+
+
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navegación -->
+  <nav class="relative flex items-center justify-between px-4 py-2 bg-white z-[9999]">
+    <!-- Logo + Nombre -->
+    <div class="flex items-center gap-2">
+      <a href="/" class="hover:underline">
+        <img src="static/image/logos/logo_empresa.png" alt="Logo del negocio"
+          class="w-15 h-10 rounded-lg border-4 border-white shadow-lg hover:scale-110 transition-transform duration-300" />
+      </a>
+      <h1 class="text-xl font-bold">Florería Manu</h1>
+    </div>
+
+    <!-- Barra de búsqueda -->
+    <!-- Buscador -->
+    <!-- Buscador -->
+    <form id="form-busqueda" class="flex items-center border rounded px-2 py-1 bg-gray-100">
+      <input type="search" id="buscador" placeholder="Buscar..." class="bg-transparent outline-none px-2 text-sm" />
+      <button type="submit">
+        <img src="static/image/logos/buscador.png" alt="buscador"
+          class="w-6 h-6 hover:scale-110 transition-transform duration-300" />
+      </button>
+    </form>
+
+
+
+
+
+    <!-- Botón hamburguesa SOLO en móviles -->
+    <button id="animate-pulse" class="md:hidden text-gray-700 focus:outline-none relative z-[9999]">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Menú en pantallas grandes -->
+    <ul class="hidden md:flex items-center gap-4">
+      <li><a href="/juego"><img src="static/image/logos/retos.gif" alt="Misiones del cliente"
+            class="w-10 h-10 nav-logo" /></a></li>
+      <label for="toggle"> <img src="static/image/logos/claro.png" alt="Tema" class="w-8 h-8 nav-logo" data-light="static/image/logos/claro.png" data-dark="static/image/logos/oscuro.png" id="themeIcon"></label>
+      <input type="checkbox" id="toggle">
+
+      <li><a href="#"><img src="static/image/logos/carrito.png" alt="Carrito de compras" class="w-8 h-8 nav-logo" /></a>
+      </li>
+      <li><a href="#"><img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+            class="w-8 h-8 nav-logo" /></a></li>
+      <li><a href="/login"><img src="static/image/logos/perfil.png" alt="Perfil de usuario"
+            class="w-8 h-8 nav-logo" /></a></li>
+    </ul>
+
+
+    <!-- Menú móvil desplegable -->
+    <ul id="mobile-menu"
+      class="hidden absolute top-full right-0 bg-white p-4 flex flex-col gap-4 shadow-lg rounded-b-lg z-[9999] w-48">
+      <li><a href="/juego"><img src="static/image/logos/retos.gif" alt="Misiones" class="w-10 h-10" /><span
+            class="text-sm font-medium">Misiones del usuario</span></a></li>
+      <li><a href="#"><img src="static/image/logos/claro.png" alt="Tema" class="w-8 h-8" /><span
+            class="text-sm font-medium">Tema Claro/Oscuro</span></a></li>
+      <li><a href="#"><img src="static/image/logos/carrito.png" alt="Carrito" class="w-8 h-8" /><span
+            class="text-sm font-medium">Carrito de compras</span></a></li>
+      <li><a href="#"><img src="static/image/logos/favorito.png" alt="Favoritos" class="w-8 h-8" /><span
+            class="text-sm font-medium">Favoritos</span></a></li>
+      <li><a href="/login"><img src="static/image/logos/perfil.png" alt="Perfil" class="w-8 h-8" /><span
+            class="text-sm font-medium">Perfil del usuario</span></a></li>
+    </ul>
+  </nav>
+
+
+
+  <!--Carrusel de los descuentos-->
+
+  <div class="carousel-container relative w-full overflow-hidden mt-10">
+    <div class="carousel-track">
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento1.png') }}" class="h-64 object-cover"
+          alt="Imagen 1">
+      </a>
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento2.png') }}" class="h-64 object-cover"
+          alt="Imagen 2">
+      </a>
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento3.png') }}" class="h-64 object-cover"
+          alt="Imagen 3">
+      </a>
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento4.png') }}" class="h-64 object-cover"
+          alt="Imagen 4">
+      </a>
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento5.png') }}" class="h-64 object-cover"
+          alt="Imagen 5">
+      </a>
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento6.png') }}" class="h-64 object-cover"
+          alt="Imagen 6">
+      </a>
+
+      <!-- Repetir para efecto infinito -->
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento1.png') }}" class="h-64 object-cover"
+          alt="Imagen 1">
+      </a>
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento2.png') }}" class="h-64 object-cover"
+          alt="Imagen 2">
+      </a>
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento3.png') }}" class="h-64 object-cover"
+          alt="Imagen 3">
+      </a>
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento4.png') }}" class="h-64 object-cover"
+          alt="Imagen 4">
+      </a>
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento5.png') }}" class="h-64 object-cover"
+          alt="Imagen 5">
+      </a>
+      <a href="{{ url_for('formulario_compra') }}">
+        <img src="{{ url_for('static', filename='image/descuentos/descuento6.png') }}" class="h-64 object-cover"
+          alt="Imagen 6">
+      </a>
+    </div>
+  </div>
+
+  <div class="relative w-full max-w4xl overflow-hidden rounded-2xl shadow-lg">
+    <div class="flex animate-slide-x">
+      {% for img in imagenes %}
+      <img src="{{ images }}" class="w-full h-64 w-96 object-cover" alt="Image {{ loop.index }}">
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+  <!-- Sección de Ramos -->
+  <section class="p-10">
+    <h5 class="text-center font-bold mb-10 ">RAMOS</h5>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Tarjeta de producto -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo1.jpg" id="imagenramo1" alt="Ramo 1"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="relative p-4 bg-white rounded shadow-md">
+          <h4 class="font-semibold text-lg">Alma de Bosque</h4>
+          <p class="text-pink-600 font-bold">S/45.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo2.jpg" id="imagenramo2" alt="Ramo 2"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Aurora Moderna</h4>
+          <p class="text-pink-600 font-bold">S/37.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="#" id="heartLink">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos" id="heartIcon"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer" />
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo3.png" id="imagenramo3" alt="Ramo 3"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Atetish</h4>
+          <p class="text-pink-600 font-bold">S/40.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo4.png" id="imagenramo4" alt="Ramo 4"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Belicate</h4>
+          <p class="text-pink-600 font-bold">S/35.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo5.jpg" id="imagenramo5" alt="Ramo 5"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Canto de Rio</h4>
+          <p class="text-pink-600 font-bold">S/80.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo6.png" id="imagenramo6" alt="Ramo 6"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Clicken lila</h4>
+          <p class="text-pink-600 font-bold">S/40.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo7.jpg" id="imagenramo7" alt="Ramo 7"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Corazón de jardin</h4>
+          <p class="text-pink-600 font-bold">S/45.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo8.jpg" id="imagenramo8" alt="Ramo 8"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Deliccat</h4>
+          <p class="text-pink-600 font-bold">S/35.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo9.jpg" id="imagenramo9" alt="Ramo 9"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Dulce Amanecer</h4>
+          <p class="text-pink-600 font-bold">S/45.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo10.png" id="imagenramo10" alt="Ramo 10"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Eco de Primavera</h4>
+          <p class="text-pink-600 font-bold">S/50.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo11.jpg" id="imagenramo11" alt="Ramo 11"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Elegancia Pura</h4>
+          <p class="text-pink-600 font-bold">S/40.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo12.jpg" id="imagenramo12" alt="Ramo 12"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Elixir de flores</h4>
+          <p class="text-pink-600 font-bold">S/35.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramos/ramo13.png" id="imagenramo13" alt="Ramo 13"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Eterno romance</h4>
+          <p class="text-pink-600 font-bold">S/35.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario_compra" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- Botón para el chatbot-->
+  <div class="chatbot-wrapper fixed bottom-24 right-6 z-50">
+    <!-- Globo de diálogo -->
+    <div id="floribot-bubble" class="chatbot-bubble">
+      Soy FloriBot tu asistente🌼,<br />
+      Si necesitas información sobre ramos,<br />
+      no dudes en preguntarme.
+    </div>
+
+    <!-- chatbot -->
+    <a href="/chatbot" target="_blank" id="chatbot-toggle" class="chatbot-button">
+      <img src="static/image/logos/chatbot-icon.png" alt="Chatbot" />
+    </a>
+  </div>
+
+
+
+  <!-- Botón flotante de WhatsApp -->
+
+  <a href="https://wa.me/51967086515" target="_blank" class="fixed bottom-6 right-6 z-50">
+    <img src="static/image/logos/whatsapp.png" alt="WhatsApp"
+      class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
+  </a>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-section">
+        <h3>🛍️ Cliente</h3>
+        <ul class="social-icons">
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100075779234124" target="_blank" 
+            class="icono-texto">
+              <img src="static/image/logos/perfil.png" alt="perfil">
+              <span class="forma-letra3">Mi cuenta</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100075779234124" target="_blank" 
+            class="icono-texto">
+              <img src="static/image/logos/carrito.png" alt="perfil">
+              <span class="forma-letra3">Mis pedidos</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100075779234124" target="_blank" 
+            class="icono-texto">
+              <img src="static/image/logos/favorito.png" alt="perfil">
+              <span class="forma-letra3">Mis favoritos</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100075779234124" target="_blank" 
+            class="icono-texto">
+              <img src="static/image/logos/seguimiento.png" alt="perfil">
+              <span class="forma-letra3">Seguimiento de envio</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>🔗 Enlaces</h3>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>📞 Contáctanos</h3>
+        <p>📍 Av. Los Emprendedores 123, Cañete – Lima</p>
+        <p>📱 +51 967 086 515</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>📱 Síguenos</h3>
+        <ul class="social-icons">
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100075779234124" target="_blank" 
+            class="icono-texto">
+              <img src="static/image/logos/facebook.png" alt="Facebook">
+              <span class="forma-letra2">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/floreriamanu/?igsh=MTY4N29xZXR3d2pmMA%3D%3D#" target="_blank"
+              class="icono-texto">
+              <img src="static/image/logos/instagram.png" alt="Instagram">
+              <span class="forma-letra">Instagram</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.tiktok.com/@floreriamanu" target="_blank" class="icono-texto">
+              <img src="static/image/logos/tiktok.png" alt="TikTok">
+              <span class="forma-letra3">Tik tok</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="footer-section">
+        <h3>📘 Libro de Reclamaciones</h3>
+        <a href="#" target="_blank" class="social-icons2">
+          <img src="static/image/logos/libro_reclamaciones.png" alt="libro de reclamos" class="libro-img">
+        </a>
+      </div>
+
+
+      <div class="footer-section">
+        <h3>💳 Pagos</h3>
+        <p>Yape | Plin | PagoEfectivo</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>🎁 Regístrate</h3>
+        <p>Obtén hasta 15% de descuento</p>
+        <a href="/registro" class="register-btn">Haz clic para registrarte</a>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      © 2025 FloreriaManu. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/favorito.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/menu.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/menu.movil.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/buscador.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/modo-oscuro.js')}}"></script>
+
+</body>
+
+
+</html>
