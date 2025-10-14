@@ -8,6 +8,13 @@ function appendMessage(sender, text) {
   chat.scrollTop = chat.scrollHeight;
 }
 
+document.getElementById("userInput").addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    sendMessage();
+  }
+});
+
 function sendMessage() {
   const input = document.getElementById("userInput");
   const userText = input.value.trim();
