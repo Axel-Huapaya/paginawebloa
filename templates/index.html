@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot-logo.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/logos-final.css')}}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/modo-oscuro.css')}}">
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/buscador.css')}}">
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -39,15 +39,21 @@
     </div>
 
     <!-- Buscador -->
-    <form id="form-busqueda" class="flex items-center border rounded px-2 py-1 bg-gray-100">
-      <input type="search" id="buscador" placeholder="Buscar..." class="bg-transparent outline-none px-2 text-sm" />
-      <button type="submit">
-        <img src="static/image/logos/buscador.png" alt="buscador"
-          class="w-6 h-6 hover:scale-110 transition-transform duration-300" />
-      </button>
-    </form>
-
-
+  <form id="form-busqueda" class="flex items-center border rounded px-2 py-1 bg-gray-100" onsubmit="event.preventDefault()">
+  <input
+    type="search"
+    id="buscador"
+    placeholder="Buscar..."
+    class="bg-transparent outline-none px-2 text-sm"
+  />
+  <button type="button">
+    <img
+      src="static/image/logos/buscador.png"
+      alt="buscador"
+      class="w-6 h-6 hover:scale-110 transition-transform duration-300"
+    />
+  </button>
+</form>
 
 
 
@@ -193,7 +199,7 @@
     <h5 class="text-center font-bold mb-10 ">RAMOS</h5>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Tarjeta de producto -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo1" src="static/audio/alma de bosque.wav"></audio>
         <img src="static/image/ramos/ramo1.jpg" id="imagenramo1" alt="Ramo 1"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -215,7 +221,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo2" src="static/audio/aurora moderna.wav"></audio>
         <img src="static/image/ramos/ramo2.jpg" id="imagenramo2" alt="Ramo 2"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -238,7 +244,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo3" src="static/audio/atetish.wav"></audio>
         <img src="static/image/ramos/ramo3.png" id="imagenramo3" alt="Ramo 3"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -260,7 +266,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo4" src="static/audio/belicate.wav"></audio>
         <img src="static/image/ramos/ramo4.png" id="imagenramo4" alt="Ramo 4"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -281,7 +287,7 @@
           </div>
         </div>
       </div>
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo5" src="static/audio/canto de rio.wav"></audio>
         <img src="static/image/ramos/ramo5.jpg" id="imagenramo5" alt="Ramo 5"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -303,7 +309,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto ">
         <audio id="audioRamo6" src="static/audio/clicken lila.wav"></audio>
         <img src="static/image/ramos/ramo6.png" id="imagenramo6" alt="Ramo 6"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -325,7 +331,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo7" src="static/audio/corazón de jardin.wav"></audio>
         <img src="static/image/ramos/ramo7.jpg" id="imagenramo7" alt="Ramo 7"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -347,7 +353,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo8" src="static/audio/deliccat.wav"></audio>
         <img src="static/image/ramos/ramo8.jpg" id="imagenramo8" alt="Ramo 8"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -369,7 +375,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo9" src="static/audio/dulce amanecer.wav"></audio>
         <img src="static/image/ramos/ramo9.jpg" id="imagenramo9" alt="Ramo 9"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -391,7 +397,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo10" src="static/audio/eco de primavera.wav"></audio>
         <img src="static/image/ramos/ramo10.png" id="imagenramo10" alt="Ramo 10"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -413,7 +419,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo11" src="static/audio/elegancia pura.wav"></audio>
         <img src="static/image/ramos/ramo11.jpg" id="imagenramo11" alt="Ramo 11"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -435,7 +441,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo12" src="static/audio/elixir de flores.wav"></audio>
         <img src="static/image/ramos/ramo12.jpg" id="imagenramo12" alt="Ramo 12"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -457,7 +463,7 @@
         </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo13" src="static/audio/eterno romance.wav"></audio>
         <img src="static/image/ramos/ramo13.png" id="imagenramo13" alt="Ramo 13"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -622,6 +628,7 @@
   <script src="{{ url_for('static', filename='js/menu.movil.js')}}"></script>
   <script src="{{ url_for('static', filename='js/buscador.js')}}"></script>
   <script src="{{ url_for('static', filename='js/modo-oscuro.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/buscador.js')}}"></script>
 
 </body>
 
