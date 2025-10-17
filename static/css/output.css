@@ -809,6 +809,9 @@
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
   }
+  .px-20 {
+    padding-inline: calc(var(--spacing) * 20);
+  }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
   }
@@ -1035,11 +1038,6 @@
       @media (hover: hover) {
         display: block;
       }
-    }
-  }
-  .focus-within\:border-green-500 {
-    &:focus-within {
-      border-color: var(--color-green-500);
     }
   }
   .hover\:scale-105 {
@@ -1269,11 +1267,6 @@
       color: var(--color-gray-300);
     }
   }
-  .dark\:text-gray-400 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-gray-400);
-    }
-  }
   .dark\:text-green-200 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-green-200);
@@ -1292,11 +1285,6 @@
   .dark\:text-indigo-300 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-indigo-300);
-    }
-  }
-  .dark\:text-pink-400 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-pink-400);
     }
   }
   .dark\:text-red-200 {
