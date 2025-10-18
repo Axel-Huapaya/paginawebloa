@@ -11,7 +11,8 @@
   <link href="{{ url_for('static', filename='css/final_compra.css') }}" rel="stylesheet" />
 </head>
 
-<body class="bg-gradient-to-br from-green-100 to-pink-100 min-h-screen flex items-center justify-center p-6 transition-colors duration-500">
+<body
+  class="bg-gradient-to-br from-green-100 to-pink-100 min-h-screen flex items-center justify-center p-6 transition-colors duration-500">
 
   <!-- BOTÓN REGRESAR -->
   <div class="boton-regresar">
@@ -21,17 +22,20 @@
   </div>
 
   <!-- CONTENEDOR PRINCIPAL -->
-  <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 w-full max-w-3xl mx-auto transition-colors duration-500">
+  <div
+    class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 w-full max-w-3xl mx-auto transition-colors duration-500">
 
     <!-- LOGO -->
     <div class="flex justify-center mb-6">
-      <img src="{{ url_for('static', filename='image/logos/logo_empresa.png') }}" alt="Logo Florería Manu" class="h-16" />
+      <img src="{{ url_for('static', filename='image/logos/logo_empresa.png') }}" alt="Logo Florería Manu"
+        class="h-16" />
     </div>
 
     <!-- TÍTULO -->
     <div class="text-center mb-8">
       <h1 class="text-3xl font-extrabold text-green-700 dark:text-green-400">Formulario de Compra</h1>
-      <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">🌸 Entregas disponibles solo en Cañete, Lima - Perú 🌸</p>
+      <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">🌸 Entregas disponibles solo en Cañete, Lima - Perú 🌸
+      </p>
     </div>
 
     <!-- FORMULARIO -->
@@ -39,7 +43,8 @@
       <!-- DATOS -->
       <div>
         <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3 flex items-center gap-2">
-          <img src="{{ url_for('static', filename='image/logos/perfil.png') }}" class="h-5 w-5 auto-invert" alt=""> Datos personales
+          <img src="{{ url_for('static', filename='image/logos/perfil.png') }}" class="h-5 w-5 auto-invert" alt="">
+          Datos personales
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input type="text" name="nombre" placeholder="Nombre" required
@@ -52,15 +57,16 @@
       <!-- CONTACTO -->
       <div>
         <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3 flex items-center gap-2">
-          <img src="{{ url_for('static', filename='image/logos/contacto.png') }}" class="h-5 w-5 auto-invert" alt=""> Contacto
+          <img src="{{ url_for('static', filename='image/logos/contacto.png') }}" class="h-5 w-5 auto-invert" alt="">
+          Contacto
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input type="email" name="correo" placeholder="Correo electrónico" required
             class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent">
 
           <!-- TELÉFONO con validación 9 dígitos -->
-          <input type="tel" name="telefono" placeholder="Número de teléfono" required
-            maxlength="9" pattern="[0-9]{9}" title="Debe contener exactamente 9 dígitos"
+          <input type="tel" name="telefono" placeholder="Número de teléfono" required maxlength="9" pattern="[0-9]{9}"
+            title="Debe contener exactamente 9 dígitos"
             class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent">
         </div>
       </div>
@@ -68,7 +74,8 @@
       <!-- DIRECCIÓN -->
       <div>
         <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3 flex items-center gap-2">
-          <img src="{{ url_for('static', filename='image/logos/dirección.png') }}" class="h-5 w-5 auto-invert" alt=""> Dirección de entrega
+          <img src="{{ url_for('static', filename='image/logos/dirección.png') }}" class="h-5 w-5 auto-invert" alt="">
+          Dirección de entrega
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input type="text" name="direccion" placeholder="Dirección" required
@@ -78,19 +85,37 @@
         </div>
       </div>
 
+      <!-- FECHA Y HORA DE ENTREGA -->
+      <div class="mb-6">
+        <h2 class="font-semibold text-lg text-green-900 mb-2">Fecha y hora de entrega</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <input type="date" name="fecha_entrega" id="fecha_entrega"
+            class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent"
+            required>
+          <input type="time" name="hora_entrega" id="hora_entrega"
+            class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent"
+            required>
+        </div>
+      </div>
+
       <!-- MÉTODO DE PAGO Y ENTREGA -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="border-2 border-green-400 dark:border-green-600 rounded-2xl p-5">
           <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3">Método de pago</h2>
-          <label class="flex items-center mb-2"><input type="radio" name="pago" value="Yape" class="mr-2 accent-pink-500" required> Yape</label>
-          <label class="flex items-center mb-2"><input type="radio" name="pago" value="Plin" class="mr-2 accent-pink-500"> Plin</label>
-          <label class="flex items-center"><input type="radio" name="pago" value="Pago contra entrega" class="mr-2 accent-pink-500"> Pago contra entrega</label>
+          <label class="flex items-center mb-2"><input type="radio" name="pago" value="Yape"
+              class="mr-2 accent-pink-500" required> Yape</label>
+          <label class="flex items-center mb-2"><input type="radio" name="pago" value="Plin"
+              class="mr-2 accent-pink-500"> Plin</label>
+          <label class="flex items-center"><input type="radio" name="pago" value="Pago contra entrega"
+              class="mr-2 accent-pink-500"> Pago contra entrega</label>
         </div>
 
         <div class="border-2 border-green-400 dark:border-green-600 rounded-2xl p-5">
           <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3">Tipo de entrega</h2>
-          <label class="flex items-center mb-2"><input type="radio" name="entrega" value="Presencial" class="mr-2 accent-green-500" required> Presencial</label>
-          <label class="flex items-center"><input type="radio" name="entrega" value="Delivery" class="mr-2 accent-green-500"> Delivery</label>
+          <label class="flex items-center mb-2"><input type="radio" name="entrega" value="Presencial"
+              class="mr-2 accent-green-500" required> Presencial</label>
+          <label class="flex items-center"><input type="radio" name="entrega" value="Delivery"
+              class="mr-2 accent-green-500"> Delivery</label>
         </div>
       </div>
 
@@ -112,17 +137,17 @@
 
   <!-- ANIMACIÓN DE ÉXITO -->
   {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <div id="success-overlay" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <div class="bg-white rounded-3xl p-10 flex flex-col items-center shadow-lg">
-          <svg class="w-20 h-20 text-green-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-          </svg>
-          <h2 class="text-2xl font-bold text-green-700">{{ messages[0] }}</h2>
-          <p class="text-gray-600 mt-2">Redirigiendo a la página principal...</p>
-        </div>
-      </div>
-    {% endif %}
+  {% if messages %}
+  <div id="success-overlay" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div class="bg-white rounded-3xl p-10 flex flex-col items-center shadow-lg">
+      <svg class="w-20 h-20 text-green-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+      <h2 class="text-2xl font-bold text-green-700">{{ messages[0] }}</h2>
+      <p class="text-gray-600 mt-2">Redirigiendo a la página principal...</p>
+    </div>
+  </div>
+  {% endif %}
   {% endwith %}
 
   <!-- SCRIPTS -->
@@ -130,4 +155,5 @@
   <script src="{{ url_for('static', filename='js/final_compra.js') }}" defer></script>
 
 </body>
+
 </html>
