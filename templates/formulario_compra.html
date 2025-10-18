@@ -78,6 +78,26 @@
         </div>
       </div>
 
+      <!-- FECHA Y HORA DE ENTREGA -->
+      <div>
+  <h2 class="font-semibold text-lg text-green-900 mb-2">Fecha y hora de entrega</h2>
+  <div class="grid grid-cols-2 gap-4">
+    <input 
+      type="date" 
+      name="fecha_entrega" 
+      id="fecha_entrega" 
+      class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent"
+      required
+    >
+    <input 
+      type="time" 
+      name="hora_entrega" 
+      id="hora_entrega" 
+      class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent"
+      required
+    >
+  </div>
+</div>
       <!-- MÉTODO DE PAGO Y ENTREGA -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="border-2 border-green-400 dark:border-green-600 rounded-2xl p-5">

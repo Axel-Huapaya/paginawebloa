@@ -1110,13 +1110,6 @@
       }
     }
   }
-  .hover\:bg-green-800 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-green-800);
-      }
-    }
-  }
   .hover\:bg-pink-400 {
     &:hover {
       @media (hover: hover) {
@@ -1180,11 +1173,6 @@
   .focus\:ring-green-600 {
     &:focus {
       --tw-ring-color: var(--color-green-600);
-    }
-  }
-  .focus\:ring-green-800 {
-    &:focus {
-      --tw-ring-color: var(--color-green-800);
     }
   }
   .focus\:outline-none {
