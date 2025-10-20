@@ -170,6 +170,11 @@ def index():
 def dedicatorias():
     return render_template("dedicatorias.html")
 
+#formulario dedicatorias
+@app.route('/formulario_dedicatorias')
+def formulario_dedicatorias():
+    return render_template('formulario_dedicatorias.html')
+
 #Fidelizacion
 @app.route("/fidelizacion")
 def fidelizacion():
