@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulario de Compra - Floreria Manu</title>
+  <title>Formulario de Compra - Florería Manu</title>
+
+  <!-- Estilos -->
   <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet" />
   <link href="{{ url_for('static', filename='css/modo-oscuro.css') }}" rel="stylesheet" />
   <link href="{{ url_for('static', filename='css/regresar.css') }}" rel="stylesheet" />
@@ -13,7 +15,7 @@
 
 <body class="bg-gradient-to-br from-green-100 to-pink-100 min-h-screen flex items-center justify-center p-6 transition-colors duration-500">
 
-  <!-- BOTON REGRESAR -->
+  <!-- BOTÓN REGRESAR -->
   <div class="boton-regresar">
     <a href="/">
       <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar" class="auto-invert2">
@@ -25,10 +27,10 @@
 
     <!-- LOGO -->
     <div class="flex justify-center mb-6">
-      <img src="{{ url_for('static', filename='image/logos/logo_empresa.png') }}" alt="Logo Floreria Manu" class="h-16" />
+      <img src="{{ url_for('static', filename='image/logos/logo_empresa.png') }}" alt="Logo Florería Manu" class="h-16" />
     </div>
 
-    <!-- TITULO -->
+    <!-- TÍTULO -->
     <div class="text-center mb-8">
       <h1 class="text-3xl font-extrabold text-green-700 dark:text-green-400">Formulario de Compra</h1>
       <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">🌸 Entregas disponibles solo en Cañete, Lima - Perú 🌸</p>
@@ -36,10 +38,11 @@
 
     <!-- FORMULARIO -->
     <form method="POST" class="space-y-8 text-gray-800 dark:text-gray-200">
-      <!-- DATOS -->
+      <!-- DATOS PERSONALES -->
       <div>
         <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3 flex items-center gap-2">
-          <img src="{{ url_for('static', filename='image/logos/perfil.png') }}" class="h-5 w-5 auto-invert" alt=""> Datos personales
+          <img src="{{ url_for('static', filename='image/logos/perfil.png') }}" class="h-5 w-5 auto-invert" alt="">
+          Datos personales
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input type="text" name="nombre" placeholder="Nombre" required
@@ -52,49 +55,72 @@
       <!-- CONTACTO -->
       <div>
         <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3 flex items-center gap-2">
-          <img src="{{ url_for('static', filename='image/logos/contacto.png') }}" class="h-5 w-5 auto-invert" alt=""> Contacto
+          <img src="{{ url_for('static', filename='image/logos/contacto.png') }}" class="h-5 w-5 auto-invert" alt="">
+          Contacto
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="email" name="correo" placeholder="Correo electronico" required
+          <input type="email" name="correo" placeholder="Correo electrónico" required
             class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent">
-
-          <!-- TELEFONO con validacion 9 digitos -->
-          <input type="tel" name="telefono" placeholder="Numero de telefono" required
-            maxlength="9" pattern="[0-9]{9}" title="Debe contener exactamente 9 digitos"
+          <input type="tel" name="telefono" placeholder="Número de teléfono" required
+            maxlength="9" pattern="[0-9]{9}" title="Debe contener exactamente 9 dígitos"
             class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent">
         </div>
       </div>
 
-      <!-- DIRECCION -->
+      <!-- DIRECCIÓN -->
       <div>
         <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3 flex items-center gap-2">
-          <img src="{{ url_for('static', filename='image/logos/dirección.png') }}" class="h-5 w-5 auto-invert" alt=""> Dirección de entrega
+          <img src="{{ url_for('static', filename='image/logos/dirección.png') }}" class="h-5 w-5 auto-invert" alt="">
+          Dirección de entrega
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="text" name="direccion" placeholder="Direccion" required
+          <input type="text" name="direccion" placeholder="Dirección" required
             class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent">
           <input type="text" name="referencia" placeholder="Referencia (opcional)"
             class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent">
         </div>
       </div>
 
-      <!-- METODO DE PAGO Y ENTREGA -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="border-2 border-green-400 dark:border-green-600 rounded-2xl p-5">
-          <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3">Metodo de pago</h2>
-          <label class="flex items-center mb-2"><input type="radio" name="pago" value="Yape" class="mr-2 accent-pink-500" required> Yape</label>
-          <label class="flex items-center mb-2"><input type="radio" name="pago" value="Plin" class="mr-2 accent-pink-500"> Plin</label>
-          <label class="flex items-center"><input type="radio" name="pago" value="Pago contra entrega" class="mr-2 accent-pink-500"> Pago contra entrega</label>
-        </div>
-
-        <div class="border-2 border-green-400 dark:border-green-600 rounded-2xl p-5">
-          <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3">Tipo de entrega</h2>
-          <label class="flex items-center mb-2"><input type="radio" name="entrega" value="Presencial" class="mr-2 accent-green-500" required> Presencial</label>
-          <label class="flex items-center"><input type="radio" name="entrega" value="Delivery" class="mr-2 accent-green-500"> Delivery</label>
+      <!-- FECHA Y HORA DE ENTREGA -->
+      <div>
+        <h2 class="font-semibold text-lg text-green-900 mb-2">Fecha y hora de entrega</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="date" name="fecha_entrega" id="fecha_entrega"
+            class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent" required>
+          <input type="time" name="hora_entrega" id="hora_entrega"
+            class="border-2 border-gray-300 rounded-full p-3 w-full focus:ring-2 focus:ring-green-600 bg-transparent" required>
         </div>
       </div>
 
-      <!-- BOTON -->
+      <!-- MÉTODO DE PAGO Y ENTREGA -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- MÉTODO DE PAGO -->
+        <div class="border-2 border-green-400 dark:border-green-600 rounded-2xl p-5">
+          <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3">Método de pago</h2>
+          <label class="flex items-center mb-2">
+            <input type="radio" name="pago" value="Yape" class="mr-2 accent-pink-500" required> Yape
+          </label>
+          <label class="flex items-center mb-2">
+            <input type="radio" name="pago" value="Plin" class="mr-2 accent-pink-500"> Plin
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="pago" value="Pago contra entrega" class="mr-2 accent-pink-500"> Pago contra entrega
+          </label>
+        </div>
+
+        <!-- TIPO DE ENTREGA -->
+        <div class="border-2 border-green-400 dark:border-green-600 rounded-2xl p-5">
+          <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3">Tipo de entrega</h2>
+          <label class="flex items-center mb-2">
+            <input type="radio" name="entrega" value="Presencial" class="mr-2 accent-green-500" required> Presencial
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="entrega" value="Delivery" class="mr-2 accent-green-500"> Delivery
+          </label>
+        </div>
+      </div>
+
+      <!-- BOTÓN -->
       <div class="text-center">
         <button type="submit"
           class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-10 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
@@ -110,25 +136,24 @@
       class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
   </a>
 
-  <!-- ANIMACION DE EXITO -->
+  <!-- ANIMACIÓN DE ÉXITO -->
   {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <div id="success-overlay" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <div class="bg-white rounded-3xl p-10 flex flex-col items-center shadow-lg">
-          <svg class="w-20 h-20 text-green-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-          </svg>
-          <h2 class="text-2xl font-bold text-green-700">{{ messages[0] }}</h2>
-          <p class="text-gray-600 mt-2">Redirigiendo a la pagina principal...</p>
-        </div>
-      </div>
-    {% endif %}
+  {% if messages %}
+  <div id="success-overlay" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div class="bg-white rounded-3xl p-10 flex flex-col items-center shadow-lg">
+      <svg class="w-20 h-20 text-green-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+      <h2 class="text-2xl font-bold text-green-700">{{ messages[0] }}</h2>
+      <p class="text-gray-600 mt-2">Redirigiendo a la página principal...</p>
+    </div>
+  </div>
+  {% endif %}
   {% endwith %}
 
-  <!-- SCRIPTS -->
+  <!-- JS -->
   <script src="{{ url_for('static', filename='js/modo-oscuro.js') }}" defer></script>
   <script src="{{ url_for('static', filename='js/final_compra.js') }}" defer></script>
 
 </body>
 </html>
-
