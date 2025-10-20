@@ -195,16 +195,13 @@ def formulario_compra():
         referencia = request.form['referencia']
         pago = request.form['pago']
         entrega = request.form['entrega']
-        fecha_entrega = request.form['fecha_entrega']
-        hora_entrega = request.form['hora_entrega']
 
         cur = mysql.connection.cursor()
         try:
             cur.execute("""
-                INSERT INTO compras 
-                (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega, fecha_entrega, hora_entrega)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """, (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega, fecha_entrega, hora_entrega))
+                INSERT INTO compras (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """, (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega))
             mysql.connection.commit()
             flash('✅ Pedido enviado correctamente.', 'success')
         except Exception as e:
@@ -216,7 +213,6 @@ def formulario_compra():
         return redirect('/formulario_compra')
 
     return render_template('formulario_compra.html')
-
 
 
 #formulario cotizacion 
