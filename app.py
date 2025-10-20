@@ -197,9 +197,55 @@ def formulario_compra():
         correo = request.form['correo']
         telefono = request.form['telefono']
         direccion = request.form['direccion']
+        referencia = request.form.get('referencia', '')
+        pago = request.form['pago']
+        entrega = request.form['entrega']
+        fecha_entrega = request.form['fecha_entrega']
+        hora_entrega = request.form['hora_entrega']
+
+        # 🕒 Validar que la fecha sea futura
+        from datetime import datetime
+        try:
+            fecha_actual = datetime.now().date()
+            fecha_form = datetime.strptime(fecha_entrega, "%Y-%m-%d").date()
+            if fecha_form <= fecha_actual:
+                flash('⚠️ La fecha de entrega debe ser futura.', 'error')
+                return redirect('/formulario_compra')
+        except ValueError:
+            flash('⚠️ Fecha de entrega inválida.', 'error')
+            return redirect('/formulario_compra')
+
+        # 💾 Guardar datos en MySQL
+        cur = mysql.connection.cursor()
+        try:
+            cur.execute("""
+                INSERT INTO compras 
+                (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega, fecha_entrega, hora_entrega)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega, fecha_entrega, hora_entrega))
+            mysql.connection.commit()
+            flash('✅ Pedido enviado correctamente.', 'success')
+        except Exception as e:
+            mysql.connection.rollback()
+            flash(f'⚠️ Error al guardar el pedido: {e}', 'error')
+        finally:
+            cur.close()
+
+        return redirect('/formulario_compra')
+
+    return render_template('formulario_compra.html')
+
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        correo = request.form['correo']
+        telefono = request.form['telefono']
+        direccion = request.form['direccion']
         referencia = request.form['referencia']
         pago = request.form['pago']
         entrega = request.form['entrega']
+        fecha_entrega = request.form['fecha_entrega']
+        hora_entrega = request.form['hora_entrega']
 
         cur = mysql.connection.cursor()
         try:
