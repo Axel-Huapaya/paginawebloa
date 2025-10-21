@@ -140,3 +140,213 @@ imagen13.addEventListener('mouseleave', () => {
   audio13.pause();
   audio13.currentTime = 0;
 });
+
+/* Arreglos */
+const imagen14 = document.getElementById('imagenarreglo1');
+const audio14 = document.getElementById('audioArreglo1');
+imagen14.addEventListener('mouseenter', () => {
+  audio14.currentTime = 0;
+  audio14.play();
+});
+imagen14.addEventListener('mouseleave', () => {
+  audio14.pause();
+  audio14.currentTime = 0;
+});
+
+const imagen15 = document.getElementById('imagenarreglo2');
+const audio15 = document.getElementById('audioArreglo2');
+imagen15.addEventListener('mouseenter', () => {
+  audio15.currentTime = 0;
+  audio15.play();
+});
+imagen15.addEventListener('mouseleave', () => {
+  audio15.pause();
+  audio15.currentTime = 0;
+});
+
+const imagen16 = document.getElementById('imagenarreglo3');
+const audio16 = document.getElementById('audioArreglo3');
+imagen16.addEventListener('mouseenter', () => {
+  audio16.currentTime = 0;
+  audio16.play();
+});
+imagen16.addEventListener('mouseleave', () => {
+  audio16.pause();
+  audio16.currentTime = 0;
+});
+
+const imagen17 = document.getElementById('imagenarreglo4');
+const audio17 = document.getElementById('audioArreglo4'); 
+imagen17.addEventListener('mouseenter', () => {
+  audio17.currentTime = 0;
+  audio17.play();
+});
+imagen17.addEventListener('mouseleave', () => {
+  audio17.pause();
+  audio17.currentTime = 0;
+});
+
+const imagen18 = document.getElementById('imagenarreglo5');
+const audio18 = document.getElementById('audioArreglo5');
+imagen18.addEventListener('mouseenter', () => {
+  audio18.currentTime = 0;
+  audio18.play();
+});
+imagen18.addEventListener('mouseleave', () => {
+  audio18.pause();
+  audio18.currentTime = 0;
+});
+
+const imagen19 = document.getElementById('imagenarreglo6');
+const audio19 = document.getElementById('audioArreglo6'); 
+imagen19.addEventListener('mouseenter', () => {
+  audio19.currentTime = 0;
+  audio19.play();
+});
+imagen19.addEventListener('mouseleave', () => {
+  audio19.pause();
+  audio19.currentTime = 0;
+});
+
+const imagen20 = document.getElementById('imagenarreglo7');
+const audio20 = document.getElementById('audioArreglo7');
+imagen20.addEventListener('mouseenter', () => {
+  audio20.currentTime = 0;
+  audio20.play();
+});
+imagen20.addEventListener('mouseleave', () => {
+  audio20.pause();
+  audio20.currentTime = 0;
+});
+
+const imagen21 = document.getElementById('imagenarreglo8');
+const audio21 = document.getElementById('audioArreglo8');     
+imagen21.addEventListener('mouseenter', () => {
+  audio21.currentTime = 0;
+  audio21.play();
+});
+imagen21.addEventListener('mouseleave', () => {
+  audio21.pause();
+  audio21.currentTime = 0;
+});
+
+const imagen22 = document.getElementById('imagenarreglo9');
+const audio22 = document.getElementById('audioArreglo9'); 
+imagen22.addEventListener('mouseenter', () => {
+  audio22.currentTime = 0;
+  audio22.play();
+});
+imagen22.addEventListener('mouseleave', () => {
+  audio22.pause();
+  audio22.currentTime = 0;
+});
+
+const imagen23 = document.getElementById('imagenarreglo10');
+const audio23 = document.getElementById('audioArreglo10');  
+imagen23.addEventListener('mouseenter', () => {
+  audio23.currentTime = 0;
+  audio23.play();
+});
+imagen23.addEventListener('mouseleave', () => {
+  audio23.pause();
+  audio23.currentTime = 0;
+});
+
+const imagen24 = document.getElementById('imagenarreglo11');
+const audio24 = document.getElementById('audioArreglo11');
+imagen24.addEventListener('mouseenter', () => {
+  audio24.currentTime = 0;
+  audio24.play();
+});
+imagen24.addEventListener('mouseleave', () => {
+  audio24.pause();
+  audio24.currentTime = 0;
+});
+
+const imagen25 = document.getElementById('imagenarreglo12');
+const audio25 = document.getElementById('audioArreglo12');
+imagen25.addEventListener('mouseenter', () => {
+  audio25.currentTime = 0;
+  audio25.play();
+});
+imagen25.addEventListener('mouseleave', () => {
+  audio25.pause();
+  audio25.currentTime = 0;
+});
+
+const imagen26 = document.getElementById('imagenarreglo13');
+const audio26 = document.getElementById('audioArreglo13');
+imagen26.addEventListener('mouseenter', () => {
+  audio26.currentTime = 0;
+  audio26.play();
+});
+imagen26.addEventListener('mouseleave', () => {
+  audio26.pause();
+  audio26.currentTime = 0;
+});
+
+const imagen27 = document.getElementById('imagenarreglo14');
+const audio27 = document.getElementById('audioArreglo14');
+imagen27.addEventListener('mouseenter', () => {
+  audio27.currentTime = 0;
+  audio27.play();
+});
+imagen27.addEventListener('mouseleave', () => {
+  audio27.pause();
+  audio27.currentTime = 0;
+});
+
+const imagen28 = document.getElementById('imagenarreglo15');
+const audio28 = document.getElementById('audioArreglo15');
+imagen28.addEventListener('mouseenter', () => {
+  audio28.currentTime = 0;
+  audio28.play();
+});
+imagen28.addEventListener('mouseleave', () => {
+  audio28.pause();
+  audio28.currentTime = 0;
+});
+
+const imagen29 = document.getElementById('imagenarreglo16');
+const audio29 = document.getElementById('audioArreglo16');
+imagen29.addEventListener('mouseenter', () => {
+  audio29.currentTime = 0;
+  audio29.play();
+});
+imagen29.addEventListener('mouseleave', () => {
+  audio29.pause();
+  audio29.currentTime = 0;
+});
+
+const imagen30 = document.getElementById('imagenarreglo17');
+const audio30 = document.getElementById('audioArreglo17');  
+imagen30.addEventListener('mouseenter', () => {
+  audio30.currentTime = 0;
+  audio30.play();
+}); 
+imagen30.addEventListener('mouseleave', () => {
+  audio30.pause();
+  audio30.currentTime = 0;
+});
+
+const imagen31 = document.getElementById('imagenarreglo18');
+const audio31 = document.getElementById('audioArreglo18');
+imagen31.addEventListener('mouseenter', () => {
+  audio31.currentTime = 0;
+  audio31.play();
+});
+imagen31.addEventListener('mouseleave', () => {
+  audio31.pause();
+  audio31.currentTime = 0;
+});
+
+const imagen32 = document.getElementById('imagenarreglo19');
+const audio32 = document.getElementById('audioArreglo19');  
+imagen32.addEventListener('mouseenter', () => {
+  audio32.currentTime = 0;
+  audio32.play();
+});
+imagen32.addEventListener('mouseleave', () => {
+  audio32.pause();
+  audio32.currentTime = 0;
+});
