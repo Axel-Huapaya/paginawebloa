@@ -41,6 +41,7 @@ button {
   font-weight: 600;
 }
 
+/* Efecto hover en el botón */
 button:hover {
   background-color: #db2777;
   transition: background-color 0.3s ease;
