@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Clonamos el template
     const clone = template.content.cloneNode(true);
 
-    // Rellenamos los datos
+    // Rellenamos los datos con lo que tenemos en favoritos
     clone.querySelector(".imagen").src = producto.imagen;
     clone.querySelector(".imagen").alt = producto.nombre;
     clone.querySelector(".nombre").textContent = producto.nombre;
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.target.closest(".producto-favorito").remove();
 
       if (nuevosFavoritos.length === 0) {
-        lista.innerHTML = '<p class="text-center text-gray-500">No tienes productos en favoritos 💔</p>';
+        lista.innerHTML = '<p class="text-center text-gray-500">No tienes productos en favoritos </p>';
       }
     });
 
