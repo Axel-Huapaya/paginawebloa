@@ -8,95 +8,70 @@
   <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-white flex justify-center items-center min-h-screen">
-  <div class="bg-pink-50 w-11/12 md:w-3/4 lg:w-2/3 p-6 rounded-xl shadow-lg">
+<body class="bg-gradient-to-br from-pink-50 to-white min-h-screen flex flex-col items-center justify-start relative">
 
-    <!-- Botón regresar -->
-    <div class="mb-4">
-      <a href="/" class="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl">
-        ←
-      </a>
+  <!--  Botón Regresar -->
+  <a href="/"
+    class="absolute top-6 left-6 bg-black hover:bg-gray-800 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-lg transition-all duration-300">
+    ←
+  </a>
+
+  <!--Contenedor principal -->
+  <div class="w-11/12 md:w-3/4 lg:w-2/3 bg-white mt-24 p-8 rounded-2xl shadow-2xl border border-pink-100">
+
+    <!--  Título -->
+    <h1 class="text-center text-3xl font-extrabold text-pink-600 mb-8 tracking-wide">Mis Favoritos</h1>
+
+    <!--Contenedor de la lista -->
+    <div class="bg-pink-50 rounded-xl p-6 shadow-inner border border-pink-100">
+      <h2 class="text-lg font-bold text-green-900 mb-4 flex items-center gap-2">
+        <span class="text-pink-500 text-2xl"></span> Lista de productos guardados
+      </h2>
+
+      <!-- Contenedor dinámico -->
+      <div class="flex flex-col gap-6" id="listaFavoritos"></div>
+
+      <!-- Template para producto favorito -->
+      <template id="templateFavorito">
+        <div
+          class="flex flex-col md:flex-row md:items-center justify-between bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300 producto-favorito">
+          <div class="flex items-center gap-4">
+            <img class="imagen w-24 h-24 object-cover border-2 border-green-500 rounded-xl" alt="Producto">
+            <div>
+              <p class="nombre font-semibold text-green-900 text-lg"></p>
+              <p class="precio text-pink-600 font-bold text-md"></p>
+              <div class="flex gap-2 mt-3">
+                <button
+                  class="info bg-green-700 hover:bg-green-800 text-white text-sm font-semibold px-3 py-1.5 rounded-full transition-colors duration-200">
+                  INFO. ARREGLO
+                </button>
+                <button
+                  class="carrito bg-pink-400 hover:bg-pink-500 text-white text-sm font-semibold px-3 py-1.5 rounded-full transition-colors duration-200">
+                  CARRITO
+                </button>
+                <button
+                  class="eliminar text-red-500 text-lg hover:scale-110 transition-transform duration-200"
+                  title="Eliminar favorito">
+                  🗑️
+                </button>
+              </div>
+            </div>
+          </div>
+          <span class="text-pink-500 text-2xl mt-3 md:mt-0">❤</span>
+        </div>
+      </template>
     </div>
-
-
-
-    <!-- Título -->
-    <h1 class="text-center text-2xl font-bold text-green-900 mb-6">MIS FAVORITOS</h1>
-
-    <!-- Contenedor -->
-    <div class="bg-pink-50 rounded-xl p-6">
-
-      <h2 class="text-lg font-bold text-green-900 mb-4">LISTA DE PRODUCTOS:</h2>
-
-      <!-- Lista de productos -->
-      <div class="flex flex-col gap-6">
-
-        <!-- Producto -->
-        <div class="flex items-center justify-between bg-white rounded-xl p-3 shadow-sm">
-          <div class="flex items-center gap-3">
-            <img src="static/image/ramos/ramo1.jpg" alt="Bella Esperanza"
-              class="w-20 h-20 border-2 border-green-500 rounded-md">
-            <div>
-              <p class="font-semibold text-green-900">RAMO ALMA DE BOSQUE</p>
-              <div class="flex gap-2 mt-2">
-                <button class="bg-green-900 text-white text-sm font-semibold px-3 py-1 rounded-full">INFO.
-                  ARREGLO</button>
-                <button
-                  class="bg-pink-300 hover:bg-pink-400 text-white text-sm font-semibold px-3 py-1 rounded-full">CARRITO</button>
-                <button class="text-red-500 text-lg">🗑️</button>
-              </div>
-            </div>
-          </div>
-          <span class="text-pink-400 text-2xl">❤</span>
-        </div>
-
-        <!-- Producto -->
-        <div class="flex items-center justify-between bg-white rounded-xl p-3 shadow-sm">
-          <div class="flex items-center gap-3">
-            <img src="static/image/ramos/ramo2.jpg" alt="Bella Esperanza"
-              class="w-20 h-20 border-2 border-green-500 rounded-md">
-            <div>
-              <p class="font-semibold text-green-900">RAMO AURORA</p>
-              <div class="flex gap-2 mt-2">
-                <button class="bg-green-900 text-white text-sm font-semibold px-3 py-1 rounded-full">INFO.
-                  ARREGLO</button>
-                <button
-                  class="bg-pink-300 hover:bg-pink-400 text-white text-sm font-semibold px-3 py-1 rounded-full">CARRITO</button>
-                <button class="text-red-500 text-lg">🗑️</button>
-              </div>
-            </div>
-          </div>
-          <span class="text-pink-400 text-2xl">❤</span>
-        </div>
-
-        <!-- Producto -->
-        <div class="flex items-center justify-between bg-white rounded-xl p-3 shadow-sm">
-          <div class="flex items-center gap-3">
-            <img src="static/image/ramos/ramo3.png" alt="Bella Esperanza"
-              class="w-20 h-20 border-2 border-green-500 rounded-md">
-            <div>
-              <p class="font-semibold text-green-900">RAMO ATETISH</p>
-              <div class="flex gap-2 mt-2">
-                <button class="bg-green-900 text-white text-sm font-semibold px-3 py-1 rounded-full">INFO.
-                  ARREGLO</button>
-                <button
-                  class="bg-pink-300 hover:bg-pink-400 text-white text-sm font-semibold px-3 py-1 rounded-full">CARRITO</button>
-                <button class="text-red-500 text-lg">🗑️</button>
-              </div>
-            </div>
-          </div>
-          <span class="text-pink-400 text-2xl">❤</span>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Botón WhatsApp -->
-    <a href="https://wa.me/51967086515" target="_blank" class="fixed bottom-6 right-6 z-50">
-      <img src="static/image/logos/whatsapp.png" alt="WhatsApp"
-        class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
-    </a>
   </div>
+
+  <!-- Botón WhatsApp Flotante -->
+  <a href="https://wa.me/51967086515" target="_blank"
+    class="fixed bottom-6 right-6 z-50 hover:scale-110 transition-transform duration-300">
+    <img src="{{ url_for('static', filename='image/logos/whatsapp.png') }}" alt="WhatsApp"
+      class="w-16 h-16 rounded-full shadow-xl" />
+  </a>
+
+  <!-- Script para animaciones -->
+  <script src="{{ url_for('static', filename='js/mostrar_favoritos.js') }}"></script>
 </body>
 
 </html>

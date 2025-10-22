@@ -76,7 +76,7 @@
 
       <li><a href="#"><img src="static/image/logos/carrito.png" alt="Carrito de compras" class="w-8 h-8 nav-logo" /></a>
       </li>
-      <li><a href="#"><img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+      <li><a href="/favoritos"><img src="static/image/logos/favorito.png" alt="Sección de favoritos"
             class="w-8 h-8 nav-logo" /></a></li>
       <li><a href="/login"><img src="static/image/logos/perfil.png" alt="Perfil de usuario"
             class="w-8 h-8 nav-logo" /></a></li>
@@ -92,7 +92,7 @@
             class="text-sm font-medium">Tema Claro/Oscuro</span></a></li>
       <li><a href="#"><img src="static/image/logos/carrito.png" alt="Carrito" class="w-8 h-8" /><span
             class="text-sm font-medium">Carrito de compras</span></a></li>
-      <li><a href="#"><img src="static/image/logos/favorito.png" alt="Favoritos" class="w-8 h-8" /><span
+      <li><a href="/favoritos"><img src="static/image/logos/favorito.png" alt="Favoritos" class="w-8 h-8" /><span
             class="text-sm font-medium">Favoritos</span></a></li>
       <li><a href="/login"><img src="static/image/logos/perfil.png" alt="Perfil" class="w-8 h-8" /><span
             class="text-sm font-medium">Perfil del usuario</span></a></li>
@@ -205,7 +205,7 @@
         <audio id="audioRamo1" src="static/audio/ramos/alma de bosque.wav"></audio>
         <img src="static/image/ramos/ramo1.jpg" id="imagenramo1" alt="Ramo 1"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Alma de Bosque</h4>
           <p class="text-pink-600 font-bold">S/45.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -213,12 +213,13 @@
               <button
                 class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
                 Añadir al carrito
+              </button>
             </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+              <img src="static/image/logos/favorito.png" alt="Agregar a favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+                data-nombre="Alma de Bosque"
+                data-imagen="static/image/ramos/ramo1.jpg"
+                data-precio="45.00" />
           </div>
         </div>
       </div>
@@ -237,11 +238,13 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="#" id="heartLink">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos" id="heartIcon"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer" />
-            </a>
-
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Aurora Moderna"
+            data-imagen="static/image/ramos/ramo2.jpg"
+            data-precio="37.00" />
           </div>
         </div>
       </div>
@@ -260,10 +263,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+            
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Atetish"
+            data-imagen="static/image/ramos/ramo3.png"
+            data-precio="40.00" />
           </div>
         </div>
       </div>
@@ -282,13 +289,18 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Belicate"
+            data-imagen="static/image/ramos/ramo4.png"
+            data-precio="35.00" />
           </div>
         </div>
       </div>
+
       <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioRamo5" src="static/audio/ramos/canto de rio.wav"></audio>
         <img src="static/image/ramos/ramo5.jpg" id="imagenramo5" alt="Ramo 5"
@@ -303,10 +315,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Canto de Rio"
+            data-imagen="static/image/ramos/ramo5.jpg"
+            data-precio="80.00" />
           </div>
         </div>
       </div>
@@ -325,10 +341,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Clicken lila"
+            data-imagen="static/image/ramos/ramo6.png"
+            data-precio="40.00" />
           </div>
         </div>
       </div>
@@ -347,10 +367,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Corazón de jardin"
+            data-imagen="static/image/ramos/ramo7.jpg"
+            data-precio="45.00" />
           </div>
         </div>
       </div>
@@ -369,10 +393,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+            
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Deliccat"
+            data-imagen="static/image/ramos/ramo8.jpg"
+            data-precio="35.00" />
           </div>
         </div>
       </div>
@@ -391,10 +419,13 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Dulce Amanecer"
+            data-imagen="static/image/ramos/ramo9.jpg"
+            data-precio="45.00" />
           </div>
         </div>
       </div>
@@ -413,10 +444,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+            
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Eco de Primavera"
+            data-imagen="static/image/ramos/ramo10.png"
+            data-precio="50.00" />
           </div>
         </div>
       </div>
@@ -435,10 +470,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Elegancia Pura"
+            data-imagen="static/image/ramos/ramo11.jpg"
+            data-precio="40.00" />
           </div>
         </div>
       </div>
@@ -457,9 +496,13 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Elixir de flores"
+            data-imagen="static/image/ramos/ramo12.jpg"
+            data-precio="35.00" />
             </a>
           </div>
         </div>
@@ -479,10 +522,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Eterno romance"
+            data-imagen="static/image/ramos/ramo13.png"
+            data-precio="35.00" />
           </div>
         </div>
       </div>
@@ -497,7 +544,7 @@
         <audio id="audioArreglo1" src="static/audio/arreglos/anivesh.wav"></audio>
         <img src="static/image/Arreglos/arreglo1.jpg" id="imagenarreglo1" alt="Arreglo 1"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Anivech</h4>
           <p class="text-pink-600 font-bold">S/150.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -507,10 +554,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Anivech"
+            data-imagen="static/image/Arreglos/arreglo1.jpg"
+            data-precio="150.00" />
           </div>
         </div>
       </div>
@@ -519,7 +570,7 @@
         <audio id="audioArreglo2" src="static/audio/arreglos/blank_love.wav"></audio>
         <img src="static/image/Arreglos/arreglo2.jpg" id="imagenarreglo2" alt="Arreglo 2"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Blank Love </h4>
           <p class="text-pink-600 font-bold">S/100.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -529,10 +580,13 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Blank Love"
+            data-imagen="static/image/Arreglos/arreglo2.jpg"
+            data-precio="100.00" />
           </div>
         </div>
       </div>
@@ -541,7 +595,7 @@
         <audio id="audioArreglo3" src="static/audio/arreglos/blue_kate.wav"></audio>
         <img src="static/image/Arreglos/arreglo3.jpg" id="imagenarreglo3" alt="Arreglo 3"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Blue Kate </h4>
           <p class="text-pink-600 font-bold">S/50.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -551,20 +605,23 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Blue Kate"
+            data-imagen="static/image/Arreglos/arreglo3.jpg"
+            data-precio="50.00" />
           </div>
         </div>
       </div>
-
 
       <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
         <audio id="audioArreglo4" src="static/audio/arreglos/brillo_solar.wav"></audio>
         <img src="static/image/Arreglos/arreglo4.webp" id="imagenarreglo4" alt="Arreglo 4"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Brillo Solar</h4>
           <p class="text-pink-600 font-bold">S/180.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -574,10 +631,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+            
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Brillo Solar"
+            data-imagen="static/image/Arreglos/arreglo4.webp"
+            data-precio="180.00" />
           </div>
         </div>
       </div>
@@ -586,7 +647,7 @@
         <audio id="audioArreglo5" src="static/audio/arreglos/dorado_silvestre.wav"></audio>
         <img src="static/image/Arreglos/arreglo5.jpg" id="imagenarreglo5" alt="Arreglo 5"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Dorado Silvestre</h4>
           <p class="text-pink-600 font-bold">S/200.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -596,10 +657,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+            
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Dorado Silvestre"
+            data-imagen="static/image/Arreglos/arreglo5.jpg"
+            data-precio="200.00" />
           </div>
         </div>
       </div>
@@ -608,7 +673,7 @@
         <audio id="audioArreglo6" src="static/audio/arreglos/duble.wav"></audio>
         <img src="static/image/Arreglos/arreglo6.jpg" id="imagenarreglo6" alt="Arreglo 6"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Duble</h4>
           <p class="text-pink-600 font-bold">S/200.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -618,10 +683,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Duble"
+            data-imagen="static/image/Arreglos/arreglo6.jpg"
+            data-precio="200.00" />
           </div>
         </div>
       </div>
@@ -630,7 +699,7 @@
         <audio id="audioArreglo7" src="static/audio/arreglos/freschs.wav"></audio>
         <img src="static/image/Arreglos/arreglo7.jpg" id="imagenarreglo7" alt="Arreglo 7"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Freschs</h4>
           <p class="text-pink-600 font-bold">S/80.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -640,10 +709,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Freschs"
+            data-imagen="static/image/Arreglos/arreglo7.jpg"
+            data-precio="80.00" />
           </div>
         </div>
       </div>
@@ -652,7 +725,7 @@
         <audio id="audioArreglo8" src="static/audio/arreglos/jejyf.wav"></audio>
         <img src="static/image/Arreglos/arreglo8.jpg" id="imagenarreglo8" alt="Arreglo 8"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Jejyf</h4>
           <p class="text-pink-600 font-bold">S/140.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -662,10 +735,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+            
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Jejyf"
+            data-imagen="static/image/Arreglos/arreglo8.jpg"
+            data-precio="140.00" />
           </div>
         </div>
       </div>
@@ -674,7 +751,7 @@
         <audio id="audioArreglo9" src="static/audio/arreglos/jeylur.wav"></audio>
         <img src="static/image/Arreglos/arreglo9.jpg" id="imagenarreglo9" alt="Arreglo 9"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Jeylur</h4>
           <p class="text-pink-600 font-bold">S/50.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -684,10 +761,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Jeylur"
+            data-imagen="static/image/Arreglos/arreglo9.jpg"
+            data-precio="50.00" />
           </div>
         </div>
       </div>
@@ -696,7 +777,7 @@
         <audio id="audioArreglo10" src="static/audio/arreglos/lilauis.wav"></audio>
         <img src="static/image/Arreglos/arreglo10.jpg" id="imagenarreglo10" alt="Arreglo 10"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Lilauis</h4>
           <p class="text-pink-600 font-bold">S/60.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -706,10 +787,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Lilauis"
+            data-imagen="static/image/Arreglos/arreglo10.jpg"
+            data-precio="60.00" />
           </div>
         </div>
       </div>
@@ -718,7 +803,7 @@
         <audio id="audioArreglo11" src="static/audio/arreglos/narejch.wav"></audio>
         <img src="static/image/Arreglos/arreglo11.jpg" id="imagenarreglo11" alt="Arreglo 11"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Narejch</h4>
           <p class="text-pink-600 font-bold">S/30.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -728,10 +813,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Narejch"
+            data-imagen="static/image/Arreglos/arreglo11.jpg"
+            data-precio="30.00" />
           </div>
         </div>
       </div>
@@ -740,7 +829,7 @@
         <audio id="audioArreglo12" src="static/audio/arreglos/pinkffo.wav"></audio>
         <img src="static/image/Arreglos/arreglo12.jpg" id="imagenarreglo12" alt="Arreglo 12"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Pinkffo</h4>
           <p class="text-pink-600 font-bold">S/130.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -750,10 +839,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Pinkffo"
+            data-imagen="static/image/Arreglos/arreglo12.jpg"
+            data-precio="130.00" />
           </div>
         </div>
       </div>
@@ -762,7 +855,7 @@
         <audio id="audioArreglo13" src="static/audio/arreglos/primaverate.wav"></audio>
         <img src="static/image/Arreglos/arreglo13.jpg" id="imagenarreglo13" alt="Arreglo 13"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Primaverate</h4>
           <p class="text-pink-600 font-bold">S/80.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -772,10 +865,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Primaverate"
+            data-imagen="static/image/Arreglos/arreglo13.jpg"
+            data-precio="80.00" />
           </div>
         </div>
       </div>
@@ -784,7 +881,7 @@
         <audio id="audioArreglo14" src="static/audio/arreglos/rosxh.wav"></audio>
         <img src="static/image/Arreglos/arreglo14.jpg" id="imagenarreglo14" alt="Arreglo 14"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Rosxh</h4>
           <p class="text-pink-600 font-bold">S/70.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -794,10 +891,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Rosxh"
+            data-imagen="static/image/Arreglos/arreglo14.jpg"
+            data-precio="70.00" />
           </div>
         </div>
       </div>
@@ -806,7 +907,7 @@
         <audio id="audioArreglo15" src="static/audio/arreglos/rousnote.wav"></audio>
         <img src="static/image/Arreglos/arreglo15.jpg" id="imagenarreglo15" alt="Arreglo 15"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Rousnote</h4>
           <p class="text-pink-600 font-bold">S/200.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -816,10 +917,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Rousnote"
+            data-imagen="static/image/Arreglos/arreglo15.jpg"
+            data-precio="200.00" />
           </div>
         </div>
       </div>
@@ -828,7 +933,7 @@
         <audio id="audioArreglo16" src="static/audio/arreglos/sonrisa_del_sol.wav"></audio>
         <img src="static/image/Arreglos/arreglo16.jpg" id="imagenarreglo16" alt="Arreglo 16"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Sonrisa del sol</h4>
           <p class="text-pink-600 font-bold">S/120.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -838,10 +943,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Sonrisa del sol"
+            data-imagen="static/image/Arreglos/arreglo16.jpg"
+            data-precio="120.00" />
           </div>
         </div>
       </div>
@@ -850,7 +959,7 @@
         <audio id="audioArreglo17" src="static/audio/arreglos/tulippt.wav"></audio>
         <img src="static/image/Arreglos/arreglo17.jpg" id="imagenarreglo17" alt="Arreglo 17"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Tulippt</h4>
           <p class="text-pink-600 font-bold">S/100.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -860,10 +969,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Tulippt"
+            data-imagen="static/image/Arreglos/arreglo17.jpg"
+            data-precio="100.00" />
           </div>
         </div>
       </div>
@@ -872,7 +985,7 @@
         <audio id="audioArreglo18" src="static/audio/arreglos/yrlouus.wav"></audio>
         <img src="static/image/Arreglos/arreglo18.jpg" id="imagenarreglo18" alt="Arreglo 18"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Yrlouus</h4>
           <p class="text-pink-600 font-bold">S/320.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -882,10 +995,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Yrlouus"
+            data-imagen="static/image/Arreglos/arreglo18.jpg"
+            data-precio="320.00" />
           </div>
         </div>
         </div>
@@ -894,7 +1011,7 @@
         <audio id="audioArreglo19" src="static/audio/arreglos/lowy.wav"></audio>
         <img src="static/image/Arreglos/arreglo19.jpg" id="imagenarreglo19" alt="Arreglo 19"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
+        <div class="p-4">
           <h4 class="font-semibold text-lg">Lowy</h4>
           <p class="text-pink-600 font-bold">S/90.00</p>
           <div class="flex items-center justify-between mt-2">
@@ -904,10 +1021,14 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
+
+            <img 
+            src="static/image/logos/favorito.png"
+            alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+            data-nombre="Lowy"
+            data-imagen="static/image/Arreglos/arreglo19.jpg"
+            data-precio="90.00" />
           </div>
         </div>
       </div>
