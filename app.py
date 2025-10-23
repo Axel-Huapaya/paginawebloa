@@ -300,6 +300,10 @@ def retos():
 def nosotros():
     return render_template("nosotros.html")
 
+@app.route("/mi_perfil")
+def mi_cuenta():
+    return render_template("mi_cuenta.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
