@@ -1,0 +1,150 @@
+
+
+/*=
+  CONTENEDOR PRINCIPAL
+*/
+.mi-cuenta-actions-wrapper {
+  background: #f6e8e8; /* tono rosado suave */
+  padding: 16px;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Panel blanco interior (si existe otro div dentro) */
+.mi-cuenta-actions-wrapper > div {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+/*==================================
+  GRID Y LAYOUT DE TARJETAS
+==================================*/
+.mi-cuenta-actions {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+/*==================================
+  ESTILOS DE TARJETAS
+==================================*/
+.mi-cuenta-actions > .action-card,
+.mi-cuenta-actions > .action-card:link,
+.mi-cuenta-actions > .action-card:visited {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  width: 120px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
+  transition: transform .2s ease;
+}
+
+/* Efecto hover en tarjetas */
+.mi-cuenta-actions > .action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.1);
+}
+
+/*==================================
+  ICONOS Y CÍRCULOS
+==================================*/
+.mi-cuenta-actions .icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ef7b78;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.mi-cuenta-actions .icon-svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+/*==================================
+  TIPOGRAFÍA Y TEXTOS
+==================================*/
+.mi-cuenta-actions .card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f766e; /* verde oscuro */
+  margin-top: 4px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.mi-cuenta-actions .card-sub {
+  font-size: 11px;
+  color: #6b7280; /* gris */
+  text-align: center;
+  display: none;
+}
+
+/*==================================
+  BOTÓN DE CERRAR SESIÓN
+==================================*/
+.logout-btn {
+  background: #ffffff;
+  border: 2px solid #ffdfe2; /* borde rosado claro */
+  color: #111827;
+  padding: 10px 28px;
+  border-radius: 999px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background .12s ease, transform .12s ease;
+  box-shadow: 0 8px 20px rgba(16, 24, 40, 0.04);
+}
+
+.logout-btn:hover {
+  background: #fff7f7;
+  transform: translateY(-3px);
+}
+
+/*==================================
+  DISEÑO RESPONSIVE
+==================================*/
+@media (max-width: 640px) {
+  .mi-cuenta-actions {
+    flex-direction: column;
+  }
+  
+  .mi-cuenta-actions > .action-card {
+    width: 100%;
+    min-height: auto;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .mi-cuenta-actions .icon-circle {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+  }
+
+  .mi-cuenta-actions .icon-svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .mi-cuenta-actions .card-title {
+    font-size: 13px;
+    margin-top: 0;
+    text-align: left;
+  }
+}
