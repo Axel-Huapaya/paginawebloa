@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Ramo</title>
+    <link rel="stylesheet" href="static/css/infoDeRamos.css">
+    <link href="{{ url_for('static', filename='css/modo-oscuro.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/regresar.css') }}">
+</head>
+
+<body>
+    <div class="boton-regresar">
+        <a href="/Sitio_Inclusivo">
+            <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar" class="auto-invert2">
+        </a>
+    </div>
+
+    <div class="card-titulo">
+        <h4 class="card-name-titulo">ALMA DE BOSQUE</h4>
+
+        <div class="card">
+            <img src="static/image/ramos/ramo1.jpg" alt="Ramo de flores">
+
+            <div class="card-content">
+                <h2 class="card-title">Ramo Primavera</h2>
+
+                <p class="card-description">
+                    Este hermoso ramo combina flores frescas de temporada,
+                    destacando tonos rosados y amarillos que alegran cualquier espacio.
+                    Ideal para regalar o decorar tu hogar.
+                </p>
+
+                <p class="price">$45.00</p>
+
+                <div class="card-actions">
+                    <a href="/formulario_compra" class="btn btn-buy">Comprar</a>
+
+                    <img src="static/image/logos/favorito.png" alt="Agregar a favoritos"
+                        class="w-5 h-5 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+                        data-nombre="Alma de Bosque" data-imagen="static/image/ramos/ramo1.jpg" data-precio="45.00" />
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+
+  <script src="{{ url_for('static', filename='js/modo-oscuro.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/favoritos.js') }}"></script>
+
+
+</body>
+
+</html>
