@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad | Florería Manu</title>
+
+  <!-- Estilos -->
+  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/regresar.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/modo-oscuro.css') }}" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='image/logos/flor.png') }}">
+</head>
+
+<body id="pagina-privacidad" class="bg-gradient-to-br from-green-100 to-pink-100 min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-500">
+
+  <!-- BOTÓN REGRESAR FIJO -->
+  <div class="boton-regresar">
+    <a href="/">
+      <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar" class="auto-invert2">
+    </a>
+  </div>
+
+  <!-- CUADRO PRINCIPAL -->
+  <main class="bg-pink-50 dark:bg-gray-900 shadow-lg rounded-2xl max-w-3xl w-full p-10 border border-pink-200 dark:border-gray-700 transition-colors duration-500">
+    <h1 class="text-3xl font-bold text-pink-700 text-center mb-6">Política de Privacidad</h1>
+
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+      En <strong>Florería Manu</strong> valoramos la privacidad de nuestros clientes y nos comprometemos a proteger la información personal que nos proporcionen. 
+      Esta política explica cómo recopilamos, utilizamos y protegemos sus datos.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-pink-600 mt-6 mb-3">1. Información que recopilamos</h2>
+    <p class="text-gray-700 dark:text-gray-300 mb-4">
+      Recopilamos información personal como nombre, dirección de correo electrónico, número de teléfono y dirección de entrega cuando realiza un pedido o se registra en nuestra página web.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-pink-600 mt-6 mb-3">2. Uso de la información</h2>
+    <p class="text-gray-700 dark:text-gray-300 mb-4">
+      Utilizamos su información únicamente para procesar pedidos, enviar confirmaciones, responder consultas y mejorar nuestros servicios. 
+      No compartimos sus datos personales con terceros sin su consentimiento.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-pink-600 mt-6 mb-3">3. Protección de datos</h2>
+    <p class="text-gray-700 dark:text-gray-300 mb-4">
+      Implementamos medidas de seguridad para proteger la información personal contra acceso no autorizado, pérdida o alteración.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-pink-600 mt-6 mb-3">4. Derechos del usuario</h2>
+    <p class="text-gray-700 dark:text-gray-300 mb-4">
+      Los usuarios pueden solicitar la actualización o eliminación de sus datos personales en cualquier momento comunicándose con nosotros a través de nuestros canales oficiales.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-pink-600 mt-6 mb-3">5. Cambios en esta política</h2>
+    <p class="text-gray-700 dark:text-gray-300 mb-0">
+      Florería Manu se reserva el derecho de actualizar esta política de privacidad en cualquier momento. 
+      Cualquier modificación será publicada en este mismo apartado.
+    </p>
+  </main>
+
+  <footer class="mt-8 text-gray-600 dark:text-gray-400 text-sm text-center">
+    © 2025 Florería Manu. Todos los derechos reservados.
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/modo-oscuro.js') }}"></script>
+</body>
+</html>

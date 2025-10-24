@@ -207,6 +207,78 @@ body#pagina-nosotros.dark-mode .boton-regresar img {
   filter: none !important;
 }
 
+/* ========================= */
+/* ====== PÁGINA PRIVACIDAD ===== */
+/* ========================= */
+
+/* 🌸 Fondo normal */
+#pagina-privacidad {
+  background: linear-gradient(to bottom right, #d1fae5, #fbcfe8); /* verde-rosado */
+  transition: background 0.5s ease;
+}
+
+/* 🌙 Fondo oscuro */
+body.dark-mode#pagina-privacidad {
+  background: linear-gradient(to bottom right, #1a1a1a, #2a2a2a); /* gris oscuro */
+}
+
+/* 🌸 Textos normales */
+#pagina-privacidad p,
+#pagina-privacidad h1,
+#pagina-privacidad h2,
+#pagina-privacidad h3 {
+  color: #333;
+  transition: color 0.5s ease;
+}
+
+/* 🌙 Textos en modo oscuro */
+body.dark-mode#pagina-privacidad p,
+body.dark-mode#pagina-privacidad h1,
+body.dark-mode#pagina-privacidad h2,
+body.dark-mode#pagina-privacidad h3 {
+  color: #fff;
+}
+
+/* 🌸 Cuadros interiores */
+#pagina-privacidad main,
+#pagina-privacidad section div {
+  background-color: #fff;
+  border-color: #fbcfe8;
+  transition: all 0.5s ease;
+}
+
+/* 🌙 Cuadros interiores en modo oscuro */
+body.dark-mode#pagina-privacidad main,
+body.dark-mode#pagina-privacidad section div {
+  background-color: #1f2937; /* gris oscuro */
+  border-color: #374151;
+}
+
+/* Títulos y subtítulos en rosa modo oscuro */
+body.dark-mode#pagina-privacidad h1,
+body.dark-mode#pagina-privacidad h2 {
+  color: #f6a6d5 !important;
+}
+
+/* Botón (si existe) igual que Nosotros */
+body.dark-mode#pagina-privacidad .bg-pink-500 {
+  background-color: #be185d !important;
+}
+body.dark-mode#pagina-privacidad .bg-pink-500:hover {
+  background-color: #9f1239 !important;
+}
+
+/* Footer */
+body.dark-mode#pagina-privacidad footer {
+  background-color: #0b1220 !important;
+  color: #ffffff !important;
+}
+
+/* Icono regresar */
+body.dark-mode#pagina-privacidad .boton-regresar img {
+  filter: none !important;
+}
+
 /* ----------------------------- */
 /* ====== LOGIN / REGISTRO ===== */
 /* ----------------------------- */

@@ -300,6 +300,10 @@ def retos():
 def nosotros():
     return render_template("nosotros.html")
 
+@app.route("/politica_privacidad")
+def politica_privacidad():
+   return render_template("politica_privacidad.html")
+
 @app.route("/mi_perfil")
 def mi_cuenta():
     return render_template("mi_cuenta.html")
