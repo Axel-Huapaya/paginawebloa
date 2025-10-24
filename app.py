@@ -308,6 +308,10 @@ def politica_privacidad():
 def mi_cuenta():
     return render_template("mi_cuenta.html")
 
+@app.route("/Sitio_Inclusivo")
+def sitio_inclusivo():
+    return render_template("sitioConVozDeGuia.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

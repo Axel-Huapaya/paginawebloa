@@ -20,15 +20,6 @@
 
 <body class="bg-gray-50 text-gray-800">
 
-  <div id="popupOverlay" class="hidden">
-    <div id="popupBox">
-      <p>¿Deseas activar el modo con voz de guía?</p>
-      <p>(esta acción está diseñada para personas con pérdida de visión)</p>
-      <button id="btnSi">Sí</button>
-      <button id="btnNo">No</button>
-    </div>
-  </div>
-
   <!-- Navegación -->
   <nav class="relative flex items-center justify-between px-4 py-2 bg-white z-[9999]">
     <!-- Logo + Nombre -->
@@ -60,41 +51,41 @@
 
 
     <!-- Botón hamburguesa SOLO en móviles -->
-    <button id="animate-pulse" class="md:hidden text-gray-700 focus:outline-none relative z-[9999]">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
+<button id="animate-pulse" class="md:hidden text-gray-700 focus:outline-none relative z-[9999]">
+  <img src="static/image/logos/hamburguesa.png"
+       alt="Menú"
+       class="w-5 h-5 nav-logo">
+</button>
+
 
     <!-- Menú en pantallas grandes -->
     <ul class="hidden md:flex items-center gap-4">
-      <li><a href="#"><img src="static/image/logos/retos.gif" alt="Misiones del cliente"
+      <li><a href="/selector_retos"><img src="static/image/logos/retos.gif" alt="Misiones del cliente"
             class="w-10 h-10 nav-logo" /></a></li>
       <label for="toggle"> <img src="static/image/logos/claro.png" alt="Tema" class="w-8 h-8 nav-logo" data-light="static/image/logos/claro.png" data-dark="static/image/logos/oscuro.png" id="themeIcon"></label>
       <input type="checkbox" id="toggle">
 
       <li><a href="#"><img src="static/image/logos/carrito.png" alt="Carrito de compras" class="w-8 h-8 nav-logo" /></a>
       </li>
-      <li><a href="#"><img src="static/image/logos/favorito.png" alt="Sección de favoritos"
+      <li><a href="/favoritos"><img src="static/image/logos/favorito.png" alt="Sección de favoritos"
             class="w-8 h-8 nav-logo" /></a></li>
-      <li><a href="#"><img src="static/image/logos/perfil.png" alt="Perfil de usuario"
+      <li><a href="/login"><img src="static/image/logos/perfil.png" alt="Perfil de usuario"
             class="w-8 h-8 nav-logo" /></a></li>
     </ul>
 
 
     <!-- Menú móvil desplegable -->
     <ul id="mobile-menu"
-      class="hidden absolute top-full right-0 bg-white p-4 flex flex-col gap-4 shadow-lg rounded-b-lg z-[9999] w-48">
-      <li><a href="#"><img src="static/image/logos/retos.gif" alt="Misiones" class="w-10 h-10" /><span
+      class=" nav-logo hidden absolute top-full right-0 bg-white p-4 flex flex-col gap-4 shadow-lg rounded-b-lg z-[9999] w-48">
+      <li><a href="/juego"><img src="static/image/logos/retos.gif" alt="Misiones" class="w-10 h-10 nav-logo" /><span
             class="text-sm font-medium">Misiones del usuario</span></a></li>
-      <li><a href="#"><img src="static/image/logos/claro.png" alt="Tema" class="w-8 h-8" /><span
-            class="text-sm font-medium">Tema Claro/Oscuro</span></a></li>
-      <li><a href="#"><img src="static/image/logos/carrito.png" alt="Carrito" class="w-8 h-8" /><span
+       <label  for="toggle"> <img src="static/image/logos/claro.png" alt="Tema" class="w-8 h-8 nav-logo" data-light="static/image/logos/claro.png" data-dark="static/image/logos/oscuro.png" id="themeIcon"></label>
+      <input type="checkbox" id="toggle"><span class="text-sm font-medium">Modo oscuro/claro</span>
+      <li><a href="#"><img src="static/image/logos/carrito.png" alt="Carrito" class="w-8 h-8 nav-logo" /><span
             class="text-sm font-medium">Carrito de compras</span></a></li>
-      <li><a href="#"><img src="static/image/logos/favorito.png" alt="Favoritos" class="w-8 h-8" /><span
+      <li><a href="/favoritos"><img src="static/image/logos/favorito.png" alt="Favoritos" class="w-8 h-8 nav-logo" /><span
             class="text-sm font-medium">Favoritos</span></a></li>
-      <li><a href="#"><img src="static/image/logos/perfil.png" alt="Perfil" class="w-8 h-8" /><span
+      <li><a href="/login"><img src="static/image/logos/perfil.png" alt="Perfil" class="w-8 h-8 nav-logo" /><span
             class="text-sm font-medium">Perfil del usuario</span></a></li>
     </ul>
   </nav>
@@ -1460,8 +1451,8 @@
       class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
   </a>
 
-  <footer class="footer">
-    <div class="footer-container">
+    <footer class="footer">
+     <div class="footer-container">
 
       <div class="footer-section">
         <h3>🛍️ Cliente</h3>
@@ -1501,8 +1492,8 @@
         <h3>🔗 Enlaces</h3>
         <ul>
           <li><a href="#">Inicio</a></li>
-          <li><a href="#">Sobre nosotros</a></li>
-          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="/nosotros">Sobre nosotros</a></li>
+          <li><a href="/politica_privacidad">Política de privacidad</a></li>
           <li><a href="#">Términos y condiciones</a></li>
         </ul>
       </div>
@@ -1557,14 +1548,14 @@
       <div class="footer-section">
         <h3>🎁 Regístrate</h3>
         <p>Obtén hasta 15% de descuento</p>
-        <a href="#" class="register-btn">Haz clic para registrarte</a>
+        <a href="/registro" class="register-btn">Haz clic para registrarte</a>
       </div>
 
-    </div>
-    <div class="footer-bottom">
+     </div>
+     <div class="footer-bottom">
       © 2025 FloreriaManu. Todos los derechos reservados.
-    </div>
-  </footer>
+     </div>
+    </footer>
 
   <script src="{{ url_for('static', filename='js/sonido.js') }}"></script>
   <script src="{{ url_for('static', filename='js/favorito.js') }}"></script>

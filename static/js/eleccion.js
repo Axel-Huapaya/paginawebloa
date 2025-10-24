@@ -11,11 +11,13 @@ window.addEventListener('DOMContentLoaded', () => {
         const script = document.createElement('script');
         script.src = 'sonido.js'; // archivo de audio
         document.body.appendChild(script);
-        overlay.remove();
+        
+        // Redirigir a la ruta deseada
+        window.location.href = '/Sitio_Inclusivo';
     });
 
     // Acción al hacer clic en "No"
     btnNo.addEventListener('click', () => {
-        window.location.href = 'normal'; // lo llevara a la sección donde interactua de una forma normal
+        window.location.href = 'normal'; // lo llevará a la sección normal
     });
 });
