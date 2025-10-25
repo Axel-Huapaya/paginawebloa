@@ -224,7 +224,8 @@ def formulario_compra():
         fecha_entrega = request.form['fecha_entrega']
         hora_entrega = request.form['hora_entrega']
 
-        # 🕒 Validar que la fecha sea futura
+        producto_nombre = request.form.get('producto_nombre', None)
+        producto_precio = request.form.get('producto_precio', None)
         from datetime import datetime
         try:
             fecha_actual = datetime.now().date()
@@ -236,14 +237,14 @@ def formulario_compra():
             flash('⚠️ Fecha de entrega inválida.', 'error')
             return redirect('/formulario_compra')
 
-        # 💾 Guardar datos en MySQL
+
         cur = mysql.connection.cursor()
         try:
             cur.execute("""
                 INSERT INTO compras 
-                (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega, fecha_entrega, hora_entrega)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """, (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega, fecha_entrega, hora_entrega))
+                (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega, fecha_entrega, hora_entrega, producto_nombre, producto_precio)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega, fecha_entrega, hora_entrega, producto_nombre, producto_precio))
             mysql.connection.commit()
             flash('✅ Pedido enviado correctamente.', 'success')
         except Exception as e:
@@ -255,37 +256,6 @@ def formulario_compra():
         return redirect('/formulario_compra')
 
     return render_template('formulario_compra.html')
-
-    if request.method == 'POST':
-        nombre = request.form['nombre']
-        apellido = request.form['apellido']
-        correo = request.form['correo']
-        telefono = request.form['telefono']
-        direccion = request.form['direccion']
-        referencia = request.form['referencia']
-        pago = request.form['pago']
-        entrega = request.form['entrega']
-        fecha_entrega = request.form['fecha_entrega']
-        hora_entrega = request.form['hora_entrega']
-
-        cur = mysql.connection.cursor()
-        try:
-            cur.execute("""
-                INSERT INTO compras (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-            """, (nombre, apellido, correo, telefono, direccion, referencia, pago, entrega))
-            mysql.connection.commit()
-            flash('✅ Pedido enviado correctamente.', 'success')
-        except Exception as e:
-            mysql.connection.rollback()
-            flash(f'⚠️ Error al guardar el pedido: {e}', 'error')
-        finally:
-            cur.close()
-
-        return redirect('/formulario_compra')
-
-    return render_template('formulario_compra.html')
-
 
 #formulario cotizacion 
 @app.route("/formulario_cotizacion")
@@ -335,6 +305,14 @@ def canto_de_rio():
 @app.route("/Clicken_Lila")
 def clicken_lila():
     return render_template("infoRamos/ClickenLila.html")
+
+@app.route("/CorazondeJardin")
+def corazon_de_jardin():
+    return render_template("infoRamos/Corazon_de_jardin.html")
+
+@app.route("/Deliccat")
+def deliccat():
+    return render_template("infoRamos/Deliccat.html")
 
 if __name__ == '__main__':
     app.run(debug=True)

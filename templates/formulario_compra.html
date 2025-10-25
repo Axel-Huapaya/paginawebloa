@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formulario de Compra - Florería Manu</title>
 
-  <!-- Estilos -->
   <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet" />
   <link href="{{ url_for('static', filename='css/modo-oscuro.css') }}" rel="stylesheet" />
   <link href="{{ url_for('static', filename='css/regresar.css') }}" rel="stylesheet" />
@@ -15,30 +14,33 @@
 
 <body class="bg-gradient-to-br from-green-100 to-pink-100 min-h-screen flex items-center justify-center p-6 transition-colors duration-500">
 
-  <!-- BOTÓN REGRESAR -->
   <div class="boton-regresar">
     <a href="/Sitio_Inclusivo">
       <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar" class="auto-invert2">
     </a>
   </div>
 
-  <!-- CONTENEDOR PRINCIPAL -->
+
   <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 w-full max-w-3xl mx-auto transition-colors duration-500">
 
-    <!-- LOGO -->
     <div class="flex justify-center mb-6">
       <img src="{{ url_for('static', filename='image/logos/logo_empresa.png') }}" alt="Logo Florería Manu" class="h-16" />
     </div>
 
-    <!-- TÍTULO -->
     <div class="text-center mb-8">
       <h1 class="text-3xl font-extrabold text-green-700 dark:text-green-400">Formulario de Compra</h1>
       <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">🌸 Entregas disponibles solo en Cañete, Lima - Perú 🌸</p>
     </div>
 
-    <!-- FORMULARIO -->
+    <div id="productoSeleccionado" class="text-center mb-8 hidden">
+      <h2 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">Producto seleccionado</h2>
+      <img id="imagenProducto" src="" alt="Producto" class="mx-auto w-40 h-40 rounded-xl shadow-md mb-2 object-cover">
+      <p id="nombreProducto" class="text-lg font-semibold"></p>
+      <p id="precioProducto" class="text-pink-600 font-bold"></p>
+    </div>
+
     <form method="POST" class="space-y-8 text-gray-800 dark:text-gray-200">
-      <!-- DATOS PERSONALES -->
+
       <div>
         <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3 flex items-center gap-2">
           <img src="{{ url_for('static', filename='image/logos/perfil.png') }}" class="h-5 w-5 auto-invert" alt="">
@@ -52,7 +54,7 @@
         </div>
       </div>
 
-      <!-- CONTACTO -->
+
       <div>
         <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3 flex items-center gap-2">
           <img src="{{ url_for('static', filename='image/logos/contacto.png') }}" class="h-5 w-5 auto-invert" alt="">
@@ -67,7 +69,7 @@
         </div>
       </div>
 
-      <!-- DIRECCIÓN -->
+
       <div>
         <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3 flex items-center gap-2">
           <img src="{{ url_for('static', filename='image/logos/dirección.png') }}" class="h-5 w-5 auto-invert" alt="">
@@ -81,7 +83,6 @@
         </div>
       </div>
 
-      <!-- FECHA Y HORA DE ENTREGA -->
       <div>
         <h2 class="font-semibold text-lg text-green-900 mb-2">Fecha y hora de entrega</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -92,9 +93,7 @@
         </div>
       </div>
 
-      <!-- MÉTODO DE PAGO Y ENTREGA -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- MÉTODO DE PAGO -->
         <div class="border-2 border-green-400 dark:border-green-600 rounded-2xl p-5">
           <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3">Método de pago</h2>
           <label class="flex items-center mb-2">
@@ -108,7 +107,6 @@
           </label>
         </div>
 
-        <!-- TIPO DE ENTREGA -->
         <div class="border-2 border-green-400 dark:border-green-600 rounded-2xl p-5">
           <h2 class="font-semibold text-lg text-green-900 dark:text-green-400 mb-3">Tipo de entrega</h2>
           <label class="flex items-center mb-2">
@@ -120,6 +118,10 @@
         </div>
       </div>
 
+      <input type="hidden" name="producto_nombre" id="inputNombreProducto">
+      <input type="hidden" name="producto_precio" id="inputPrecioProducto">
+      <input type="hidden" name="producto_imagen" id="inputImagenProducto">
+
       <!-- BOTÓN -->
       <div class="text-center">
         <button type="submit"
@@ -130,13 +132,11 @@
     </form>
   </div>
 
-  <!-- WHATSAPP FLOTANTE -->
   <a href="https://wa.me/51967086515" target="_blank" class="fixed bottom-6 right-6 z-50">
     <img src="{{ url_for('static', filename='image/logos/whatsapp.png') }}" alt="WhatsApp"
       class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
   </a>
 
-  <!-- ANIMACIÓN DE ÉXITO -->
   {% with messages = get_flashed_messages() %}
   {% if messages %}
   <div id="success-overlay" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -151,7 +151,6 @@
   {% endif %}
   {% endwith %}
 
-  <!-- JS -->
   <script src="{{ url_for('static', filename='js/modo-oscuro.js') }}" defer></script>
   <script src="{{ url_for('static', filename='js/final_compra.js') }}" defer></script>
 

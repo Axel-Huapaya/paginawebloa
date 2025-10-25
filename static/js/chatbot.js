@@ -36,7 +36,7 @@ function sendMessage() {
     else if (lower.includes("alma de bosque", "Alma de Bosque", "ALMA DE BOSQUE")) botResponse ="El ramo 'Alma de Bosque' es una encantadora propuesta de opción, este ramo contiene flores de Gladiolo de color blanco lo cual tiene como precio de S/45.00.";
     else if (lower.includes("aurora moderna", "Aurora Moderna", "AURORA MODERNA")) botResponse=" El ramo 'Aurora Moderna' es una encantadora propuesta de opción, este ramo contiene flores Margaritas de color rosa lavanda o lila con centros amarillos, tambien contiene Paniculata o Gypsophila de flores blancas, lo cual tiene como precio de S/37.00.";
     else if (lower.includes("atetish", "Atetish", "ATETISH")) botResponse="El ramo 'Atetish' es una encantadora propuesta de opción, este ramo contiene flores Girasol de color amarillo y Estatice de color morado o lila, lo cual tiene como precio de S/40.00.";
-    appendMessage("ParaBot", botResponse);
+    appendMessage("FloriBot", botResponse);
   }, 600);
 }
 

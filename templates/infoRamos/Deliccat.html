@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliccat</title>
+    <link href="{{ url_for('static', filename='css/modo-oscuro.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/regresar.css') }}">
+</head>
+
+<body class="bg-gray-50 bg-center bg-no-repeat bg-cover min-h-screen flex items-center justify-center">
+
+    <!-- Botón regresar -->
+    <div class="absolute top-4 left-4">
+        <a href="/Sitio_Inclusivo">
+            <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar"
+                class="auto-invert2 w-11 h-11 hover:scale-110 transition-transform">
+        </a>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div
+        class="card flex flex-col sm:flex-row bg-white bg-center shadow-lg rounded-2xl overflow-hidden max-w-4xl w-full mx-4 p-6">
+
+        <!-- Imagen + precio -->
+        <div class="flex flex-col items-center sm:w-1/2 mb-6 sm:mb-0">
+            <img src="{{ url_for('static', filename='image/ramos/ramo8.jpg') }}" alt="Deliccat"
+                class="w-64 h-64 object-cover rounded-lg shadow-md mb-3 mt-6">
+            <p class="price text-pink-600 font-bold text-lg">S/35.00</p>
+        </div>
+
+        <!-- Contenido -->
+        <div class="card-content sm:w-1/2 flex flex-col justify-between sm:pl-6">
+            <div>
+                <h2 class="card-title text-xl font-semibold text-gray-900 mb-3">Ramo Delicate</h2>
+
+                <p class="card-description text-gray-700 text-sm leading-relaxed">
+                    Rinda homenaje a la dulzura y la calidez con nuestro encantador ramo "Deliccat". Este arreglo
+                    vertical de inspiración campestre destaca con esplendor gracias a sus esbeltos gladiolos de un
+                    exquisito color coral o salmón pálido, que irradian ternura y sofisticación discreta. El diseño es
+                    una oda al estilo vintage y moderno, envuelto en una doble capa: la interior con un alegre y
+                    hogareño estampado de cuadros vichy en tonos melocotón y blanco, y la exterior con un suave y
+                    contemporáneo papel de diseño verde salvia claro. El lazo de cintas en tonos dorado y verde oliva
+                    culmina la presentación, aportando un toque final de distinción artesanal. "Deliccat" es la elección
+                    perfecta para celebrar la amistad, la gratitud o para enviar un mensaje lleno de cariño y buen
+                    gusto. ¡Regale esta pieza única y memorable hoy mismo!
+                </p>
+            </div>
+
+            <!-- Botones -->
+            <div class="card-actions flex items-center justify-between mt-6">
+                <a href="/formulario_compra"
+                    class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors duration-300 font-medium">
+                    Comprar
+                </a>
+
+                <img src="{{ url_for('static', filename='image/logos/favorito.png') }}" alt="Agregar a favoritos"
+                    class="w-7 h-7 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+                    data-nombre="Alma de Bosque" data-imagen="{{ url_for('static', filename='image/ramos/ramo2.jpg') }}"
+                    data-precio="45.00" />
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/modo-oscuro.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/favoritos.js') }}"></script>
+
+</body>
+
+</html>
