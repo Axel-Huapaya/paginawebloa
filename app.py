@@ -274,6 +274,10 @@ def nosotros():
 def politica_privacidad():
    return render_template("politica_privacidad.html")
 
+@app.route("/terminos_condiciones")
+def terminos_condiciones():
+   return render_template("terminos_condiciones.html")
+
 @app.route("/mi_perfil")
 def mi_cuenta():
     return render_template("mi_cuenta.html")

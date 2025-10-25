@@ -1,3 +1,4 @@
+/* Configuración base del cuerpo de la página */
 body {
   margin: 0;
   background: #000;
@@ -6,38 +7,45 @@ body {
   text-align: center;
 }
 
+/* Contenedor principal del juego */
 .game-wrap {
   max-width: 800px;
   margin: auto;
 }
 
+/* Margen superior e inferior del header */
 header {
   margin: 10px 0;
 }
 
+/* Barra de información (puntaje, vidas, etc.) */
 .hud {
   display: flex;
   justify-content: space-around;
   margin: 10px 0;
 }
 
+/* Paneles de información dentro del HUD */
 .panel {
   background: rgba(255, 255, 255, 0.1);
   padding: 5px 10px;
   border-radius: 6px;
 }
 
+/* Contenedor relativo que permitirá superponer mensajes o capas */
 .overlay {
   position: relative;
   display: inline-block;
 }
 
+/* Lienzo principal del juego */
 canvas {
   border: 2px solid #fff;
   background: url("../image/fondos/fondo-juego.png") no-repeat center center;
   background-size: cover;
 }
 
+/* MENSAJES EN PANTALLA */
 .message {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -50,11 +58,13 @@ canvas {
   font-size: 20px;
 }
 
+/* Texto destacado dentro del mensaje */
 .big {
   font-size: 26px;
   font-weight: bold;
 }
 
+/* Estilo general para botones */
 .btn {
   background: #ff4081;
   border: none;
@@ -65,11 +75,13 @@ canvas {
   border-radius: 6px;
 }
 
+/* Versión pequeña del botón */
 .btn.small {
   padding: 6px 10px;
   font-size: 14px;
 }
 
+/* Fila que contiene los botones de control */
 .touch-row {
   margin-top: 10px;
   display: flex;
@@ -77,6 +89,7 @@ canvas {
   gap: 10px;
 }
 
+/* Botones de control táctil */
 .touch-btn {
   background: #444;
   padding: 10px;
@@ -89,12 +102,14 @@ canvas {
   margin-top: 20px;
 }
 
+/* Contenedor de los personajes */
 .character-options {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
+/* Imagen individual del personaje */
 .character {
   width: 100px;
   height: auto;
@@ -102,14 +117,14 @@ canvas {
   transition: transform 0.2s, border 0.2s;
 }
 
+/* Efecto al pasar el cursor sobre el personaje */
 .character:hover {
   transform: scale(1.1);
   border: 3px solid #ff4081;
   border-radius: 8px;
 }
 
-
-
+/* Posiciona el botón flotante de regresar */
 .mb-4 {
   position: fixed;       /* se mantiene visible incluso si haces scroll */
   top: 20px;             /* distancia desde arriba */
@@ -117,6 +132,7 @@ canvas {
   z-index: 1000;         /* por encima de los demás elementos */
 }
 
+/* Imagen dentro del botón de regresar */
 .mb-4 img {
   width: 48px;
   height: 48px;
@@ -124,6 +140,7 @@ canvas {
   transition: transform 0.2s;
 }
 
+/* Efecto al pasar el cursor sobre la imagen */
 .mb-4 img:hover {
   transform: scale(1.1);
 }

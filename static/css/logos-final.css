@@ -1,3 +1,4 @@
+/* Estilos base para los íconos pequeños de redes sociales */
 .social-icons img {
   width: 20px;   
   height: 20px;
@@ -5,30 +6,37 @@
   transition: transform 0.3s ease;
 }
 
+/* Efecto zoom al pasar el mouse sobre los íconos pequeños */
 .social-icons img:hover {
   transform: scale(1.2); /* efecto zoom al pasar el mouse */
 }
 
+/* Estilos para los íconos más grandes de redes sociales */
 .social-icons2 img {
   width: 80px; /* Ajusta este valor según lo grande que lo quieras */
   height: auto;
   transition: transform 0.3s ease;
 }
+
+/* Efecto zoom al pasar el mouse sobre los íconos grandes */
 .social-icons2 img:hover {
   transform: scale(1.2); /* efecto zoom al pasar el mouse */
 }
 
+/* Clase con color rosado-violeta llamativo */
 .forma-letra {
   color: #1877F2;
   font-weight: bold;
 }
 
+/* Alinea el ícono y el texto horizontalmente */
 .icono-texto {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
+/* Imagen dentro del contenedor de ícono y texto */
 .icono-texto img {
   margin-right: 8px;
   width: 24px;
@@ -53,6 +61,7 @@
   font-weight: 500;
 }
 
+/* Imagen clickeable de mayor tamaño */
 .libro-img {
   width: 120px;
   height: auto;

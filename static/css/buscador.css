@@ -1,3 +1,4 @@
+/* Contenedor principal del formulario de búsqueda */
 #form-busqueda {
   display: flex;
   align-items: center;
@@ -10,11 +11,13 @@
   transition: all 0.3s ease;
 }
 
+/* Efecto al enfocar el formulario (cuando se escribe) */
 #form-busqueda:focus-within {
   border-color: #68d65a; /* rosado */
   box-shadow: 0 0 5px #021d00;
 }
 
+/* Campo de texto del buscador */
 #buscador {
   flex: 1;
   border: none;
@@ -24,12 +27,14 @@
   font-size: 0.9rem;
 }
 
+/* Ícono dentro del botón de búsqueda */
 #form-busqueda button img {
   width: 24px;
   height: 24px;
   transition: transform 0.3s ease;
 }
 
+/* Efecto al pasar el cursor sobre el botón */
 #form-busqueda button:hover img {
   transform: scale(1.1);
 }

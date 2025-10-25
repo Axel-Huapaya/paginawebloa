@@ -30,6 +30,7 @@
   position: relative;
 }
 
+/* Triángulo decorativo del globo */
 .chatbot-bubble::after {
   content: "";
   position: absolute;
@@ -54,6 +55,7 @@
   cursor: pointer;
 }
 
+/* Efecto hover del botón */
 .chatbot-button:hover {
   transform: scale(1.1);
 }

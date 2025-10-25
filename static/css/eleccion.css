@@ -1,3 +1,4 @@
+/* Cubre toda la pantalla con un fondo oscuro y centra el contenido */
 #popupOverlay {
   position: fixed;
   top: 0;
@@ -11,6 +12,7 @@
   z-index: 9999;
 }
 
+/* Contenedor del mensaje y botones */
 #popupBox {
   background-color: white;
   padding: 30px;
@@ -19,6 +21,7 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
+/* Estilo base para los botones dentro del cuadro emergente */
 #popupBox button {
   margin: 10px;
   padding: 10px 20px;

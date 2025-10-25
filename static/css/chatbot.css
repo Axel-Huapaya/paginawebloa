@@ -1,3 +1,4 @@
+/* Centra el chatbot en pantalla con fondo claro y tipografía limpia */
 body {
   background-color: #fff8e1;
   font-family: 'Segoe UI', sans-serif;
@@ -8,6 +9,7 @@ body {
   margin: 0;
 }
 
+/* Caja principal con bordes redondeados y sombra sutil */
 .chatbot-container {
   background-color: #ffffff;
   border: 2px solid #fdd835;
@@ -18,6 +20,7 @@ body {
   padding: 24px;
 }
 
+/* Contiene el ícono y los textos principales */
 .chatbot-header {
   display: flex;
   align-items: center;
@@ -25,6 +28,7 @@ body {
   margin-bottom: 20px;
 }
 
+/* Ícono circular del chatbot */
 .chatbot-header img {
   width: 48px;
   height: 48px;
@@ -32,17 +36,20 @@ body {
   border: 2px solid #fbc02d;
 }
 
+/* Título principal del chatbot */
 .chatbot-title {
   font-size: 1.5rem;
   font-weight: bold;
   color: #62a045;
 }
 
+/* Subtítulo del chatbot */
 .chatbot-subtitle {
   font-size: 1.0rem;
   color: #80c473;
 }
 
+/* Área de chat */
 .chat-area {
   background-color: #fffde7;
   border: 1px solid #fdd835;
@@ -55,12 +62,14 @@ body {
   color: #333;
 }
 
+/* Agrupa el campo de texto y el botón de enviar */
 .chatbot-input {
   display: flex;
   gap: 8px;
   margin-bottom: 16px;
 }
 
+/* Campo de texto del chatbot */
 .chatbot-input input {
   flex-grow: 1;
   padding: 10px;
@@ -69,6 +78,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* Botón de enviar mensaje */
 .chatbot-input button {
   background-color: #fbc02d;
   color: white;
@@ -79,10 +89,12 @@ body {
   font-weight: bold;
 }
 
+/* Título de los botones rápidos  */
 .chatbot-input button:hover {
   background-color: #f9a825;
 }
 
+/*  Contenedor de los botones rápidos */
 .quick-title {
   font-size: 0.95rem;
   font-weight: bold;
@@ -90,11 +102,13 @@ body {
   margin-bottom: 8px;
 }
 
+/* Botones rápidos del chatbot */
 .quick-buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
+
 
 .quick-buttons button {
   background-color: #fff9c4;
@@ -105,6 +119,7 @@ body {
   font-size: 0.85rem;
 }
 
+/*  Efecto hover de los botones rápidos */
 .quick-buttons button:hover {
   background-color: #fff59d;
 }

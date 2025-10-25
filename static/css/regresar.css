@@ -6,6 +6,7 @@
   z-index: 1000;
 }
 
+/* Imagen dentro del botón */
 .boton-regresar img {
   width: 48px;
   height: 48px;
@@ -13,6 +14,7 @@
   transition: transform 0.2s ease;
 }
 
+/* Efecto al pasar el mouse por encima */
 .boton-regresar img:hover {
   transform: scale(1.1);
 }

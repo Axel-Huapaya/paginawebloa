@@ -279,6 +279,78 @@ body.dark-mode#pagina-privacidad .boton-regresar img {
   filter: none !important;
 }
 
+/* =============================== */
+/* ====== PÁGINA TÉRMINOS ======= */
+/* =============================== */
+
+/* 🌸 Fondo normal */
+#pagina-terminos {
+  background: linear-gradient(to bottom right, #d1fae5, #fbcfe8); /* verde-rosado */
+  transition: background 0.5s ease;
+}
+
+/* 🌙 Fondo oscuro */
+body.dark-mode#pagina-terminos {
+  background: linear-gradient(to bottom right, #1a1a1a, #2a2a2a); /* gris oscuro */
+}
+
+/* 🌸 Textos normales */
+#pagina-terminos p,
+#pagina-terminos h1,
+#pagina-terminos h2,
+#pagina-terminos h3 {
+  color: #333;
+  transition: color 0.5s ease;
+}
+
+/* 🌙 Textos en modo oscuro */
+body.dark-mode#pagina-terminos p,
+body.dark-mode#pagina-terminos h1,
+body.dark-mode#pagina-terminos h2,
+body.dark-mode#pagina-terminos h3 {
+  color: #fff;
+}
+
+/* 🌸 Cuadros interiores */
+#pagina-terminos main,
+#pagina-terminos section div {
+  background-color: #fff;
+  border-color: #fbcfe8;
+  transition: all 0.5s ease;
+}
+
+/* 🌙 Cuadros interiores en modo oscuro */
+body.dark-mode#pagina-terminos main,
+body.dark-mode#pagina-terminos section div {
+  background-color: #1f2937; /* gris oscuro */
+  border-color: #374151;
+}
+
+/* Títulos y subtítulos en rosa modo oscuro */
+body.dark-mode#pagina-terminos h1,
+body.dark-mode#pagina-terminos h2 {
+  color: #f6a6d5 !important;
+}
+
+/* Botón (si existe) igual que Nosotros */
+body.dark-mode#pagina-terminos .bg-pink-500 {
+  background-color: #be185d !important;
+}
+body.dark-mode#pagina-terminos .bg-pink-500:hover {
+  background-color: #9f1239 !important;
+}
+
+/* Footer */
+body.dark-mode#pagina-terminos footer {
+  background-color: #0b1220 !important;
+  color: #ffffff !important;
+}
+
+/* Icono regresar */
+body.dark-mode#pagina-terminos .boton-regresar img {
+  filter: none !important;
+}
+
 /* ----------------------------- */
 /* ====== LOGIN / REGISTRO ===== */
 /* ----------------------------- */

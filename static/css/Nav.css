@@ -22,6 +22,7 @@ html {
   }
 }
 
+/* Se utiliza para activar el efecto definido arriba */
 .animate-fadeInUp {
   animation: fadeInUp var(--anim-duration) var(--anim-ease) forwards;
 }
