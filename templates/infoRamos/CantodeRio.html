@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canto de Rio</title>
+    <link href="{{ url_for('static', filename='css/modo-oscuro.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/regresar.css') }}">
+</head>
+
+<body class="bg-gray-50 bg-center bg-no-repeat bg-cover min-h-screen flex items-center justify-center">
+
+    <!-- Botón regresar -->
+    <div class="absolute top-4 left-4">
+        <a href="/Sitio_Inclusivo">
+            <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar"
+                class="auto-invert2 w-11 h-11 hover:scale-110 transition-transform">
+        </a>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div
+        class="card flex flex-col sm:flex-row bg-white bg-center shadow-lg rounded-2xl overflow-hidden max-w-4xl w-full mx-4 p-6">
+
+        <!-- Imagen + precio -->
+        <div class="flex flex-col items-center sm:w-1/2 mb-6 sm:mb-0">
+            <img src="{{ url_for('static', filename='image/ramos/ramo5.jpg') }}" alt="Canto de Rio"
+                class="w-64 h-64 object-cover rounded-lg shadow-md mb-3 mt-6">
+            <p class="price text-pink-600 font-bold text-lg">S/80.00</p>
+        </div>
+
+        <!-- Contenido -->
+        <div class="card-content sm:w-1/2 flex flex-col justify-between sm:pl-6">
+            <div>
+                <h2 class="card-title text-xl font-semibold text-gray-900 mb-3">Ramo Canto de Rio</h2>
+
+                <p class="card-description text-gray-700 text-sm leading-relaxed">
+                    Inspírese en la serenidad y la belleza natural con nuestro distinguido ramo "Canto de Río". Este
+                    arreglo vertical captura la atención con sus magníficos gladiolos que exhiben un delicado y
+                    romántico color rosa pálido con toques de blanco, evocando la suavidad y el fluir de un río. Su
+                    forma alta y esbelta, con tallos verdes vibrantes, le otorga una presencia majestuosa y atemporal.
+                    Hemos optado por un envoltorio de papel kraft rústico de tono marrón natural que contrasta
+                    elegantemente con la dulzura de las flores, aportando un toque moderno y orgánico. "Canto de Río" es
+                    la elección perfecta para expresar respeto, recuerdo o una admiración sutil y profunda. ¡Adquiéralo
+                    hoy y regale un gesto de elegancia pura y naturalidad!
+                </p>
+            </div>
+
+            <!-- Botones -->
+            <div class="card-actions flex items-center justify-between mt-6">
+                <a href="/formulario_compra"
+                    class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors duration-300 font-medium">
+                    Comprar
+                </a>
+
+                <img src="{{ url_for('static', filename='image/logos/favorito.png') }}" alt="Agregar a favoritos"
+                    class="w-7 h-7 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
+                    data-nombre="Alma de Bosque" data-imagen="{{ url_for('static', filename='image/ramos/ramo2.jpg') }}"
+                    data-precio="45.00" />
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/modo-oscuro.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/favoritos.js') }}"></script>
+
+</body>
+
+</html>

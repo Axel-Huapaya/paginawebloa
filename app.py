@@ -312,6 +312,29 @@ def mi_cuenta():
 def sitio_inclusivo():
     return render_template("sitioConVozDeGuia.html")
 
+@app.route("/Alma_de_Bosque")
+def alma_de_bosque():
+    return render_template("infoRamos/almadebosque.html")
+
+@app.route("/Aurora_Moderna")
+def aurora_moderna():
+    return render_template("infoRamos/Auroramoderna.html")
+
+@app.route("/Atetish")
+def atetish():
+    return render_template("infoRamos/Atetish.html")
+
+@app.route("/Belicate")
+def belicate():
+    return render_template("infoRamos/Belicate.html")
+
+@app.route("/Canto_de_Rio")
+def canto_de_rio():
+    return render_template("infoRamos/CantodeRio.html")
+
+@app.route("/Clicken_Lila")
+def clicken_lila():
+    return render_template("infoRamos/ClickenLila.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
