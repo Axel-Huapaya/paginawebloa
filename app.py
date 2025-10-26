@@ -2,10 +2,12 @@ from flask import Flask, render_template, url_for, send_from_directory, redirect
 from flask_mysqldb import MySQL
 from werkzeug.security import generate_password_hash, check_password_hash
 import requests
+from werkzeug.utils import secure_filename
+import os
 
 app = Flask(__name__)
-app.secret_key = 'clave_secreta'
 
+app.secret_key = 'clave_secreta'
 app.config['MYSQL_HOST'] = 'florerialogin.c56wy8mq0stq.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_PORT'] = 3306
 app.config['MYSQL_USER'] = 'admin'
@@ -13,6 +15,8 @@ app.config['MYSQL_PASSWORD'] = 'floreriamanu'
 app.config['MYSQL_DB'] = 'floreria_db'
 
 mysql = MySQL(app)
+
+
 # Ruta para el sitemap
 @app.route('/sitemap.xml')
 def sitemap():
@@ -174,9 +178,10 @@ def login():
         finally:
             cur.close()
 
-        return redirect('/login')
+        return redirect('/mi_cuenta')
 
     return render_template('login.html')
+
 
 @app.route("/chatbot")
 def index():
@@ -278,9 +283,6 @@ def politica_privacidad():
 def terminos_condiciones():
    return render_template("terminos_condiciones.html")
 
-@app.route("/mi_perfil")
-def mi_cuenta():
-    return render_template("mi_cuenta.html")
 
 @app.route("/Sitio_Inclusivo")
 def sitio_inclusivo():
@@ -321,6 +323,84 @@ def deliccat():
 @app.route("/LibroReclamos")
 def libroReclamos():
     return render_template("libro.html")
+
+@app.route("/mi_cuenta", methods=['GET', 'POST'])
+def mi_cuenta():
+    if 'user_id' not in session:
+        flash('⚠️ Debes iniciar sesión primero.', 'error')
+        return redirect('/login')
+
+    cur = mysql.connection.cursor()
+    
+    if request.method == 'POST':
+        nombre = request.form.get('nombre')
+        apellido = request.form.get('apellido')
+        telefono = request.form.get('telefono')
+        direccion = request.form.get('direccion')
+
+        try:
+            cur.execute("""
+                UPDATE usuarios 
+                SET nombre=%s, apellido=%s, telefono=%s, direccion=%s
+                WHERE id=%s
+            """, (nombre, apellido, telefono, direccion, session['user_id']))
+            mysql.connection.commit()
+            flash('✅ Perfil actualizado correctamente.', 'success')
+        except Exception as e:
+            mysql.connection.rollback()
+            flash(f'⚠️ Error al actualizar perfil: {e}', 'error')
+        finally:
+            cur.close()
+
+    # Obtener datos actuales del usuario
+    cur = mysql.connection.cursor()
+    cur.execute("""
+        SELECT nombre, apellido, email, telefono, direccion
+        FROM usuarios
+        WHERE id=%s
+    """, (session['user_id'],))
+    usuario = cur.fetchone()
+    cur.close()
+
+    user = {
+        'nombre': usuario[0],
+        'apellido': usuario[1],
+        'email': usuario[2],
+        'telefono': usuario[3],
+        'direccion': usuario[4],
+    }
+
+    return render_template("mi_cuenta.html", user=user)
+
+@app.route('/actualizar_usuario', methods=['POST'])
+def actualizar_usuario():
+    if 'user_id' not in session:
+        flash('⚠️ Debes iniciar sesión primero.', 'error')
+        return redirect('/login')
+
+    nombre = request.form.get('nombre')
+    apellido = request.form.get('apellido')
+    telefono = request.form.get('telefono')
+    direccion = request.form.get('direccion')
+
+    cur = mysql.connection.cursor()
+    try:
+        cur.execute("""
+            UPDATE usuarios 
+            SET nombre=%s, apellido=%s, telefono=%s, direccion=%s
+            WHERE id=%s
+        """, (nombre, apellido, telefono, direccion, session['user_id']))
+        mysql.connection.commit()
+        flash('✅ Perfil actualizado correctamente.', 'success')
+    except Exception as e:
+        mysql.connection.rollback()
+        flash(f'⚠️ Error al actualizar perfil: {e}', 'error')
+    finally:
+        cur.close()
+
+    return redirect('/mi_cuenta')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
