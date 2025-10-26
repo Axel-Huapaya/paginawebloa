@@ -6,15 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis Favoritos</title>
   <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/modo-oscuro.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/regresar.css')}}" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-br from-pink-50 to-white min-h-screen flex flex-col items-center justify-start relative">
+<body id="pagina-favoritos" class="bg-gradient-to-br from-pink-50 to-white min-h-screen flex flex-col items-center justify-start relative">
 
-  <!--  Botón Regresar -->
-  <a href="/Sitio_Inclusivo"
-    class="absolute top-6 left-6 bg-black hover:bg-gray-800 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-lg transition-all duration-300">
-    ←
-  </a>
+  <div class="boton-regresar">
+    <a href="/Sitio_Inclusivo">
+      <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar" class="auto-invert2">
+    </a>
+  </div>
 
   <!--Contenedor principal -->
   <div class="w-11/12 md:w-3/4 lg:w-2/3 bg-white mt-24 p-8 rounded-2xl shadow-2xl border border-pink-100">
@@ -70,8 +72,8 @@
       class="w-16 h-16 rounded-full shadow-xl" />
   </a>
 
-  <!-- Script para animaciones -->
   <script src="{{ url_for('static', filename='js/mostrar_favoritos.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/modo-oscuro.js') }}"></script>
 </body>
 
 </html>

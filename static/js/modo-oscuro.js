@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const themedImages = Array.from(document.querySelectorAll('img[data-light][data-dark]'));
   const themeIcon = document.getElementById('themeIcon')
 
-  // 🔹 Aplicar inmediatamente si el modo oscuro está activado en localStorage
+  // Si el modo oscuro está activado en localStorage
   if (localStorage.getItem(STORAGE_KEY) === 'enabled') {
     body.classList.add('dark-mode');
   }

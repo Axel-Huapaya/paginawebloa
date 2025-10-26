@@ -318,5 +318,9 @@ def corazon_de_jardin():
 def deliccat():
     return render_template("infoRamos/Deliccat.html")
 
+@app.route("/LibroReclamos")
+def libroReclamos():
+    return render_template("libro.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
