@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     precio.textContent = `S/ ${pedido.precio.toFixed(2)}`;
     estado.textContent = `Estado: ${pedido.estado}`;
     estado.classList.add(
-      pedido.estado === "En proceso" ? "text-yellow-600" : "text-green-600"
+      pedido.estado === "En proceso" ? "text-green-600" : "text-red-600"
     );
     fecha.textContent = `Fecha: ${pedido.fecha} - ${pedido.hora}`;
 

@@ -10,7 +10,9 @@
   <link href="{{ url_for('static', filename='css/regresar.css') }}" rel="stylesheet">
 </head>
 
-<body id="pagina-carrito" class="bg-gradient-to-br from-pink-50 to-white min-h-screen flex flex-col items-center justify-start relative">
+<body id="pagina-carrito"
+  class="min-h-screen flex flex-col items-center justify-start relative transition-all duration-500
+         bg-gradient-to-br from-pink-50 to-white dark:from-gray-900 dark:to-black dark:text-gray-200">
 
   <!-- Botón regresar -->
   <div class="boton-regresar">
@@ -20,8 +22,8 @@
   </div>
 
   <!-- Contenedor principal -->
-  <div class="w-11/12 md:w-3/4 lg:w-2/3 bg-white mt-24 p-8 rounded-2xl shadow-2xl border border-pink-100">
-
+  <div
+    class="w-11/12 md:w-3/4 lg:w-2/3 bg-white dark:bg-gray-800 mt-24 p-8 rounded-2xl shadow-2xl border border-pink-100 dark:border-gray-700 transition-colors duration-500">
     <!-- Título -->
     <h1 class="text-center text-3xl font-extrabold text-pink-600 mb-8 tracking-wide">Mi Carrito / Pedidos en Proceso</h1>
 
@@ -57,13 +59,6 @@
         <p id="totalGeneral" class="text-2xl font-extrabold text-pink-600">S/ 0.00</p>
       </div>
 
-      <!-- Botón de realizar nueva compra -->
-      <div class="flex justify-center mt-8">
-        <a href="/formulario_compra"
-          class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
-          Realizar nueva compra 🛒
-        </a>
-      </div>
     </div>
   </div>
 

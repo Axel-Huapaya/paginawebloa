@@ -6,12 +6,23 @@
   <title>Mi Cuenta - Florería Manu</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/mi_cuenta_botones.css') }}">
-  <script src="{{ url_for('static', filename='js/cuenta.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/regresar.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/modo-oscuro.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot-logo.css') }}">
+  
+
 </head>
 
 <body class="bg-pink-50 font-sans min-h-screen flex items-center justify-center">
 
   <div class="bg-white rounded-3xl shadow-lg p-10 w-full max-w-3xl border border-pink-200 space-y-8">
+
+    <!-- Botón regresar -->
+  <div class="boton-regresar">
+    <a href="/Sitio_Inclusivo">
+      <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar" class="auto-invert2">
+    </a>
+  </div>
 
     <!-- Encabezado -->
     <div class="text-center space-y-2">
@@ -122,9 +133,38 @@
     </a>
 
   </div>
+
+
 </div>
 
+   <!-- Botón para el chatbot-->
+    <div class="chatbot-wrapper fixed bottom-24 right-6 z-50">
+      <!-- Globo de diálogo -->
+      <div id="floribot-bubble" class="chatbot-bubble">
+        Soy FloriBot tu asistente🌼,<br />
+        Si necesitas información sobre ramos, arreglos, coronas o etc,<br />
+        no dudes en preguntarme.
+      </div>
 
-  </div>
+      <!-- chatbot -->
+      <a href="/chatbot" target="_blank" id="chatbot-toggle" class="chatbot-button">
+        <img src="static/image/logos/chatbot-icon.png" alt="Chatbot" />
+      </a>
+    </div>
+
+
+
+    <!-- Botón flotante de WhatsApp -->
+
+    <a href="https://wa.me/51967086515" target="_blank" class="fixed bottom-6 right-6 z-50">
+      <img src="static/image/logos/whatsapp.png" alt="WhatsApp"
+        class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
+    </a>
+
+</div>
+
+     <script src="{{ url_for('static', filename='js/cuenta.js') }}" defer></script>
+     <script src="{{ url_for('static', filename='js/modo-oscuro.js') }}" defer></script>
+
 </body>
 </html>

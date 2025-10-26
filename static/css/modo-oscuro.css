@@ -536,6 +536,10 @@ body.dark-mode#pagina-favoritos {
 
 .card-title,
 .card-description {
-  color: white !important;
+  color: rgb(116, 115, 115) !important;
 }
 
+body.dark-mode {
+  background: linear-gradient(to bottom right, #111, #000);
+  color: #ddd;
+}
