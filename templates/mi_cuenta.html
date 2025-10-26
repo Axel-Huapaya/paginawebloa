@@ -18,7 +18,7 @@
       <h1 class="text-3xl font-extrabold text-green-700">Mi Cuenta</h1>
       <div class="flex items-center justify-center gap-2">
         <p class="text-gray-600 text-sm">
-          ¡Bienvenida, <span class="font-semibold text-green-700">{{ user.nombre }}</span>!
+          ¡Bienvenid@, <span class="font-semibold text-green-700">{{ user.nombre }}</span>a la floreria Manu!
         </p>
         <span class="text-sm">🌸</span>
       </div>
@@ -31,7 +31,7 @@
 
         <!-- Foto de perfil solo lectura -->
         <img id="fotoPerfil"
-             src="{{ user.foto_url if user.foto_url else 'https://cdn-icons-png.flaticon.com/512/219/219969.png' }}"
+             src="static/image/logos/perfil1.png"
              alt="Perfil"
              class="w-24 h-24 rounded-full shadow-lg object-cover">
 
@@ -98,7 +98,7 @@
     </a>
 
     <!-- Mis pedidos -->
-    <a href="/mis_pedidos" class="action-card flex flex-col items-center p-3" aria-label="Mis pedidos">
+    <a href="/carrito" class="action-card flex flex-col items-center p-3" aria-label="Mis pedidos">
       <div class="icon-circle" aria-hidden="true">
         <svg viewBox="0 0 23 23" class="icon-svg" xmlns="http://www.w3.org/2000/svg"><path d="M7 4h-2l-1 2h2l1-2zm2 0h8v2h-8zM6 8h12l-1.2 8.4A2 2 0 0 1 14.82 18H9.18a2 2 0 0 1-1.98-1.6L6 8zM9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
       </div>
@@ -114,7 +114,7 @@
     </a>
 
     <!-- Cerrar sesión -->
-    <a href="/logout" class="action-card flex flex-col items-center p-3" aria-label="Cerrar sesión">
+    <a href="/Sitio_Inclusivo" class="action-card flex flex-col items-center p-3" aria-label="Cerrar sesión">
       <div class="icon-circle" aria-hidden="true">
         <svg viewBox="0 0 23 23" class="icon-svg" xmlns="http://www.w3.org/2000/svg"><path d="M16 13v-2H7V8l-5 4 5 4v-3zM20 3H10v2h10v14H10v2h10c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
       </div>

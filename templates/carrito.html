@@ -1,73 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Carrito - Florería Manu</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/carrito_styles.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Carrito - Florería Manu</title>
+  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/modo-oscuro.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/regresar.css') }}" rel="stylesheet">
 </head>
-<body class=" bg-pink-50 flex justify-center items-center min-h-screen">
-  <div class="carrito-container w-11/12 md:w-3/4 lg:w-2/3 p-6 rounded-xl shadow-lg">
-    
-    <!-- Botón regresar -->
-    <div class="mb-4">
-      <button class="back-button">
-        ←
-      </button>
-    </div>
 
-    <!-- Título -->
-    <h1 class="carrito-title text-center text-2xl font-bold text-green-900 mb-6">CARRITO</h1>
+<body id="pagina-carrito" class="bg-gradient-to-br from-pink-50 to-white min-h-screen flex flex-col items-center justify-start relative">
 
-    <!-- Contenedor -->
-    <div class="producto-container bg-pink-50 rounded-xl border border-green-300 p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-
-      <!-- Producto -->
-      <div class="flex flex-col items-center">
-        <img src="static/image/ramos/ramo1.jpg" alt="Ramo Bella Esperanza" class="producto-imagen w-40 h-40 rounded-lg border">
-        <p class="producto-nombre mt-3 font-bold text-green-900">RAMO BELLA<br>ESPERANZA</p>
-      </div>
-
-      <!-- Detalles -->
-      <div class="detalles-container flex flex-col justify-center gap-4">
-        
-        <!-- Precio y cantidad -->
-        <div class="precio-cantidad flex justify-between items-center">
-          <p class="precio-label font-bold text-green-900">Precio: 
-            <span class="precio-valor ml-2 border rounded-full px-4 py-1">S/. 100.00</span>
-          </p>
-          <div class="cantidad-selector flex items-center border rounded-full px-4 py-1">
-            <button class="cantidad-boton px-2 font-bold">-</button>
-            <span class="px-4">3</span>
-            <button class="cantidad-boton px-2 font-bold">+</button>
-          </div>
-        </div>
-
-        <!-- Cupón -->
-        <div class="cupon-container flex border rounded-xl p-3 items-center justify-between">
-          <input type="text" placeholder="¿Tienes algún cupón?" class="cupon-input outline-none bg-pink-50 flex-1 px-2">
-          <button class="cupon-boton bg-pink-300 hover:bg-pink-400 text-white font-semibold px-4 py-1 rounded-lg">
-            Aplicar descuento
-          </button>
-        </div>
-
-        <!-- Total -->
-        <div class="total-container border rounded-xl p-4 text-center">
-          <p class="total-label font-bold text-green-900">Total del carrito:</p>
-          <p class="total-valor text-lg font-semibold mt-1">S/. 300.00</p>
-          <button class="finalizar-compra-boton mt-3 bg-pink-300 hover:bg-pink-400 text-white font-semibold px-4 py-2 rounded-lg">
-            Finalizar compra
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Botón WhatsApp -->
-    <a href="https://wa.me/51967086515" target="_blank" class="fixed bottom-6 right-6 z-50">
-      <img src="static/image/logos/whatsapp.png" alt="WhatsApp"
-        class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
+  <!-- Botón regresar -->
+  <div class="boton-regresar">
+    <a href="/Sitio_Inclusivo">
+      <img src="{{ url_for('static', filename='image/logos/regresar.png') }}" alt="Regresar" class="auto-invert2">
     </a>
   </div>
+
+  <!-- Contenedor principal -->
+  <div class="w-11/12 md:w-3/4 lg:w-2/3 bg-white mt-24 p-8 rounded-2xl shadow-2xl border border-pink-100">
+
+    <!-- Título -->
+    <h1 class="text-center text-3xl font-extrabold text-pink-600 mb-8 tracking-wide">Mi Carrito / Pedidos en Proceso</h1>
+
+    <!-- Lista de pedidos -->
+    <div class="bg-pink-50 rounded-xl p-6 shadow-inner border border-pink-100">
+      <h2 class="text-lg font-bold text-green-900 mb-4 flex items-center gap-2">
+        🛍️ Pedidos guardados localmente
+      </h2>
+
+      <div class="flex flex-col gap-6" id="listaCarrito"></div>
+
+      <template id="templateCarrito">
+        <div
+          class="flex flex-col md:flex-row md:items-center justify-between bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300 producto-carrito">
+          <div class="flex items-center gap-4">
+            <img class="imagen w-24 h-24 object-cover border-2 border-green-500 rounded-xl" alt="Producto">
+            <div>
+              <p class="nombre font-semibold text-green-900 text-lg"></p>
+              <p class="precio text-pink-600 font-bold text-md"></p>
+              <p class="estado text-sm font-semibold mt-1"></p>
+              <p class="fecha text-xs text-gray-500"></p>
+            </div>
+          </div>
+          <button
+            class="eliminar text-red-500 text-lg hover:scale-110 transition-transform duration-200 mt-3 md:mt-0"
+            title="Eliminar pedido">🗑️</button>
+        </div>
+      </template>
+
+      <!-- Total -->
+      <div class="flex justify-between items-center mt-8 border-t pt-4">
+        <p class="text-xl font-bold text-green-900">Total:</p>
+        <p id="totalGeneral" class="text-2xl font-extrabold text-pink-600">S/ 0.00</p>
+      </div>
+
+      <!-- Botón de realizar nueva compra -->
+      <div class="flex justify-center mt-8">
+        <a href="/formulario_compra"
+          class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+          Realizar nueva compra 🛒
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/51967086515" target="_blank"
+    class="fixed bottom-6 right-6 z-50 hover:scale-110 transition-transform duration-300">
+    <img src="{{ url_for('static', filename='image/logos/whatsapp.png') }}" alt="WhatsApp"
+      class="w-16 h-16 rounded-full shadow-xl" />
+  </a>
+
+  <script src="{{ url_for('static', filename='js/modo-oscuro.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/mostrar_carrito.js') }}"></script>
 </body>
 </html>

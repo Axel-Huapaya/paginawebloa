@@ -59,3 +59,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+ 
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  if (!form) return;
+
+  form.addEventListener("submit", () => {
+    const nombre = document.getElementById("inputNombreProducto").value;
+    const precio = parseFloat(document.getElementById("inputPrecioProducto").value);
+    const imagen = document.getElementById("inputImagenProducto").value;
+
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    const nuevoPedido = {
+      nombre: nombre || "Producto sin nombre",
+      precio: precio || 0,
+      imagen: imagen || "{{ url_for('static', filename='image/logos/logo_empresa.png') }}",
+      estado: "En proceso",
+      fecha: new Date().toLocaleDateString(),
+      hora: new Date().toLocaleTimeString(),
+    };
+
+    carrito.push(nuevoPedido);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    console.log("✅ Pedido guardado en carrito:", nuevoPedido);
+  });
+});

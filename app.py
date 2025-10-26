@@ -169,18 +169,26 @@ def login():
 
         cur = mysql.connection.cursor()
         try:
-            cur.execute("INSERT INTO usuarios (nombre, contraseña) VALUES (%s, %s)", (nombre, contraseña))
-            mysql.connection.commit()
-            flash('Usuario guardado', 'success')
+            # Buscar usuario por nombre
+            cur.execute("SELECT id, nombre, contraseña FROM registro WHERE nombre = %s", (nombre,))
+            usuario = cur.fetchone()
+
+            if usuario and usuario[2] == contraseña:
+                # Guardar sesión
+                session['user_id'] = usuario[0]
+                session['nombre'] = usuario[1]
+                flash('✅ Inicio de sesión exitoso.', 'success')
+                return redirect('/mi_cuenta')
+            else:
+                flash('⚠️ Nombre o contraseña incorrectos.', 'error')
+
         except Exception as e:
-            mysql.connection.rollback()
-            flash(f'Error al guardar: {e}', 'error')
+            flash(f'⚠️ Error al iniciar sesión: {e}', 'error')
         finally:
             cur.close()
 
-        return redirect('/mi_cuenta')
-
     return render_template('login.html')
+
 
 
 @app.route("/chatbot")
@@ -399,6 +407,8 @@ def actualizar_usuario():
         cur.close()
 
     return redirect('/mi_cuenta')
+
+
 
 
 
