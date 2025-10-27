@@ -130,28 +130,23 @@ def registro():
         telefono = request.form['telefono']
         contraseña = request.form['contraseña']
         confirmar_contraseña = request.form['confirmar_contraseña']
-        preferencias = request.form.get('preferencias')  # ✅ nuevo campo
+        preferencias = request.form.get('preferencias')
 
-        # Validar contraseñas iguales
         if contraseña != confirmar_contraseña:
             flash('⚠️ Las contraseñas no coinciden.', 'error')
             return redirect('/registro')
 
         cur = mysql.connection.cursor()
         try:
-            # ✅ Insertar solo los campos que existen en la tabla
             cur.execute("""
-                INSERT INTO registro (nombre, email, telefono, contraseña, preferencias)
+                INSERT INTO usuarios (nombre, email, telefono, contraseña, preferencias)
                 VALUES (%s, %s, %s, %s, %s)
             """, (nombre, email, telefono, contraseña, preferencias))
-
             mysql.connection.commit()
             flash('✅ Usuario registrado correctamente.', 'success')
-
         except Exception as e:
             mysql.connection.rollback()
-            flash(f'⚠️ Error al guardar: {e}', 'error')
-
+            flash(f'⚠️ Error al registrar usuario: {e}', 'error')
         finally:
             cur.close()
 
@@ -168,24 +163,17 @@ def login():
         contraseña = request.form['contraseña']
 
         cur = mysql.connection.cursor()
-        try:
-            # Buscar usuario por nombre
-            cur.execute("SELECT id, nombre, contraseña FROM registro WHERE nombre = %s", (nombre,))
-            usuario = cur.fetchone()
+        cur.execute("SELECT id, nombre, contraseña FROM usuarios WHERE nombre = %s", (nombre,))
+        usuario = cur.fetchone()
+        cur.close()
 
-            if usuario and usuario[2] == contraseña:
-                # Guardar sesión
-                session['user_id'] = usuario[0]
-                session['nombre'] = usuario[1]
-                flash('✅ Inicio de sesión exitoso.', 'success')
-                return redirect('/mi_cuenta')
-            else:
-                flash('⚠️ Nombre o contraseña incorrectos.', 'error')
-
-        except Exception as e:
-            flash(f'⚠️ Error al iniciar sesión: {e}', 'error')
-        finally:
-            cur.close()
+        if usuario and usuario[2] == contraseña:
+            session['user_id'] = usuario[0]
+            session['nombre'] = usuario[1]
+            flash('✅ Inicio de sesión exitoso.', 'success')
+            return redirect('/mi_cuenta')
+        else:
+            flash('⚠️ Nombre o contraseña incorrectos.', 'error')
 
     return render_template('login.html')
 
@@ -339,7 +327,7 @@ def mi_cuenta():
         return redirect('/login')
 
     cur = mysql.connection.cursor()
-    
+
     if request.method == 'POST':
         nombre = request.form.get('nombre')
         apellido = request.form.get('apellido')
@@ -357,11 +345,7 @@ def mi_cuenta():
         except Exception as e:
             mysql.connection.rollback()
             flash(f'⚠️ Error al actualizar perfil: {e}', 'error')
-        finally:
-            cur.close()
 
-    # Obtener datos actuales del usuario
-    cur = mysql.connection.cursor()
     cur.execute("""
         SELECT nombre, apellido, email, telefono, direccion
         FROM usuarios
@@ -379,35 +363,6 @@ def mi_cuenta():
     }
 
     return render_template("mi_cuenta.html", user=user)
-
-@app.route('/actualizar_usuario', methods=['POST'])
-def actualizar_usuario():
-    if 'user_id' not in session:
-        flash('⚠️ Debes iniciar sesión primero.', 'error')
-        return redirect('/login')
-
-    nombre = request.form.get('nombre')
-    apellido = request.form.get('apellido')
-    telefono = request.form.get('telefono')
-    direccion = request.form.get('direccion')
-
-    cur = mysql.connection.cursor()
-    try:
-        cur.execute("""
-            UPDATE usuarios 
-            SET nombre=%s, apellido=%s, telefono=%s, direccion=%s
-            WHERE id=%s
-        """, (nombre, apellido, telefono, direccion, session['user_id']))
-        mysql.connection.commit()
-        flash('✅ Perfil actualizado correctamente.', 'success')
-    except Exception as e:
-        mysql.connection.rollback()
-        flash(f'⚠️ Error al actualizar perfil: {e}', 'error')
-    finally:
-        cur.close()
-
-    return redirect('/mi_cuenta')
-
 
 
 
