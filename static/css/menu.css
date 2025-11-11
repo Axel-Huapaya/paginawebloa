@@ -1,0 +1,33 @@
+/* ===============================
+   Efecto del menú al hacer scroll
+   =============================== */
+
+/* Fondo azul estático al inicio */
+#main-header {
+  background-color: #1e40af; /* azul igual a bg-blue-800 */
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Al hacer scroll: se mantiene azul, pero con transparencia y blur */
+#main-header.scrolled {
+  background-color: rgba(30, 64, 175, 0.85); /* azul translúcido */
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Suaviza los enlaces y el logo */
+#main-header a {
+  transition: color 0.3s ease;
+}
+
+#main-header a:hover {
+  color: #bfdbfe; /* text-blue-200 */
+}
+
+#main-header img {
+  transition: transform 0.3s ease;
+}
+
+#main-header.scrolled img {
+  transform: scale(0.95);
+}

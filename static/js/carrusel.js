@@ -1,36 +1,33 @@
-
-  const carousel = document.querySelector('.carousel-track');
-  const container = document.querySelector('.carousel-container');
-  const images = carousel.querySelectorAll('img');
-  const totalSlides = images.length;
+document.addEventListener("DOMContentLoaded", function () {
+  const sliderContainer = document.getElementById("slider-container");
+  const slides = sliderContainer.children;
+  const totalSlides = slides.length;
   let currentIndex = 0;
-  let autoSlide;
 
-  function updateCarousel() {
-    const imageWidth = images[0].clientWidth;
-    carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+  const nextBtn = document.getElementById("next-btn");
+  const prevBtn = document.getElementById("prev-btn");
+
+  // Función para mostrar el slide actual
+  function showSlide(index) {
+    const offset = -index * 100;
+    sliderContainer.style.transform = `translateX(${offset}%)`;
   }
 
-  function nextSlide() {
+  // Botón siguiente
+  nextBtn.addEventListener("click", function () {
     currentIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel();
-  }
+    showSlide(currentIndex);
+  });
 
-  function startCarousel() {
-    stopCarousel(); // evita múltiples intervalos
-    autoSlide = setInterval(nextSlide, 3000);
-  }
+  // Botón anterior
+  prevBtn.addEventListener("click", function () {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    showSlide(currentIndex);
+  });
 
-  function stopCarousel() {
-    clearInterval(autoSlide);
-  }
-
-  // Inicia el carrusel
-  startCarousel();
-
-  // Pausa al pasar el mouse sobre el contenedor
-  container.addEventListener('mouseenter', stopCarousel);
-  container.addEventListener('mouseleave', startCarousel);
-
-  // Ajusta el carrusel si cambia el tamaño de la ventana
-  window.addEventListener('resize', updateCarousel);
+  // Auto-cambio cada 5 segundos
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+  }, 5000);
+});

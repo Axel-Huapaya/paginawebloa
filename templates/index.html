@@ -2,1582 +2,186 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Florería Manu</title>
-  <link href="{{ url_for('static', filename='css/carrusel.css') }}" rel="stylesheet">
-  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/eleccion.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/pie.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot-logo.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/logos-final.css')}}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/modo-oscuro.css')}}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/buscador.css')}}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/Nav.css')}}">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOA - Inicio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/carrusel.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-100">
 
-  <div id="popupOverlay" class="hidden">
-    <div id="popupBox">
-      <p>¿Deseas activar el modo con voz de guía?</p>
-      <p>(esta acción está diseñada para personas con pérdida de visión)</p>
-      <button id="btnSi">Sí</button>
-      <button id="btnNo">No</button>
-    </div>
-  </div>
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-transparent text-white transition-all duration-500">
+  <nav class="container mx-auto p-4 flex justify-between items-center">
+    <a href="#" class="flex items-center space-x-2">
+      <img src="{{ url_for('static', filename='image/logo_empresa1.jpeg') }}" alt="Logo LOA"
+        class="h-12 w-12 rounded-full">
+      <span class="text-2xl font-bold">LOA</span>
+    </a>
 
-  <!-- Navegación -->
-  <nav class="relative flex items-center justify-between px-4 py-2 bg-white z-[9999]">
-    <!-- Logo + Nombre -->
-    <div class="flex items-center gap-2">
-      <a href="/" class="hover:underline">
-        <img src="static/image/logos/logo_empresa.png" alt="Logo del negocio"
-          class="w-15 h-10 rounded-lg border-4 border-white shadow-lg hover:scale-110 transition-transform duration-300" />
+    <ul class="hidden md:flex space-x-6">
+      <li><a href="#" class="hover:text-blue-200 font-medium">Inicio</a></li>
+      <li><a href="#" class="hover:text-blue-200 font-medium">Nosotros</a></li>
+      <li><a href="#" class="hover:text-blue-200 font-medium">Regístrate</a></li>
+    </ul>
+
+    <div class="relative">
+      <a href="#" class="hover:text-blue-200">
+        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zM7 16a2 2 0 100 4 2 2 0 000-4z" />
+        </svg>
+        <span
+          class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+          2
+        </span>
       </a>
-      <h1 class="text-xl font-bold">Florería Manu</h1>
+    </div>
+  </nav>
+</header>
+
+
+<section class="relative w-full max-w-6xl mx-auto rounded-lg overflow-hidden shadow-xl" style="height: 400px;">
+    <div id="slider-container" class="flex transition-transform duration-500 ease-in-out h-full"
+      style="transform: translateX(0%);">
+
+    <div class="w-full flex-shrink-0 h-full relative">
+      <img src="{{ url_for('static', filename='image/loa1.jpeg') }}" alt="Promoción Femme Store"
+        class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center md:justify-end p-8">
+        <div class="text-right text-white bg-yellow-500 bg-opacity-80 p-6 rounded-lg">
+          <h2 class="text-5xl font-bold text-gray-800">FEMME STORE</h2>
+          <p class="text-2xl text-gray-700"> EXPRESARSE</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="w-full flex-shrink-0 h-full relative">
+      <img src="{{ url_for('static', filename='image/loa2.jpg') }}" alt="Otra Oferta" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+        <h2 class="text-4xl font-bold text-white">DESCUBRE MÁS</h2>
+      </div>
     </div>
 
-    <!-- Buscador -->
-<form id="form-busqueda" class="flex items-center border rounded px-2 py-1 bg-gray-100" onsubmit="event.preventDefault()">
-  <input
-    type="search"
-    id="buscador"
-    placeholder="Buscar..."
-    class="bg-transparent outline-none px-20 text-sm"
-  />
-  <button type="button">
-    <img
-      src="static/image/logos/buscador.png"
-      alt="buscador"
-      class="w-6 h-6 hover:scale-110 transition-transform duration-300"
-    />
-  </button>
-</form>
 
-
-
-    <!-- Botón hamburguesa SOLO en móviles -->
-    <button id="animate-pulse" class="md:hidden text-gray-700 focus:outline-none relative z-[9999]">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+    <button id="prev-btn"
+      class="absolute top-1/2 left-4 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 hover:bg-opacity-100">
+      <svg src="{{ url_for('static', filename='image/loa1.jpeg') }}" class="h-6 w-6 text-gray-800" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
     </button>
-
-    <!-- Menú en pantallas grandes -->
-    <ul class="hidden md:flex items-center gap-4">
-      <li><a href="#"><img src="static/image/logos/retos.gif" alt="Misiones del cliente"
-            class="w-10 h-10 nav-logo" /></a></li>
-      <label for="toggle"> <img src="static/image/logos/claro.png" alt="Tema" class="w-8 h-8 nav-logo" data-light="static/image/logos/claro.png" data-dark="static/image/logos/oscuro.png" id="themeIcon"></label>
-      <input type="checkbox" id="toggle">
-
-      <li><a href="#"><img src="static/image/logos/carrito.png" alt="Carrito de compras" class="w-8 h-8 nav-logo" /></a>
-      </li>
-      <li><a href="#"><img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-            class="w-8 h-8 nav-logo" /></a></li>
-      <li><a href="#"><img src="static/image/logos/perfil.png" alt="Perfil de usuario"
-            class="w-8 h-8 nav-logo" /></a></li>
-    </ul>
-
-
-    <!-- Menú móvil desplegable -->
-    <ul id="mobile-menu"
-      class="hidden absolute top-full right-0 bg-white p-4 flex flex-col gap-4 shadow-lg rounded-b-lg z-[9999] w-48">
-      <li><a href="#"><img src="static/image/logos/retos.gif" alt="Misiones" class="w-10 h-10" /><span
-            class="text-sm font-medium">Misiones del usuario</span></a></li>
-      <li><a href="#"><img src="static/image/logos/claro.png" alt="Tema" class="w-8 h-8" /><span
-            class="text-sm font-medium">Tema Claro/Oscuro</span></a></li>
-      <li><a href="#"><img src="static/image/logos/carrito.png" alt="Carrito" class="w-8 h-8" /><span
-            class="text-sm font-medium">Carrito de compras</span></a></li>
-      <li><a href="#"><img src="static/image/logos/favorito.png" alt="Favoritos" class="w-8 h-8" /><span
-            class="text-sm font-medium">Favoritos</span></a></li>
-      <li><a href="#"><img src="static/image/logos/perfil.png" alt="Perfil" class="w-8 h-8" /><span
-            class="text-sm font-medium">Perfil del usuario</span></a></li>
-    </ul>
-  </nav>
-  <nav class="w-full border-t border-b border-gray-200 bg-white">
-  <ul class="flex justify-center gap-10 py-3 text-sm font-bold">
-      <li>
-      <a href="#Ramos" class="text-green-900 hover:text-green-700 hover:border-b-2 hover:border-green-700 pb-1">
-       RAMOS
-      </a>
-    </li>
-    <li>
-      <a href="#Arreglos" class="text-green-900 hover:text-green-700 hover:border-b-2 hover:border-green-700 pb-1">
-        ARREGLOS FLO.
-      </a>
-    </li>
-    <li>
-      <a href="#Coronas" class="text-green-900 hover:text-green-700 hover:border-b-2 hover:border-green-700 pb-1">
-        CORONAS
-      </a>
-    </li>
-    <li>
-      <a href="#" class="text-green-900 hover:text-green-700 hover:border-b-2 hover:border-green-700 pb-1">
-        DECORACIONES EVENT.
-      </a>
-    </li>
-    <li>
-      <a href="#" class="text-green-900 hover:text-green-700 hover:border-b-2 hover:border-green-700 pb-1">
-        FLORES
-      </a>
-    </li>
-  </ul>
-</nav>
-
-
-  <!--Carrusel de los descuentos-->
-
-  <div class="carousel-container relative w-full overflow-hidden mt-10">
-    <div class="carousel-track">
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento1.png') }}" class="h-64 object-cover"
-          alt="Imagen 1">
-      </a>
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento2.png') }}" class="h-64 object-cover"
-          alt="Imagen 2">
-      </a>
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento3.png') }}" class="h-64 object-cover"
-          alt="Imagen 3">
-      </a>
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento4.png') }}" class="h-64 object-cover"
-          alt="Imagen 4">
-      </a>
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento5.png') }}" class="h-64 object-cover"
-          alt="Imagen 5">
-      </a>
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento6.png') }}" class="h-64 object-cover"
-          alt="Imagen 6">
-      </a>
-
-      <!-- Repetir para efecto infinito -->
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento1.png') }}" class="h-64 object-cover"
-          alt="Imagen 1">
-      </a>
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento2.png') }}" class="h-64 object-cover"
-          alt="Imagen 2">
-      </a>
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento3.png') }}" class="h-64 object-cover"
-          alt="Imagen 3">
-      </a>
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento4.png') }}" class="h-64 object-cover"
-          alt="Imagen 4">
-      </a>
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento5.png') }}" class="h-64 object-cover"
-          alt="Imagen 5">
-      </a>
-      <a href="{{ url_for('formulario_compra') }}">
-        <img src="{{ url_for('static', filename='image/descuentos/descuento6.png') }}" class="h-64 object-cover"
-          alt="Imagen 6">
-      </a>
-    </div>
-  </div>
-
-  <div class="relative w-full max-w4xl overflow-hidden rounded-2xl shadow-lg">
-    <div class="flex animate-slide-x">
-      {% for img in imagenes %}
-      <img src="{{ images }}" class="w-full h-64 w-96 object-cover" alt="Image {{ loop.index }}">
-      {% endfor %}
-    </div>
-  </div>
-
-
-
-  <!-- Sección de Ramos -->
-  <section class="p-10">
-    <h5 class="text-center font-bold mb-10 ">RAMOS</h5>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Tarjeta de producto -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo1" src="static/audio/ramos/alma de bosque.wav"></audio>
-        <img src="static/image/ramos/ramo1.jpg" id="imagenramo1" alt="Ramo 1"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Alma de Bosque</h4>
-          <p class="text-pink-600 font-bold">S/45.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-              </button>
-            </a>
-              <img src="static/image/logos/favorito.png" alt="Agregar a favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-                data-nombre="Alma de Bosque"
-                data-imagen="static/image/ramos/ramo1.jpg"
-                data-precio="45.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo2" src="static/audio/ramos/aurora moderna.wav"></audio>
-        <img src="static/image/ramos/ramo2.jpg" id="imagenramo2" alt="Ramo 2"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Aurora Moderna</h4>
-          <p class="text-pink-600 font-bold">S/37.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Aurora Moderna"
-            data-imagen="static/image/ramos/ramo2.jpg"
-            data-precio="37.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo3" src="static/audio/ramos/atetish.wav"></audio>
-        <img src="static/image/ramos/ramo3.png" id="imagenramo3" alt="Ramo 3"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Atetish</h4>
-          <p class="text-pink-600 font-bold">S/40.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Atetish"
-            data-imagen="static/image/ramos/ramo3.png"
-            data-precio="40.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo4" src="static/audio/ramos/belicate.wav"></audio>
-        <img src="static/image/ramos/ramo4.png" id="imagenramo4" alt="Ramo 4"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Belicate</h4>
-          <p class="text-pink-600 font-bold">S/35.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Belicate"
-            data-imagen="static/image/ramos/ramo4.png"
-            data-precio="35.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo5" src="static/audio/ramos/canto de rio.wav"></audio>
-        <img src="static/image/ramos/ramo5.jpg" id="imagenramo5" alt="Ramo 5"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Canto de Rio</h4>
-          <p class="text-pink-600 font-bold">S/80.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Canto de Rio"
-            data-imagen="static/image/ramos/ramo5.jpg"
-            data-precio="80.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto ">
-        <audio id="audioRamo6" src="static/audio/ramos/clicken lila.wav"></audio>
-        <img src="static/image/ramos/ramo6.png" id="imagenramo6" alt="Ramo 6"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Clicken lila</h4>
-          <p class="text-pink-600 font-bold">S/40.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Clicken lila"
-            data-imagen="static/image/ramos/ramo6.png"
-            data-precio="40.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo7" src="static/audio/ramos/corazón de jardin.wav"></audio>
-        <img src="static/image/ramos/ramo7.jpg" id="imagenramo7" alt="Ramo 7"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Corazón de jardin</h4>
-          <p class="text-pink-600 font-bold">S/45.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Corazón de jardin"
-            data-imagen="static/image/ramos/ramo7.jpg"
-            data-precio="45.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo8" src="static/audio/ramos/deliccat.wav"></audio>
-        <img src="static/image/ramos/ramo8.jpg" id="imagenramo8" alt="Ramo 8"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Deliccat</h4>
-          <p class="text-pink-600 font-bold">S/35.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Deliccat"
-            data-imagen="static/image/ramos/ramo8.jpg"
-            data-precio="35.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo9" src="static/audio/ramos/dulce amanecer.wav"></audio>
-        <img src="static/image/ramos/ramo9.jpg" id="imagenramo9" alt="Ramo 9"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Dulce Amanecer</h4>
-          <p class="text-pink-600 font-bold">S/45.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Dulce Amanecer"
-            data-imagen="static/image/ramos/ramo9.jpg"
-            data-precio="45.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo10" src="static/audio/ramos/eco de primavera.wav"></audio>
-        <img src="static/image/ramos/ramo10.png" id="imagenramo10" alt="Ramo 10"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Eco de Primavera</h4>
-          <p class="text-pink-600 font-bold">S/50.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Eco de Primavera"
-            data-imagen="static/image/ramos/ramo10.png"
-            data-precio="50.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo11" src="static/audio/ramos/elegancia pura.wav"></audio>
-        <img src="static/image/ramos/ramo11.jpg" id="imagenramo11" alt="Ramo 11"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Elegancia Pura</h4>
-          <p class="text-pink-600 font-bold">S/40.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Elegancia Pura"
-            data-imagen="static/image/ramos/ramo11.jpg"
-            data-precio="40.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo12" src="static/audio/ramos/elixir de flores.wav"></audio>
-        <img src="static/image/ramos/ramo12.jpg" id="imagenramo12" alt="Ramo 12"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Elixir de flores</h4>
-          <p class="text-pink-600 font-bold">S/35.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Elixir de flores"
-            data-imagen="static/image/ramos/ramo12.jpg"
-            data-precio="35.00" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioRamo13" src="static/audio/ramos/eterno romance.wav"></audio>
-        <img src="static/image/ramos/ramo13.png" id="imagenramo13" alt="Ramo 13"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Eterno romance</h4>
-          <p class="text-pink-600 font-bold">S/35.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Eterno romance"
-            data-imagen="static/image/ramos/ramo13.png"
-            data-precio="35.00" />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--Seccion de Arreglos-->
-  <section id="Arreglos" class="p-10">
-    <h5 class="text-center font-bold mb-10 ">ARREGLOS</h5>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Tarjeta de producto -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo1" src="static/audio/arreglos/anivesh.wav"></audio>
-        <img src="static/image/Arreglos/arreglo1.jpg" id="imagenarreglo1" alt="Arreglo 1"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Anivech</h4>
-          <p class="text-pink-600 font-bold">S/150.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Anivech"
-            data-imagen="static/image/Arreglos/arreglo1.jpg"
-            data-precio="150.00" />
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo2" src="static/audio/arreglos/blank_love.wav"></audio>
-        <img src="static/image/Arreglos/arreglo2.jpg" id="imagenarreglo2" alt="Arreglo 2"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Blank Love </h4>
-          <p class="text-pink-600 font-bold">S/100.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Blank Love"
-            data-imagen="static/image/Arreglos/arreglo2.jpg"
-            data-precio="100.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo3" src="static/audio/arreglos/blue_kate.wav"></audio>
-        <img src="static/image/Arreglos/arreglo3.jpg" id="imagenarreglo3" alt="Arreglo 3"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Blue Kate </h4>
-          <p class="text-pink-600 font-bold">S/50.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Blue Kate"
-            data-imagen="static/image/Arreglos/arreglo3.jpg"
-            data-precio="50.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo4" src="static/audio/arreglos/brillo_solar.wav"></audio>
-        <img src="static/image/Arreglos/arreglo4.webp" id="imagenarreglo4" alt="Arreglo 4"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Brillo Solar</h4>
-          <p class="text-pink-600 font-bold">S/180.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Brillo Solar"
-            data-imagen="static/image/Arreglos/arreglo4.webp"
-            data-precio="180.00" />
-          </div>
-        </div>
-      </div>
-            
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo5" src="static/audio/arreglos/dorado_silvestre.wav"></audio>
-        <img src="static/image/Arreglos/arreglo5.jpg" id="imagenarreglo5" alt="Arreglo 5"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Dorado Silvestre</h4>
-          <p class="text-pink-600 font-bold">S/200.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Dorado Silvestre"
-            data-imagen="static/image/Arreglos/arreglo5.jpg"
-            data-precio="200.00" />
-          </div>
-        </div>
-      </div>
-           
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo6" src="static/audio/arreglos/duble.wav"></audio>
-        <img src="static/image/Arreglos/arreglo6.jpg" id="imagenarreglo6" alt="Arreglo 6"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Duble</h4>
-          <p class="text-pink-600 font-bold">S/200.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Duble"
-            data-imagen="static/image/Arreglos/arreglo6.jpg"
-            data-precio="200.00" />
-          </div>
-        </div>
-      </div>
-                  
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo7" src="static/audio/arreglos/freschs.wav"></audio>
-        <img src="static/image/Arreglos/arreglo7.jpg" id="imagenarreglo7" alt="Arreglo 7"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Freschs</h4>
-          <p class="text-pink-600 font-bold">S/80.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Freschs"
-            data-imagen="static/image/Arreglos/arreglo7.jpg"
-            data-precio="80.00" />
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo8" src="static/audio/arreglos/jejyf.wav"></audio>
-        <img src="static/image/Arreglos/arreglo8.jpg" id="imagenarreglo8" alt="Arreglo 8"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Jejyf</h4>
-          <p class="text-pink-600 font-bold">S/140.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Jejyf"
-            data-imagen="static/image/Arreglos/arreglo8.jpg"
-            data-precio="140.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo9" src="static/audio/arreglos/jeylur.wav"></audio>
-        <img src="static/image/Arreglos/arreglo9.jpg" id="imagenarreglo9" alt="Arreglo 9"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Jeylur</h4>
-          <p class="text-pink-600 font-bold">S/50.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Jeylur"
-            data-imagen="static/image/Arreglos/arreglo9.jpg"
-            data-precio="50.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo10" src="static/audio/arreglos/lilauis.wav"></audio>
-        <img src="static/image/Arreglos/arreglo10.jpg" id="imagenarreglo10" alt="Arreglo 10"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Lilauis</h4>
-          <p class="text-pink-600 font-bold">S/60.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Lilauis"
-            data-imagen="static/image/Arreglos/arreglo10.jpg"
-            data-precio="60.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo11" src="static/audio/arreglos/narejch.wav"></audio>
-        <img src="static/image/Arreglos/arreglo11.jpg" id="imagenarreglo11" alt="Arreglo 11"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Narejch</h4>
-          <p class="text-pink-600 font-bold">S/30.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Narejch"
-            data-imagen="static/image/Arreglos/arreglo11.jpg"
-            data-precio="30.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo12" src="static/audio/arreglos/pinkffo.wav"></audio>
-        <img src="static/image/Arreglos/arreglo12.jpg" id="imagenarreglo12" alt="Arreglo 12"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Pinkffo</h4>
-          <p class="text-pink-600 font-bold">S/130.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Pinkffo"
-            data-imagen="static/image/Arreglos/arreglo12.jpg"
-            data-precio="130.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo13" src="static/audio/arreglos/primaverate.wav"></audio>
-        <img src="static/image/Arreglos/arreglo13.jpg" id="imagenarreglo13" alt="Arreglo 13"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Primaverate</h4>
-          <p class="text-pink-600 font-bold">S/80.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Primaverate"
-            data-imagen="static/image/Arreglos/arreglo13.jpg"
-            data-precio="80.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo14" src="static/audio/arreglos/rosxh.wav"></audio>
-        <img src="static/image/Arreglos/arreglo14.jpg" id="imagenarreglo14" alt="Arreglo 14"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Rosxh</h4>
-          <p class="text-pink-600 font-bold">S/70.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Rosxh"
-            data-imagen="static/image/Arreglos/arreglo14.jpg"
-            data-precio="70.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo15" src="static/audio/arreglos/rousnote.wav"></audio>
-        <img src="static/image/Arreglos/arreglo15.jpg" id="imagenarreglo15" alt="Arreglo 15"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Rousnote</h4>
-          <p class="text-pink-600 font-bold">S/200.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Rousnote"
-            data-imagen="static/image/Arreglos/arreglo15.jpg"
-            data-precio="200.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo16" src="static/audio/arreglos/sonrisa_del_sol.wav"></audio>
-        <img src="static/image/Arreglos/arreglo16.jpg" id="imagenarreglo16" alt="Arreglo 16"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Sonrisa del sol</h4>
-          <p class="text-pink-600 font-bold">S/120.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Sonrisa del sol"
-            data-imagen="static/image/Arreglos/arreglo16.jpg"
-            data-precio="120.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo17" src="static/audio/arreglos/tulippt.wav"></audio>
-        <img src="static/image/Arreglos/arreglo17.jpg" id="imagenarreglo17" alt="Arreglo 17"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Tulippt</h4>
-          <p class="text-pink-600 font-bold">S/100.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Tulippt"
-            data-imagen="static/image/Arreglos/arreglo17.jpg"
-            data-precio="100.00" />
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo18" src="static/audio/arreglos/yrlouus.wav"></audio>
-        <img src="static/image/Arreglos/arreglo18.jpg" id="imagenarreglo18" alt="Arreglo 18"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Yrlouus</h4>
-          <p class="text-pink-600 font-bold">S/320.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Yrlouus"
-            data-imagen="static/image/Arreglos/arreglo18.jpg"
-            data-precio="320.00" />
-          </div>
-        </div>
-        </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioArreglo19" src="static/audio/arreglos/lowy.wav"></audio>
-        <img src="static/image/Arreglos/arreglo19.jpg" id="imagenarreglo19" alt="Arreglo 19"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Lowy</h4>
-          <p class="text-pink-600 font-bold">S/90.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-
-            <img 
-            src="static/image/logos/favorito.png"
-            alt="Sección de favoritos"
-            class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer favorito"
-            data-nombre="Lowy"
-            data-imagen="static/image/Arreglos/arreglo19.jpg"
-            data-precio="90.00" />
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Seccion de Coronas-->
-  <section id="Coronas" class="p-10">
-    <h5 class="text-center font-bold mb-10 ">CORONAS</h5>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Tarjeta de producto -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona1" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Adios.jpg" id="imagencorona1" alt="Corona 1"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Adios</h4>
-          <p class="text-pink-600 font-bold">S/120.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona2" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Alba.jpg" id="imagencorona2" alt="Corona 2"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Alba</h4>
-          <p class="text-pink-600 font-bold">S/220.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona3" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Amparo.jpg" id="imagencorona3" alt="Corona 3"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Amparo</h4>
-          <p class="text-pink-600 font-bold">S/240.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona4" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Ausencia_.jpg" id="imagencorona4" alt="Corona 4"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Ausencia</h4>
-          <p class="text-pink-600 font-bold">S/120.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona5" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Calma.jpg" id="imagencorona5" alt="Corona 5"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Calma</h4>
-          <p class="text-pink-600 font-bold">S/140.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona6" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Consuelo.jpg" id="imagencorona6" alt="Corona 6"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Consuelo</h4>
-          <p class="text-pink-600 font-bold">S/190.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona7" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Descanso.png" id="imagencorona7" alt="Corona 7"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Descanso</h4>
-          <p class="text-pink-600 font-bold">S/140.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona8" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Despedida.jpg" id="imagencorona8" alt="Corona 8"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Despedida</h4>
-          <p class="text-pink-600 font-bold">S/120.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona9" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Devoción_.jpg" id="imagencorona9" alt="Corona 9"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Devoción</h4>
-          <p class="text-pink-600 font-bold">S/220.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona10" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Esperanza.png" id="imagencorona10" alt="Corona 10"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Esperanza</h4>
-          <p class="text-pink-600 font-bold">S/150.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona11" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Eternidad_.png" id="imagencorona11" alt="Corona 11"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Eternidad</h4>
-          <p class="text-pink-600 font-bold">S/150.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona12" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Eternos.jpg" id="imagencorona12" alt="Corona 12"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Eternos</h4>
-          <p class="text-pink-600 font-bold">S/190.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona13" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Fe.jpg" id="imagencorona13" alt="Corona 13"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Fe</h4>
-          <p class="text-pink-600 font-bold">S/250.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona14" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Gracia.jpg" id="imagencorona14" alt="Corona 14"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Gracia</h4>
-          <p class="text-pink-600 font-bold">S/230.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona15" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Homenaje(1).jpg" id="imagencorona15" alt="Corona 15"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Homesh</h4>
-          <p class="text-pink-600 font-bold">S/170.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona16" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Homenaje.jpg" id="imagencorona16" alt="Corona 16"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Homenaje</h4>
-          <p class="text-pink-600 font-bold">S/200.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona17" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Memoria_.jpg" id="imagencorona17" alt="Corona 17"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Memoria_</h4>
-          <p class="text-pink-600 font-bold">S/180.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg overflow-hidden producto">
-        <audio id="audioCorona18" src="static/audio/alma de bosque.wav"></audio>
-        <img src="static/image/Coronas/Reencuentro_.jpg" id="imagencorona18" alt="Corona 18"
-          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
-        <div class="relative p-4 bg-white rounded shadow-md">
-          <h4 class="font-semibold text-lg">Reencuentro</h4>
-          <p class="text-pink-600 font-bold">S/220.00</p>
-          <div class="flex items-center justify-between mt-2">
-            <a href="/formulario_compra" class="hover:underline">
-              <button
-                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
-                Añadir al carrito
-            </a>
-            </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/logos/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </div>
-
+    <button id="next-btn"
+      class="absolute top-1/2 right-4 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 hover:bg-opacity-100">
+      <svg src="{{ url_for('static', filename='image/loa2.jpeg') }}" xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
   </section>
 
-  <!-- Botón para el chatbot-->
-  <div class="chatbot-wrapper fixed bottom-24 right-6 z-50">
-    <!-- Globo de diálogo -->
-    <div id="floribot-bubble" class="chatbot-bubble">
-      Soy FloriBot tu asistente🌼,<br />
-      Si necesitas información sobre ramos,<br />
-      no dudes en preguntarme.
-    </div>
+  <section class="container mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold text-center text-pink-500 mb-8">¡Descubre nuestras ofertas!</h2>
 
-    <!-- chatbot -->
-    <a href="/chatbot" target="_blank" id="chatbot-toggle" class="chatbot-button">
-      <img src="static/image/logos/chatbot-icon.png" alt="Chatbot" />
-    </a>
-  </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-
-
-  <!-- Botón flotante de WhatsApp -->
-
-  <a href="https://wa.me/51967086515" target="_blank" class="fixed bottom-6 right-6 z-50">
-    <img src="static/image/logos/whatsapp.png" alt="WhatsApp"
-      class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
-  </a>
-
-  <footer class="footer">
-    <div class="footer-container">
-
-      <div class="footer-section">
-        <h3>🛍️ Cliente</h3>
-        <ul class="social-icons">
-          <li>
-            <a href="https://www.facebook.com/profile.php?id=100075779234124" target="_blank" 
-            class="icono-texto">
-              <img src="static/image/logos/perfil.png" alt="perfil">
-              <span class="forma-letra3">Mi cuenta</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/profile.php?id=100075779234124" target="_blank" 
-            class="icono-texto">
-              <img src="static/image/logos/carrito.png" alt="perfil">
-              <span class="forma-letra3">Mis pedidos</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/profile.php?id=100075779234124" target="_blank" 
-            class="icono-texto">
-              <img src="static/image/logos/favorito.png" alt="perfil">
-              <span class="forma-letra3">Mis favoritos</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/profile.php?id=100075779234124" target="_blank" 
-            class="icono-texto">
-              <img src="static/image/logos/seguimiento.png" alt="perfil">
-              <span class="forma-letra3">Seguimiento de envio</span>
-            </a>
-          </li>
-        </ul>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+        <img src="{{ url_for('static', filename='image/loa4.jpeg') }}" alt="Agua San Vicentino"
+          class="w-full h-48 object-cover">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-bold mb-2">Agua San Vicentino</h3>
+          <p class="text-gray-700 mb-4 flex-grow">Botella de 500ml, ideal para hidratar a tu familia.</p>
+          <a href="#"
+            class="mt-auto w-full text-center bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+            Comprar ahora
+          </a>
+        </div>
       </div>
 
-      <div class="footer-section">
-        <h3>🔗 Enlaces</h3>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Sobre nosotros</a></li>
-          <li><a href="#">Política de privacidad</a></li>
-          <li><a href="#">Términos y condiciones</a></li>
-        </ul>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+        <img src="{{ url_for('static', filename='image/loa2.jpeg') }}" alt="Pack Don Italo"
+          class="w-full h-48 object-cover">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-bold mb-2">Pack Don Italo</h3>
+          <p class="text-gray-700 mb-4 flex-grow">Pack promocional con descuento especial.</p>
+          <a href="#"
+            class="mt-auto w-full text-center bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+            Comprar ahora
+          </a>
+        </div>
       </div>
 
-      <div class="footer-section">
-        <h3>📞 Contáctanos</h3>
-        <p>📍 Av. Los Emprendedores 123, Cañete – Lima</p>
-        <p>📱 +51 967 086 515</p>
-      </div>
-
-      <div class="footer-section">
-        <h3>📱 Síguenos</h3>
-        <ul class="social-icons">
-          <li>
-            <a href="https://www.facebook.com/profile.php?id=100075779234124" target="_blank" 
-            class="icono-texto">
-              <img src="static/image/logos/facebook.png" alt="Facebook">
-              <span class="forma-letra2">Facebook</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/floreriamanu/?igsh=MTY4N29xZXR3d2pmMA%3D%3D#" target="_blank"
-              class="icono-texto">
-              <img src="static/image/logos/instagram.png" alt="Instagram">
-              <span class="forma-letra">Instagram</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://www.tiktok.com/@floreriamanu" target="_blank" class="icono-texto">
-              <img src="static/image/logos/tiktok.png" alt="TikTok">
-              <span class="forma-letra3">Tik tok</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-
-      <div class="footer-section">
-        <h3>📘 Libro de Reclamaciones</h3>
-        <a href="#" target="_blank" class="social-icons2">
-          <img src="static/image/logos/libro_reclamaciones.png" alt="libro de reclamos" class="libro-img">
-        </a>
-      </div>
-
-
-      <div class="footer-section">
-        <h3>💳 Pagos</h3>
-        <p>Yape | Plin | PagoEfectivo</p>
-      </div>
-
-      <div class="footer-section">
-        <h3>🎁 Regístrate</h3>
-        <p>Obtén hasta 15% de descuento</p>
-        <a href="#" class="register-btn">Haz clic para registrarte</a>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+        <img src="{{ url_for('static', filename='image/loa3.jpeg') }}" alt="Oferta Karla"
+          class="w-full h-48 object-cover">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-bold mb-2">Oferta Karla</h3>
+          <p class="text-gray-700 mb-4 flex-grow">Producto seleccionado con envío gratis.</p>
+          <a href="#"
+            class="mt-auto w-full text-center bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+            Comprar ahora
+          </a>
+        </div>
       </div>
 
     </div>
-    <div class="footer-bottom">
-      © 2025 FloreriaManu. Todos los derechos reservados.
+  </section>
+
+  <section class="bg-cyan-500 text-white py-12">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold">UNICA COMO SU GENTE</h2>
+    </div>
+  </section>
+
+  <footer class="bg-blue-900 text-white">
+    <div class="container mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+
+        <div class="flex items-center space-x-2 mb-6 md:mb-0">
+          <img src="{{ url_for('static', filename='image/logo_empresa1.jpeg') }}" alt="Logo LOA"
+            class="h-10 w-10 rounded-full">
+          <span class="text-xl font-bold">LOA</span>
+        </div>
+
+        <div class="flex space-x-6 mb-6 md:mb-0">
+          <a href="#" class="hover:text-blue-200">Inicio</a>
+          <a href="#" class="hover:text-blue-200">Nuestro origen</a>
+          <a href="#" class="hover:text-blue-200">Contacto</a>
+          <a href="#" class="hover:text-blue-200">Términos</a>
+        </div>
+
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-blue-200"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.24 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
+              </path>
+            </svg></a>
+          <a href="#" class="hover:text-blue-200"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.227-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.14 0-3.502.01-4.72.068-2.693.123-3.878 1.318-4.003 4.003C3.21 8.498 3.198 8.859 3.198 12s.013 3.502.068 4.72c.123 2.693 1.318 3.878 4.003 4.003 1.217.055 1.579.068 4.72.068s3.502-.013 4.72-.068c2.693-.123 3.878-1.318 4.003-4.003C20.79 15.502 20.802 15.141 20.802 12s-.013-3.502-.068-4.72c-.123-2.693-1.318-3.878-4.003-4.003C15.502 3.21 15.141 3.198 12 3.198zm0 5.838c-1.933 0-3.492 1.56-3.492 3.492s1.56 3.492 3.492 3.492 3.492-1.56 3.492-3.492-1.56-3.492-3.492-3.492zm0 5.683c-1.21 0-2.191-.98-2.191-2.191s.98-2.191 2.191-2.191 2.191.98 2.191 2.191-.98 2.191-2.191 2.191zm6.162-7.339c-.556 0-1.007.45-1.007 1.007s.451 1.007 1.007 1.007 1.007-.45 1.007-1.007-.45-1.007-1.007-1.007z">
+              </path>
+            </svg></a>
+          <a href="#" class="hover:text-blue-200"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.48 1.32 4.95L2 22l5.25-1.38c1.41.81 3.02 1.3 4.79 1.3h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM12.04 20.15c-1.61 0-3.13-.44-4.44-1.23l-.32-.19-3.3 1.08 1.1-3.21-.21-.34c-.87-1.4-1.35-3.01-1.35-4.71 0-4.52 3.68-8.19 8.19-8.19 2.22 0 4.2.86 5.79 2.45 1.59 1.59 2.45 3.57 2.45 5.79-.01 4.52-3.69 8.19-8.2 8.19zm4.23-5.59c-.22-.11-1.3-.65-1.5-.72-.2-.07-.35-.11-.49.11-.14.22-.57.72-.7.87-.13.15-.26.17-.48.06-.22-.11-1-.37-1.9-1.17-.7-.63-1.17-1.41-1.31-1.65-.14-.24-.03-.38.1-.49.11-.11.24-.28.37-.42.12-.14.17-.24.26-.41.09-.17.05-.31-.02-.42-.07-.11-.49-1.17-.67-1.61-.18-.44-.37-.38-.5-.38-.13 0-.28-.05-.42-.05-.14 0-.39.06-.59.31-.2.25-.76.73-.76 1.77 0 1.04.78 2.05.88 2.19.11.14 1.54 2.34 3.73 3.28 1.86.79 2.2 1.04 2.7.94.69-.12 1.3-.49 1.48-.92.18-.42.18-.78.13-.87-.06-.11-.21-.17-.43-.28z">
+              </path>
+            </svg></a>
+          <a href="#" class="hover:text-blue-200"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M21.58 7.18s-.23-1.64-.94-2.34c-.85-.88-1.81-.88-2.25-.94C16.33 3.65 12 3.65 12 3.65s-4.33 0-6.39.25c-.44.06-1.4.06-2.25.94C2.64 5.54 2.42 7.18 2.42 7.18S2.18 8.9 2.18 10.63v2.74c0 1.73.23 3.45.23 3.45s.23 1.64.94 2.34c.85.88 1.81.88 2.25.94C7.67 20.35 12 20.35 12 20.35s4.33 0 6.39-.25c.44-.06 1.4-.06 2.25.94.71-.7 1.64-2.34 1.64-2.34s.23-1.73.23-3.45v-2.74c0-1.73-.23-3.45-.23-3.45zM9.75 15.02V9.02L15.22 12l-5.47 3.02z">
+              </path>
+            </svg></a>
+        </div>
+      </div>
+
+      <div class="border-t border-blue-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+        © 2025 San Vicentino. Todos los derechos reservados.
+      </div>
     </div>
   </footer>
 
-  <script src="{{ url_for('static', filename='js/sonido.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/favorito.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/eleccion.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/menu.js')}}"></script>
-  <script src="{{ url_for('static', filename='js/menu.movil.js')}}"></script>
-  <script src="{{ url_for('static', filename='js/buscador.js')}}"></script>
-  <script src="{{ url_for('static', filename='js/modo-oscuro.js')}}"></script>
-  <script src="{{ url_for('static', filename='js/buscador.js')}}"></script>
-
 </body>
-
 
 </html>
